@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Dropdown from 'react-bootstrap/Dropdown'
 
@@ -37,6 +37,18 @@ const assessments_data = [
 
 
 const Assessments = (props) => {
+
+    const [dropdownData, setdropdownData] = useState('Name');
+    const [filterdropdownData, setfilterdropdownData] = useState('In Progres…');
+
+    const toggleData = (data) => {
+        setdropdownData(data);
+    }
+    
+    const filtertoggleData = (data) => {
+        setfilterdropdownData(data);
+    }
+
   return (
     <div className="main-content-wrapper">
         <div className="common-padding-content">
@@ -46,7 +58,7 @@ const Assessments = (props) => {
                     <div className="breadcrumb-ul">
                         <ul>
                             <li>
-                                <a><img src={home_svg} alt="home" /></a>
+                                <a href="#0"><img src={home_svg} alt="home" /></a>
                             </li>
                             <li className="active">
                                 <span>Assessments</span>
@@ -74,15 +86,15 @@ const Assessments = (props) => {
                                     <div className="common-dropdown">
                                         <Dropdown >
                                             <Dropdown.Toggle id="dropdown-basic">
-                                                Name
+                                                {dropdownData}
                                             </Dropdown.Toggle>
 
                                             <Dropdown.Menu>
-                                                <Dropdown.Item href="#/action-1">A to Z</Dropdown.Item>
-                                                <Dropdown.Item href="#/action-2">Z to A</Dropdown.Item>
-                                                <Dropdown.Item href="#/action-3">Long</Dropdown.Item>
-                                                <Dropdown.Item href="#/action-4">Short</Dropdown.Item>
-                                                <Dropdown.Item href="#/action-5">Something else here</Dropdown.Item>
+                                                <Dropdown.Item href="#/action-1" onClick={() => toggleData('A to Z')}>A to Z</Dropdown.Item>
+                                                <Dropdown.Item href="#/action-2" onClick={() => toggleData('Z to A')}>Z to A</Dropdown.Item>
+                                                <Dropdown.Item href="#/action-3" onClick={() => toggleData('Long')}>Long</Dropdown.Item>
+                                                <Dropdown.Item href="#/action-4" onClick={() => toggleData('Short')}>Short</Dropdown.Item>
+                                                <Dropdown.Item href="#/action-5" onClick={() => toggleData('Something else here')}>Something else here</Dropdown.Item>
                                             </Dropdown.Menu>
                                         </Dropdown>
                                     </div>
@@ -105,15 +117,15 @@ const Assessments = (props) => {
                                     <div className="common-dropdown">
                                         <Dropdown >
                                             <Dropdown.Toggle id="dropdown-basic2">
-                                                Name
+                                                {filterdropdownData}
                                             </Dropdown.Toggle>
 
                                             <Dropdown.Menu>
-                                                <Dropdown.Item href="#/action-1">A to Z</Dropdown.Item>
-                                                <Dropdown.Item href="#/action-2">Z to A</Dropdown.Item>
-                                                <Dropdown.Item href="#/action-3">Long</Dropdown.Item>
-                                                <Dropdown.Item href="#/action-4">Short</Dropdown.Item>
-                                                <Dropdown.Item href="#/action-5">Something else here</Dropdown.Item>
+                                                <Dropdown.Item href="#/action-1" onClick={() => filtertoggleData('A to Z')}>A to Z</Dropdown.Item>
+                                                <Dropdown.Item href="#/action-2" onClick={() => filtertoggleData('Z to A')}>Z to A</Dropdown.Item>
+                                                <Dropdown.Item href="#/action-3" onClick={() => filtertoggleData('Long')}>Long</Dropdown.Item>
+                                                <Dropdown.Item href="#/action-4" onClick={() => filtertoggleData('Short')}>Short</Dropdown.Item>
+                                                <Dropdown.Item href="#/action-5" onClick={() => filtertoggleData('Something else here')}>Something else here</Dropdown.Item>
                                             </Dropdown.Menu>
                                         </Dropdown>
                                     </div>
@@ -124,33 +136,33 @@ const Assessments = (props) => {
                 </div>
             </div>
 
-            <div class="filter-list-wrapper assess-list-wrapper">
-                <div class="row">
+            <div className="filter-list-wrapper assess-list-wrapper">
+                <div className="row">
                     {
                         assessments_data.map((val) => {
                             return(
-                                <div class="fl-col col-sm-6 col-md-4 col-lg-3" key="{val.id}">
-                                    <div class="filter-list-box">
-                                        <div class="filter-list-img">
+                                <div className="fl-col col-sm-6 col-md-4 col-lg-3" key={val.id}>
+                                    <div className="filter-list-box">
+                                        <div className="filter-list-img">
                                             <a href="#0">
                                                 <img src={val.assessments_blog_img} alt="Filter list" />
-                                                <h3 class="assess-item-name">{val.assess_item_name}</h3>
-                                                <span class="modules-label">{val.modules_label}</span>
+                                                <h3 className="assess-item-name">{val.assess_item_name}</h3>
+                                                <span className="modules-label">{val.modules_label}</span>
                                             </a>
                                         </div>
-                                        <div class="filter-list-desc">
-                                            <div class="filter-item-post-date">
+                                        <div className="filter-list-desc">
+                                            <div className="filter-item-post-date">
                                                 <p>{val.filter_item_post_name}</p>
                                             </div>
-                                            <div class="filter-item-name">
+                                            <div className="filter-item-name">
                                                 <h3><a href="#0">{val.filter_item_name}</a></h3>
                                             </div>
-                                            <div class="starts-due-date-block">
-                                                <div class="starts-date-hold">
+                                            <div className="starts-due-date-block">
+                                                <div className="starts-date-hold">
                                                     <p>{val.starts_text}</p>
                                                     <p>{val.starts_date}</p>
                                                 </div>
-                                                <div class="starts-date-hold due-date-hold">
+                                                <div className="starts-date-hold due-date-hold">
                                                     <p>{val.starts_hold}</p>
                                                     <p>{val.starts_date_hold}</p>
                                                 </div>

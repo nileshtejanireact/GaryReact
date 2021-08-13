@@ -1,18 +1,16 @@
 
 import React,  { Suspense } from 'react';
-
 import { Redirect, Route, Switch } from 'react-router-dom'
 
+import Loader from '../Component/Loader/Loader';
 import routes from '../Routes';
 
 function Appcontent(props) {
   return (
     <>
-        <Suspense fallback={<div>Loading... </div>}>
+        <Suspense fallback={<Loader />}>
           <Switch>
             {routes.map((route, idx) => {
-              console.log(route)
-
               return (
                 route.component && (
                   <Route

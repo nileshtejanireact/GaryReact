@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 
 import Dropdown from 'react-bootstrap/Dropdown'
 import ProgressBar from 'react-bootstrap/ProgressBar'
@@ -86,6 +86,18 @@ const home_blog_data = [
 
 
 function Home_batch_1(props) {
+
+    const [dropdownData, setdropdownData] = useState('Sequence');
+    const [filterdropdownData, setfilterdropdownData] = useState('Filter by');
+
+    const toggleData = (data) => {
+        setdropdownData(data);
+    }
+
+    const filtertoggleData = (data) => {
+        setfilterdropdownData(data);
+    }
+
   return (
     <div className="main-content-wrapper">
         <div className="common-padding-content">
@@ -94,10 +106,10 @@ function Home_batch_1(props) {
                     <div className="breadcrumb-ul">
                         <ul>
                             <li>
-                                <a><img src={homesvg} alt="home" /></a>
+                                <a href="#0"><img src={homesvg} alt="home" /></a>
                             </li>
                             <li>
-                                <a>Subjects</a>
+                                <a href="#0">Subjects</a>
                             </li>
                             <li className="active">
                                 <span>Physics</span>
@@ -122,15 +134,15 @@ function Home_batch_1(props) {
                                     <div className="common-dropdown">
                                         <Dropdown >
                                             <Dropdown.Toggle id="dropdown-basic">
-                                                Sequence
+                                                {dropdownData}
                                             </Dropdown.Toggle>
 
                                             <Dropdown.Menu>
-                                                <Dropdown.Item href="#/action-1">A to Z</Dropdown.Item>
-                                                <Dropdown.Item href="#/action-2">Z to A</Dropdown.Item>
-                                                <Dropdown.Item href="#/action-3">Long</Dropdown.Item>
-                                                <Dropdown.Item href="#/action-4">Short</Dropdown.Item>
-                                                <Dropdown.Item href="#/action-5">Something else here</Dropdown.Item>
+                                                <Dropdown.Item href="#/action-1" onClick={() => toggleData('A to Z')}>A to Z</Dropdown.Item>
+                                                <Dropdown.Item href="#/action-2" onClick={() => toggleData('Z to A')}>Z to A</Dropdown.Item>
+                                                <Dropdown.Item href="#/action-3" onClick={() => toggleData('Long')}>Long</Dropdown.Item>
+                                                <Dropdown.Item href="#/action-4" onClick={() => toggleData('Short')}>Short</Dropdown.Item>
+                                                <Dropdown.Item href="#/action-5" onClick={() => toggleData('Something else here')}>Something else here</Dropdown.Item>
                                             </Dropdown.Menu>
                                         </Dropdown>
                                     </div>
@@ -153,15 +165,15 @@ function Home_batch_1(props) {
                                     <div className="common-dropdown">
                                         <Dropdown >
                                             <Dropdown.Toggle id="dropdown-basic2">
-                                                Filter by
+                                                {filterdropdownData}
                                             </Dropdown.Toggle>
 
                                             <Dropdown.Menu>
-                                                <Dropdown.Item href="#/action-1">A to Z</Dropdown.Item>
-                                                <Dropdown.Item href="#/action-2">Z to A</Dropdown.Item>
-                                                <Dropdown.Item href="#/action-3">Long</Dropdown.Item>
-                                                <Dropdown.Item href="#/action-4">Short</Dropdown.Item>
-                                                <Dropdown.Item href="#/action-5">Something else here</Dropdown.Item>
+                                                <Dropdown.Item href="#/action-1" onClick={() => filtertoggleData('A to Z')}>A to Z</Dropdown.Item>
+                                                <Dropdown.Item href="#/action-2" onClick={() => filtertoggleData('Z to A')}>Z to A</Dropdown.Item>
+                                                <Dropdown.Item href="#/action-3" onClick={() => filtertoggleData('Long')}>Long</Dropdown.Item>
+                                                <Dropdown.Item href="#/action-4" onClick={() => filtertoggleData('Short')}>Short</Dropdown.Item>
+                                                <Dropdown.Item href="#/action-5" onClick={() => filtertoggleData('Something else here')}>Something else here</Dropdown.Item>
                                             </Dropdown.Menu>
                                         </Dropdown>
                                     </div>

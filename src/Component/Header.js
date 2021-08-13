@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import Logo from '../assets/images/batch-1/logo.svg';
 import message from '../assets/images/batch-1/message.svg';
