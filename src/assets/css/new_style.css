@@ -1,0 +1,10 @@
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle{
+    color: unset;
+    background-color: #fff;
+    border-color: unset;
+    border: unset;
+    border: 1px solid rgba(32, 166, 210, 0.5);
+}
+.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus{
+    box-shadow: unset;
+}
