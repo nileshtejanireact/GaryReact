@@ -467,6 +467,7 @@ img {
     padding: 10px 20px 10px 12px;
     position: relative;
     color: #212529;
+    transition: color .5s;
 }
 .common-dropdown .btn:focus{
     outline: 0;
@@ -523,7 +524,7 @@ img {
     margin-left: 30px;
 }
 .filter-list-wrapper{
-    padding-top: 15px;
+    padding-top: 20px;
 }
 .filter-list-box {
     background-color: #ffffff;
@@ -598,6 +599,20 @@ img {
     color: #757575;
     text-transform: uppercase;
     margin-top: 5px;
+}
+.small-green-check {
+    width: 16px;
+    height: 16px;
+    background-color: #31960C;
+    display: inline-block;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    margin-right: 5px;
+    margin-top: -2px;
+}
+.small-green-check img{
+    min-width: 10px;
 }
 /*----------------Main Content Wrapper Css End ---------------*/
 
@@ -944,9 +959,366 @@ img {
     margin-top: 25px;
 }
 
-
-
 /*=============================== Batch 1 External Channels Page End ===========================*/
+
+/*=============================== Batch 1 Student-Assessment Page Start ===========================*/
+.full-content-wrapper{
+    padding-left: 0;
+}
+.exit-finish-test-block{
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 15px 20px;
+}
+.common-exit-btn a {
+    display: inline-block;
+    border-radius: 30px;
+    background-color: #CA1717;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 12px;
+    padding: 7px 25px;
+}
+.common-exit-btn a:hover{
+    background-color: rgba(202, 23, 23, 0.7);
+}
+.save-finish-btn a {
+    display: inline-block;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 12px;
+    padding: 7px 25px;
+}
+.save-continue-btn{
+    background-color: #E0E0E0;
+    color: #272D36;
+}
+.save-continue-btn:hover {
+    background-color: rgba(224, 224, 224, 0.7);
+    color: #272D36;
+}
+.finish-test-btn{
+    background-color: #31960C;
+    color: #ffffff;
+    margin-left: 10px;
+}
+.finish-test-btn:hover{
+    background-color: rgba(49, 150, 12, 0.7);
+}
+.time-management-wrapper {
+    width: 100%;
+    max-width: 1330px;
+    margin: 0 auto;
+    padding:45px 15px;
+}
+.time-section-block {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 30px;
+}
+.time-col-left {
+    width: 305px;
+}
+.time-col-right {
+    width: calc(100% - 305px);
+    padding-left: 30px;
+}
+.time-section-box{
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+}
+.time-management-title h3{
+    font-size: 24px;
+    font-weight: 600;
+}
+.time-inner-common-title h4 {
+    font-size: 18px;
+    font-weight: 500;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #E0E0E0;
+}
+.time-seat-ul{
+    margin-top: 15px;
+}
+.time-seat-ul ul{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -8px;
+}
+.time-seat-ul ul li{
+    margin-bottom: 15px;
+    width: 20%;
+    padding: 0 8px;
+}
+.tm-seat-box{
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background-color: #E0E0E0;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 600;
+}
+.seat-green{
+    background-color: #31960C;
+}
+.seat-orange{
+    background-color: #D28920;
+}
+.seat-blue{
+    background-color: #20A6D2;
+}
+.time-seat-content + .time-seat-content{
+    margin-top: 35px;
+}
+.time-question-box{
+    background-color: #ffffff;
+    padding: 20px 30px 15px;
+    border-radius: 10px;
+}
+.time-question-box .time-inner-common-title h4 {
+    color:#20A6D2 ;
+}
+.question-content{
+    padding: 18px 0 0;
+}
+.question-hold-draw h3{
+    font-weight: 600;
+    font-size: 18px;
+}
+.question-answer-block{
+    margin-top: 30px;
+}
+.question-answer-block .common-checkbox label{
+    font-size: 14px;
+    color: #272D36;
+    padding-left: 35px;
+}
+.question-answer-block .common-checkbox label:before{
+    width: 24px;
+    height: 24px;
+    top: -3px;
+    border: 2px solid #272D36;
+}
+.question-answer-block .common-checkbox input:checked + label:before {
+    background: #31960C;
+    border-color: #31960C;;
+}
+.question-answer-block .common-checkbox input:checked + label:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 8px;
+    width: 7px;
+    height: 12px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    padding: 0;
+    background: transparent;
+    border-radius: 0px;
+}
+.question-answer-block ul li + li{
+    margin-top: 35px;
+}
+.flag-pagination-block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 131px;
+}
+.que-line-draw{
+    margin: 0 -30px 15px;
+    width: calc(100% + 60px);
+    height: 1px;
+    background-color: #E0E0E0;
+}
+.flag-attempt-latter p{
+    font-size: 12px;
+    color: #757575;
+}
+.flag-attempt-latter p img {
+    margin-right: 10px;
+}
+.flag-attempt-latter p a {
+    color: #20A6D2;
+}
+.flag-attempt-latter p a:hover{
+    color: #001B4A;
+}
+.question-pagination {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.question-pagination a {
+    min-width: 105px;
+    display: inline-block;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px 15px;
+    text-align: center;
+    border-radius: 35px;
+}
+.question-pagination p{
+    font-weight: 500;
+    font-size: 14px;
+    color: #757575;
+    margin: 0 16px;
+}
+.question-pagination p span{
+    color: #001B4A;
+}
+.que-prev-btn{
+    background-color: #757575;
+}
+.que-prev-btn:hover{
+    background-color: rgba(117, 117, 117, 0.7);
+}
+.que-next-btn{
+    background-color: #20A6D2;
+}
+.que-next-btn:hover{
+    background-color: rgba(32, 166, 210, 0.7);
+}
+/*=============================== Batch 1 Student-Assessment Page End ===========================*/
+
+/*=============================== Batch 1 Chapter Inner-01 Page Start ===========================*/
+.common-inner-padding-block{
+    padding: 0 35px 35px;
+}
+.common-back-nav-block{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+.common-back-btn a{
+    display: inline-block;
+    color: #20A6D2;
+    font-size: 16px;
+}
+.common-back-btn a svg {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 15px;
+    margin-top: -1px;
+}
+.common-back-btn a svg path,
+.hide-course-btn .common-btn svg path{
+    transition: all 0.5s ease 0s;
+}
+.common-back-btn a:hover{
+    color: #001B4A;
+}
+.common-back-btn a:hover svg path {
+    fill: #001B4A;
+}
+.hide-course-btn .common-btn {
+    font-size: 12px;
+    padding: 7px 15px;
+}
+.hide-course-btn .common-btn svg {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 12px;
+}
+.hide-course-btn .common-btn:hover{
+    background-color: transparent;
+}
+.hide-course-btn .common-btn:hover svg path{
+    fill: #20A6D2;;
+}
+.physics-inner-block{
+    display: flex;
+    flex-wrap: wrap;
+}
+.physics-col-left{
+    width: calc(100% - 350px);
+    padding-right: 50px;
+}
+.physics-col-right {
+    width: 350px;
+}
+.physics-inner-box{
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.physics-header-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+}
+.physics-title p{
+    font-weight: 600;
+    font-size: 16px;
+    color: #20A6D2;
+    margin-bottom: 5px;
+}
+.physics-title h3 {
+    font-weight: 700;
+    font-size: 18px;
+}
+.physics-file-process p{
+    font-size: 12px;
+    font-weight: 500;
+    color: #757575;
+    margin-bottom: 6px;
+    text-align: right;
+}
+.common-progress {
+    min-width: 260px;
+    height: 8px;
+    border-radius: 15px;
+    background-color: #E0E0E0;
+}
+.common-progress .progress-bar{
+    border-radius: 15px;
+    background-color: #31960C;
+}
+.physics-video-img img{
+    width: 100%;
+}
+.physics-details-box{
+    background-color: #fff3cd;
+    padding: 12px;
+    position: relative;
+}
+.ph-image-title-block{
+    display: flex;
+    align-items: center;
+}
+.ph-image-hold {
+    position: relative;
+    overflow: hidden;
+    max-height: 50px;
+    width: 75px;
+}
+.ph-image-hold img {
+    object-fit: cover;
+}
+.ph-process-done-ic{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+/*=============================== Batch 1 Chapter Inner-01 Page End ===========================*/
 
 
 

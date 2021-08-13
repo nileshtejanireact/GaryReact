@@ -8,3 +8,14 @@
 .btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus{
     box-shadow: unset;
 }
+
+.common-filter-show.active{
+    display: block;
+}
+
+.student_assessment_body .sidebar-wrapper{
+    display: none;
+}
+.student_assessment_body .header-dropdown-ul ul li:not(li:last-child){
+    display: none;
+}

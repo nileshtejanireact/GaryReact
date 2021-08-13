@@ -101,6 +101,9 @@
     .sidebar-logout a{
         padding: 12px 20px;
     }
+    .time-question-box{
+        padding: 20px 20px 15px;
+    }
 }
 
 
@@ -112,6 +115,19 @@
     .common-filter-show{
         padding: 20px;
     }
+    .time-col-left{
+        width: 100%;
+    }
+    .time-col-right{
+        width: 100%;
+        padding: 20px 0 0;
+    }
+    .time-seat-ul ul li{
+        width: auto;
+    }
+    .flag-pagination-block{
+        margin-top: 60px;
+    }
 }
 @media screen and (max-width: 767px) {
     .header-block{
@@ -121,8 +137,42 @@
         width: 100%;
         margin-bottom: 10px;
     }
-    .assess-item-name, .common-head-logo-title h3 {
+    .assess-item-name, .common-head-logo-title h3, .time-management-title h3 {
         font-size: 20px;
+    }
+    .time-section-block{
+        padding-top: 20px;
+    }
+    .time-management-wrapper{
+        padding: 20px 15px;
+    }
+    .question-pagination{
+        width: 100%;
+        margin-top: 15px;
+    }
+    .question-answer-block .common-checkbox label:before {
+        width: 20px;
+        height: 20px;
+        top: 0px;
+        border: 1px solid #272D36;
+    }
+    .question-answer-block .common-checkbox label{
+        padding-left: 30px;
+    }
+    .question-answer-block .common-checkbox input:checked + label:after{
+        top: 4px;
+        left: 7px;
+        width: 6px;
+        height: 10px;
+    }
+    .question-pagination a{
+        min-width: 95px;
+    }
+    .question-pagination p{
+        margin: 0 10px;
+    }
+    .exit-finish-test-block{
+        padding: 15px;
     }
 }
 @media screen and (max-width: 637px) {}
@@ -175,6 +225,24 @@
 @media screen and (max-width: 450px) {
     .filter-category-ul ul li{
         width: 100%;
+    }
+    .exit-finish-test-block{
+        flex-flow: column;
+    }
+    .common-exit-btn a{
+        margin-bottom: 10px;
+    }
+    .common-exit-btn a, .save-finish-btn a{
+        text-align: center;
+        min-width: 200px;
+        max-width: 200px;
+        display: block;
+    }
+    .save-finish-btn a{
+        display: block;
+    }
+    .finish-test-btn{
+        margin: 10px 0 0;
     }
 }
 @media screen and (max-width: 430px) {}

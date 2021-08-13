@@ -1,11 +1,22 @@
 
-import React,  { Suspense } from 'react';
-import { Redirect, Route, Switch } from 'react-router-dom'
+import React,  { Suspense, useEffect } from 'react';
+import { Redirect, Route, Switch, withRouter } from 'react-router-dom'
 
 import Loader from '../Component/Loader/Loader';
 import routes from '../Routes';
 
 function Appcontent(props) {
+  
+  useEffect(() => {
+    const student_as_location = window.location.href;
+    // if(student_as_location.indexOf("assessments")>-1){
+    //     document.body.classList.add('student_assessment_body');
+    // }
+    // else{
+    //     document.body.classList.remove('student_assessment_body');
+    // }
+  })
+
   return (
     <>
         <Suspense fallback={<Loader />}>
@@ -34,4 +45,4 @@ function Appcontent(props) {
   );
 }
 
-export default Appcontent;
+export default withRouter(Appcontent);
