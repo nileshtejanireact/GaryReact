@@ -497,8 +497,8 @@ img {
     font-size: 12px;
 }
 .common-dropdown .dropdown-item:hover{
-    background-color: #20A6D2;
-    color: #fff;
+    background-color: rgba(32, 166, 210, 0.4);
+    color: #757575;
 }
 .filter-up-down-check{
     display: flex;
@@ -1202,7 +1202,7 @@ img {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 0;
+    padding: 22px 0;
 }
 .common-back-btn a{
     display: inline-block;
@@ -1272,6 +1272,9 @@ img {
     font-weight: 700;
     font-size: 18px;
 }
+.physics-title h3 span{
+    font-weight: 400;
+}
 .physics-file-process p{
     font-size: 12px;
     font-weight: 500;
@@ -1293,9 +1296,10 @@ img {
     width: 100%;
 }
 .physics-details-box{
-    background-color: #fff3cd;
+    background-color: #ffffff;
     padding: 12px;
     position: relative;
+    border-radius: 10px;
 }
 .ph-image-title-block{
     display: flex;
@@ -1307,6 +1311,16 @@ img {
     max-height: 50px;
     width: 75px;
 }
+.ph-done-process .ph-image-hold:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.65);
+    pointer-events: none;
+}
 .ph-image-hold img {
     object-fit: cover;
 }
@@ -1317,6 +1331,205 @@ img {
     left: 0;
     right: 0;
     text-align: center;
+}
+.ph-process-done-ic img {
+    width: 16px;
+    height: 17px;
+    object-fit: unset;
+}
+.ph-title-hold{
+    width: calc(100% - 75px);
+    padding-left: 10px;
+}
+.ph-title-hold h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #003BA1;
+    margin-bottom: 5px;
+}
+.ph-credit-label{
+    font-weight: 500;
+    color: #20A6D2;
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+.ph-title-hold p{
+    font-weight: 500;
+    font-size: 12px;
+    color: #757575;
+}
+.ph-post-time {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+.ph-post-time img {
+    display: inline-block;
+    margin-right: 4px;
+    vertical-align: middle;
+    margin-top: -1px;
+}
+.ph-post-time p{
+    font-size: 12px;
+    font-weight: 500;
+    color: #757575;
+}
+.ph-progress-bar{
+    margin: 10px 0 0;
+}
+.ph-progress-bar .common-progress{
+    height: 2px;
+}
+.ph-process-completed{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+.ph-process-completed p{
+    font-size: 12px;
+    font-weight: 500;
+    color: #757575;
+    text-transform: uppercase;
+}
+.physics-details-box + .physics-details-box{
+    margin-top: 10px;
+}
+.ph-under-process{
+    background-color: #C5D3E4;
+}
+.physics-tab-block{
+    padding: 25px 0;
+}
+.ph-tab-nav-block .nav-tabs {
+    border-color: #E0E0E0;
+}
+.ph-tab-nav-block .nav-tabs .nav-link {
+    margin: 0;
+    border: 0;
+    font-size: 18px;
+    font-weight: 300;
+    color: #272D36;
+    padding: 0 0 10px;
+}
+.ph-tab-nav-block .nav-tabs .nav-link.active {
+    background-color: transparent;
+    font-weight: 700;
+    color: #20A6D2;
+    position: relative;
+}
+.ph-tab-nav-block .nav-tabs .nav-link.active:after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #20A6D2;
+    bottom: 0;
+    left: 0;
+}
+.ph-tab-nav-block .nav-tabs li{
+    margin-right: 25px;
+}
+.ph-tab-nav-block .nav-tabs li:last-child{
+    margin: 0;
+}
+.tab-common-title h3{
+    font-weight: 600;
+    font-size: 18px;
+    color: #003BA1;
+    margin-bottom: 15px;
+}
+.tab-common-desc p{
+    font-size: 16px;
+    color: #272D36;
+}
+.ph-tab-content-block{
+    padding-top: 32px;
+}
+.cm-card{
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.cm-card-header button{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width:100%;
+    padding: 12px 12px 12px 0;
+}
+.cm-card-header button.btn:focus{
+    outline: 0;
+    box-shadow: none;
+}
+.cm-accordion-number{
+    width: 36px;
+    height: 24px;
+    border-radius: 0 12px 12px 0;
+    background-color: #E0E0E0;
+    color: #272D36;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    margin-left: -1px;
+}
+.cm-accordion-title{
+    min-width: 190px;
+    color: #001B4A;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: left;
+}
+.cm-accordion-notify{
+    background-color: #003BA1;
+    padding: 3px 10px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #ffffff;
+}
+.cm-accordion-notify img {
+    margin-right: 8px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -2px;
+}
+.cm-card-header button.collapsed .acc-minus {
+    display: none;
+}
+.cm-card-header button .acc-minus{
+    display: block;
+}
+.cm-card-header button .acc-plus{
+    display: none;
+}
+.cm-card-header button.collapsed .acc-plus {
+    display: block;
+}
+
+.cm-card-body .physics-details-box:first-child{
+    border-top: 1px solid #E0E0E0;
+}
+.cm-card-body .physics-details-box {
+    border-radius: 0;
+}
+.cm-card-body .physics-details-box + .physics-details-box {
+    margin-top: 0px;
+}
+.cm-card + .cm-card{
+    margin-top: 12px;
+}
+.chapter-inner-version-3 .physics-col-left{
+    width: 100%;
+    padding-right: 0;
+}
+.chapter-inner-version-3 .physics-tab-block {
+    max-width: 1230px;
+    margin: 0 auto;
+}
+.chapter-inner-version-3 .hide-course-btn .common-btn svg{
+    margin-right: 12px;
+    margin-left: 0;
 }
 /*=============================== Batch 1 Chapter Inner-01 Page End ===========================*/
 

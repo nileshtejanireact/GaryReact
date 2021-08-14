@@ -19,3 +19,42 @@
 .student_assessment_body .header-dropdown-ul ul li:not(li:last-child){
     display: none;
 }
+.student_assessment_body .sidebar-wrapper .mobile-menu-trigger{
+    display: none;
+}
+
+.react-transform-wrapper,
+.react-transform-component{
+    width: 100% !important;
+}
+.bottom_images_tools{
+    padding: 10px 25px;
+    background-color: #001b4a;
+}
+.images_plus_button{
+    border: unset;
+    background-color: transparent;
+    outline: unset;
+}
+.images_pogressbar{
+    margin: 0 10px;
+}
+.bottom_images_tools{
+    display: flex;
+    align-items: center;
+}
+.ph-tab-nav-block .nav.nav-tabs a {
+    margin-right: 25px;
+}
+
+
+@media screen and (max-width: 400px){
+    .ph-tab-nav-block .nav.nav-tabs a {
+        margin-right: 15px;
+    }
+}
+
+
+.sidebar-wrapper{
+    display: none;
+}

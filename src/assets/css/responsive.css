@@ -128,6 +128,32 @@
     .flag-pagination-block{
         margin-top: 60px;
     }
+    .physics-col-left{
+        padding:0 0 20px;
+        width: 100%;
+    }
+    .physics-col-right{
+        width: 100%;
+    }
+    .cm-card-header button{
+        justify-content: unset;
+    }
+    .cm-accordion-number{
+        margin-right: 10px;
+        min-width: 36px;
+    }
+    .cm-accordion-notify{
+        margin-left: auto;
+        margin-right: 10px;
+        min-width: 48px;
+        display: inherit;
+    }
+    .cm-accordion-pm-icon{
+        min-width: 24px;
+    }
+    .cm-accordion-title{
+        min-width: auto;
+    }
 }
 @media screen and (max-width: 767px) {
     .header-block{
@@ -174,6 +200,13 @@
     .exit-finish-test-block{
         padding: 15px;
     }
+    .common-inner-padding-block {
+        padding: 0 15px 25px;
+    }
+    .physics-header-nav{
+        padding: 20px;
+        flex-wrap: wrap;
+    }
 }
 @media screen and (max-width: 637px) {}
 @media screen and (max-width: 575px) {
@@ -217,6 +250,10 @@
     .common-search-hold input{
         min-width: 100%;
     }
+    .physics-file-process{
+        width: 100%;
+        margin-top: 15px;
+    }
 
 }
 
@@ -256,6 +293,31 @@
     }
     .common-filter-show.active{
         border-radius: 0px 8px 8px 8px;
+    }
+    .ph-tab-nav-block .nav-tabs .nav-link{
+        font-size: 14px;
+    }
+    .ph-tab-nav-block .nav-tabs li {
+        margin-right: 15px;
+    }
+    .tab-common-title h3{
+        font-size: 14px;
+    }
+    .tab-common-desc p{
+        font-size: 13px;
+    }
+    .physics-tab-block{
+        padding-bottom: 0;
+    }
+    .ph-tab-content-block {
+        padding-top: 20px;
+    }
+    .ph-post-time{
+        top: 6px;
+    }
+    .cm-accordion-title{
+        font-size: 14px;
+        line-height: 1.2;
     }
 }
 
