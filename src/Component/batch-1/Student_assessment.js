@@ -2,6 +2,7 @@ import React from 'react';
 
 import flag_ic from '../../assets/images/batch-1/flag_ic.svg';
 
+
 const Student_assessment = () => {
   return (
     <div className="main-content-wrapper full-content-wrapper">
