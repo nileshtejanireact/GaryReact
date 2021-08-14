@@ -11,6 +11,8 @@ const PhysicsBoxData = [
         ],
         tabs : [
             {
+                eventKey: "home",
+                tabtitle: "Subject Details",
                 tab_common_title : "How does it work?",
                 tab_common_desc : "Physics is the scientific discipline involved with elements and compounds composed of atoms, molecules and ions: their composition, structure, properties, behavior and the changes they undergo during a reaction with other substances.",
             },
@@ -21,6 +23,24 @@ const PhysicsBoxData = [
         key: 1,
         categry : "Physics",
         title : "Newton’s Laws2",
+        progressbar : "34",
+        images : [
+            "../../../assets/images/batch-1/watch_ic.svg",
+            "../../../assets/images/batch-1/watch_ic.svg",
+            "../../../assets/images/batch-1/watch_ic.svg",
+        ],
+        tabs : [
+            {
+                tab_common_title : "How does it work?",
+                tab_common_desc : "Physics is the scientific discipline involved with elements and compounds composed of atoms, molecules and ions: their composition, structure, properties, behavior and the changes they undergo during a reaction with other substances.",
+            },
+            {},
+        ],
+    },
+    {
+        key: 2,
+        categry : "Physics",
+        title : "Newton’s Laws3",
         progressbar : "34",
         images : [
             "../../../assets/images/batch-1/watch_ic.svg",

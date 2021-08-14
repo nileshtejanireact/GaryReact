@@ -3,13 +3,22 @@ import React from 'react';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 
-import PhysicsBoxData from '../batch-1/chapterinnerAll/ChapterData';
+import PhysicsBoxData from '../../batch-1/chapterinnerAll/ChapterData';
 
 
 function Tabbox(props) {
     return (
       <div className="ph-tab-nav-block">
           <Tabs defaultActiveKey="home" id="uncontrolled-tab-example">
+
+            {
+                PhysicsBoxData.map((val) => {
+                    return(
+                        
+                    )
+                })
+            }
+
             <Tab eventKey="home" title="Subject Details">
                 <div className="ph-tab-content-block">
                     <div className="tab-common-content">
