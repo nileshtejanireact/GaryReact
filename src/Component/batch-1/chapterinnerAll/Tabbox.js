@@ -3,6 +3,8 @@ import React from 'react';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 
+import PhysicsBoxData from '../batch-1/chapterinnerAll/ChapterData';
+
 
 function Tabbox(props) {
     return (
