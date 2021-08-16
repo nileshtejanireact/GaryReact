@@ -113,7 +113,7 @@ function Externalchannels() {
                     <div className="breadcrumb-ul">
                         <ul>
                             <li>
-                                <a><img src={homesvg} alt="home" /></a>
+                                <a href="javascriptVoid(0)"><img src={homesvg} alt="home" /></a>
                             </li>
                             <li className="active">
                                 <span>Knowledge Shelves</span>
@@ -328,9 +328,10 @@ function Externalchannels() {
                <div className="filter-list-wrapper ">
                     <div className="row">
                         {
-                            ext_cha_v1_data.map((val) => {
+                            ext_cha_v1_data.map((val, index) => {
                                 return(
                                     <Externalchaversion1 
+                                        key = {index}
                                         id = {val.id}
                                         ext_cha_name = {val.ext_cha_name}
                                         ext_cha_icon = {val.ext_cha_icon}
@@ -342,9 +343,10 @@ function Externalchannels() {
                         }
 
                         {
-                            ext_cha_v2_data.map((val) => {
+                            ext_cha_v2_data.map((val, index) => {
                                 return(
                                     <Externalchaversion2 
+                                        key = {index}
                                         id = {val.id}
                                         ext_cha_name = {val.ext_cha_name}
                                         ext_cha_icon = {val.ext_cha_icon}
@@ -356,9 +358,10 @@ function Externalchannels() {
                         }
 
                         {
-                            ext_cha_v3_data.map((val) => {
+                            ext_cha_v3_data.map((val, index) => {
                                 return(
                                     <Externalchaversion3 
+                                        key = {index}
                                         id = {val.id}
                                         ext_cha_name = {val.ext_cha_name}
                                         ext_cha_icon = {val.ext_cha_icon}
@@ -370,9 +373,10 @@ function Externalchannels() {
                         }
 
                         {
-                            ext_cha_v4_data.map((val) => {
+                            ext_cha_v4_data.map((val, index) => {
                                 return(
                                     <Externalchaversion4 
+                                        key = {index}
                                         id = {val.id}
                                         imagclass = {val.imagclass}
                                         ext_cha_name = {val.ext_cha_name}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 
 import ProgressBar from 'react-bootstrap/ProgressBar';
 
@@ -8,13 +8,12 @@ import watch_ic from '../../../assets/images/batch-1/watch_ic.svg';
 function PostRightsbox(props) { 
     
     function getindexdata(indexdata) {
-        const childindex = indexdata;
-       props.onsaveindexdata(childindex);
+        // const childindex = indexdata;
+       props.onsaveindexdata(indexdata);
     }
     
-
   return (
-    <div className={props.activeclasses} onClick = {() => getindexdata(props.indexs)} >
+    <div className={props.activeclasses}  onClick = {() => getindexdata(props.indexs)} >
         <div className="ph-post-time">
         <p>
             <img src={watch_ic} alt="Watch" />

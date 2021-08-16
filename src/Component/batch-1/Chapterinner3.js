@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import Dropdown from 'react-bootstrap/Dropdown'
 
-import RangeSlider from 'react-bootstrap-range-slider';
-import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
 
 import Tabbox from '../../Component/batch-1/chapterinnerAll/Tabbox';
 import Tabs from 'react-bootstrap/Tabs';
@@ -18,10 +16,6 @@ const Chapterinner1 = (props) => {
     const [bigimages, setbigimages] = useState(0);
     const [allbigimages, setallbigimages] = useState(0);
     const [fullimages, setfullimages] = useState(false);
-    const [valuePogress, setvaluePogress] = useState(1);
-
-
-    const [ value, setValue ] = React.useState(50);
 
     const [key, setKey] = useState('home');
     
@@ -49,13 +43,9 @@ const Chapterinner1 = (props) => {
         setfullimages(!fullimages);
     }
 
-    const setvaluePogressfn = (pogressdata) => {
-        setvaluePogress(pogressdata / 20 + 1);
-        setValue(pogressdata);
-        console.log(pogressdata / 20 + 1);
-    }
+
   return (
-    <div className="main-content-wrapper full-content-wrapper">
+    <div className="main-content-wrapper full-content-wrapper full-content-chapter3">
         <div className="common-inner-padding-block">
             <div className="common-back-nav-block">
                 <div className="common-back-btn">
@@ -81,7 +71,7 @@ const Chapterinner1 = (props) => {
                 <div className={fullimages ? "physics-col-left fullscreen" : "physics-col-left"}>
                     <div className="physics-inner-box">
                         <PhysicsImagebox
-                            category = {indexdata.category} 
+                            category = {indexdata.category}
                             title = {indexdata.title}
                             progressbar = {indexdata.progressbar}
                         />
@@ -89,10 +79,11 @@ const Chapterinner1 = (props) => {
                         <div className="physics-video-block">
                             <div className="physics-video-img">
                                 <TransformWrapper
-                                    initialScale={valuePogress}
+                                    initialScale={1}
                                     initialPositionX={0}
                                     initialPositionY={0}
                                     wheel={{ step: 0}}
+                                    
                                 >
                                     {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
                                     <React.Fragment>
@@ -110,11 +101,7 @@ const Chapterinner1 = (props) => {
                                                 </button>
 
                                                 <div className="images_pogressbar">
-                                                    <RangeSlider
-                                                        value={value}
-                                                        onChange={changeEvent => setvaluePogressfn(changeEvent.target.value)}
-                                                        step={20}
-                                                    />
+
                                                 </div>
 
                                                 <button onClick={() => zoomIn()} className="images_plus_button">
@@ -227,30 +214,8 @@ const Chapterinner1 = (props) => {
                                         )
                                     })
                                 }
-
                             </Tabs>
                         </div>
-                    </div>
-                </div>
-                
-            
-                <div className={fullimages ? "physics-col-right fullscreen" : "physics-col-right"} >
-                    <div className="physics-content-right">
-                        {
-                            PhysicsBoxData.map((val, index) => {
-                                return(
-                                    <PostRightsbox 
-                                        title = {val.title}
-                                        progressbar = {val.progressbar}
-                                        image = {val.images[0]}
-                                        indexs = {index}
-                                        onsaveindexdata = {saveindexhandler}
-                                        key = {index}
-                                        activeclasses = {index === bigimages ? "physics-details-box ph-done-process active" : "physics-details-box ph-done-process"}
-                                    />
-                                )
-                            })
-                        }
                     </div>
                 </div>
             </div>

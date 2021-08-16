@@ -138,6 +138,17 @@ img {
 }
 .logo-block {
     padding: 19px 0;
+    position: relative;
+}
+.logo-block:after {
+    content: '';
+    position: absolute;
+    right: -14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 35px;
+    background-color: rgba(224, 224, 224, 0.30);
 }
 .header-content-row{
     display: flex;
@@ -463,17 +474,24 @@ img {
     font-size: 12px;
     min-height: 40px;
     min-width: 130px;
+    max-width: 130px;
     text-align: left;
-    padding: 10px 20px 10px 12px;
+    padding: 0px 30px 0px 12px;
     position: relative;
     color: #212529;
     transition: color .5s;
+}
+.common-dropdown .btn .current {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
 }
 .common-dropdown .btn:focus{
     outline: 0;
     box-shadow: none;
 }
-.common-dropdown .dropdown-toggle:after{
+.common-dropdown .nice-select:after{
     display: none;
 }
 .common-dropdown .btn:before{
@@ -487,6 +505,52 @@ img {
     background-size: contain;
     /* background-image: url('../image/batch-1/down-arrow.svg'); */
     transform: translateY(-50%);
+    transition: all 0.5s ease 0s;
+}
+.common-dropdown .btn.open:before{
+    transform: translateY(-50%) rotate(180deg);
+}
+.common-dropdown .btn ul.list {
+    display: unset;
+}
+.common-dropdown .btn ul.list li + li {
+    margin: 0;
+}
+.common-dropdown .nice-select .list{
+    background-color: #fff;
+    border: 1px solid rgba(32, 166, 210, 0.5);
+    border-radius: 10px;
+    box-shadow: none;
+    max-height: 185px;
+    overflow-y: auto;
+}
+.common-dropdown .nice-select .list::-webkit-scrollbar {
+    width: 4px;
+}
+.common-dropdown .nice-select .list::-webkit-scrollbar-track {
+    border-radius: 50px;
+    background: rgba(117, 117, 117, 0.1);
+}
+.common-dropdown .nice-select .list::-webkit-scrollbar-thumb {
+    border-radius: 50px;
+    background: rgba(117, 117, 117, 0.3);
+}
+.common-dropdown .nice-select .option{
+    line-height: 30px;
+    min-height: 30px;
+}
+.nice-select .option:hover, .nice-select .option.focus, .nice-select .option.selected.focus {
+    background-color: rgba(32, 166, 210, 0.4);
+    color: #757575;
+}
+.common-dropdown .dropdown-toggle::after{
+    display: none;
+}
+.common-dropdown .dropdown-toggle{
+    padding: 10px 30px 10px 12px;
+}
+/*.common-dropdown .btn[aria-expanded="true"]:before {
+    transform: translateY(-50%) rotate(180deg);
 }
 .common-dropdown .dropdown-menu{
     background-color: #fff;
@@ -499,7 +563,7 @@ img {
 .common-dropdown .dropdown-item:hover{
     background-color: rgba(32, 166, 210, 0.4);
     color: #757575;
-}
+}*/
 .filter-up-down-check{
     display: flex;
     align-items: center;
@@ -703,7 +767,7 @@ img {
     border-radius: 8px;
     border: 1px solid rgba(32, 166, 210, 0.5);
     background-color: #fff;
-    padding: 10px 30px 10px 15px;
+    padding: 10px 35px 10px 15px;
     color: #000;
     font-size: 14px;
 }.common-search-hold input::-webkit-input-placeholder{
@@ -716,6 +780,7 @@ img {
 .common-dropdown .filter-show-trigger .btn:before {
     /* background-image: url('../image/batch-1/filter_drop_arrow.svg'); */
     transition: all 0.5s ease 0s;
+    top: 19px;
 }
 .common-dropdown .filter-show-trigger .btn.active:before {
     transform: rotate(180deg);
@@ -1533,6 +1598,353 @@ img {
 }
 /*=============================== Batch 1 Chapter Inner-01 Page End ===========================*/
 
+/*=============================== Login Page Start ===========================*/
+.login-wrapper .modal-dialog{
+    max-width: 1300px;
+}
+.login-wrapper .modal-content{
+    border-radius: 12px;
+    border: 0;
+    overflow: hidden;
+}
+.login-block{
+    display: flex;
+    flex-wrap: wrap;
+}
+.login-col-left{
+    width: calc(100% - 595px);
+}
+.login-col-right{
+    width: 595px
+}
+.login-bg-block{
+    width: 100%;
+    min-height: 775px;
+    position: relative;
+    /* background-image: url('../image/batch-4/login-bg.png'); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 70px 65px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.login-body-wrapper{
+    padding: 0;
+}
+.login-body-wrapper .close {
+    border: 0;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #757575;
+    opacity: 1;
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    color: #ffffff;
+    font-weight: 100;
+    z-index: 1;
+}
+.login-bg-block:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #001b4a2e, #001B4A);
+    pointer-events: none;
+}
+.modal-backdrop{
+    background: rgba(39, 45, 54, 0.75);
+}
+.modal-backdrop.show{
+    opacity: 1;
+}
+.login-content-block{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    position: relative;
+}
+.login-desc-block h2 {
+    font-weight: 700;
+    font-size: 48px;
+    color: #ffffff;
+    margin-bottom: 25px;
+}
+.login-desc-block p{
+    font-size: 20px;
+    color: #ffffff;
+}
+.login-form-content-block{
+    display: flex;
+    align-items: center;
+    padding: 50px 80px;
+    height: 100%;
+}
+.login-form-title h3{
+    font-weight: 600;
+    font-size: 36px;
+    color: #272D36;
+    margin-bottom: 6px;
+}
+.login-form-title p{
+    font-size: 18px;
+    color: #757575;
+}
+.my-form{
+    margin-top: 40px;
+}
+
+.common-input-filed input{
+    width: 100%;
+    height: 40px;
+    padding: 10px 15px;
+    background-color: #ffffff;
+    color: #001B4A;
+    font-weight: 400;
+    font-size: 12px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(32,166,210,0.5);
+    border-radius: 8px;
+}
+.common-input-filed input::-webkit-input-placeholder{
+    color: #757575;
+    opacity: 1;
+}
+.remember-forgot-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.forgot-password-link a {
+    font-size: 12px;
+    color: #20A6D2;
+    font-weight: 500;
+}
+.forgot-password-link a:hover{
+    color: #001B4A;
+}
+.remember-checkbox .common-checkbox label:before {
+    border-radius: 4px;
+    width: 16px;
+    height: 16px;
+    top: 0;
+}
+.remember-checkbox .common-checkbox label{
+    padding-left: 25px;
+}
+.remember-checkbox .common-checkbox input:checked + label:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    width: 6px;
+    height: 10px;
+    border: solid #20A6D2;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    padding: 0;
+    background: transparent;
+    border-radius: 0px;
+}
+.login-submit-btn{
+    margin-top: 32px;
+}
+.input-value-close{
+    position: relative;
+}
+.input-close-text{
+    position: absolute;
+    right: 16px;
+    top: 36%;
+    transform: translateY(-50%);
+    display: none;
+    cursor: pointer;
+}
+/*=============================== Login Page End ===========================*/
+
+/*=============================== Settings Screen Page Start ===========================*/
+.settings-tab-wrapper{
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+.settings-tab-nav .nav-tabs{
+    border-bottom: 3px solid rgba(117, 117, 117, 0.1);
+    padding: 0 25px;
+}
+.settings-tab-nav .nav-tabs .nav-link {
+    border: 0;
+    padding: 20px 20px 17px;
+    color: #757575;
+    font-size: 16px;
+    position: relative;
+    transition: unset;
+    border-radius: 0;
+    margin: 0;
+}
+.settings-tab-nav .nav-tabs .nav-item {
+    margin-right: 25px;
+}
+.settings-tab-nav .nav-tabs .nav-item:last-child{
+    margin: 0;
+}
+.settings-tab-nav .nav-tabs .nav-link.active {
+    font-weight: 700;
+    color: #20A6D2;
+    background-color: transparent;
+}
+.settings-tab-nav .nav-tabs .nav-link.active:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #20A6D2;
+    bottom: -3px;
+    left: 0;
+}
+.common-setting-content-block {
+    padding: 22px;
+    background-color: rgba(32, 166, 210, 0.1);
+}
+.tab-common-inner-title h3{
+    font-size: 20px;
+    font-weight: 500;
+}
+.website-mobile-banner-block{
+    padding: 25px 0 0;
+}
+.web-mob-banner-block {
+    display: flex;
+    flex-wrap: wrap;
+}
+.web-mob-col{
+    max-width: 210px;
+    width: 100%;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+.web-mob-col:last-child{
+    margin-right: 0;
+}
+.web-mob-note p{
+   font-size: 12px;
+    color: #000000;
+    margin-bottom: 6px;
+}
+.cm_file_upload_section {
+    width: 100%;
+    min-height: 101px;
+    border-radius: 8px;
+    border: dashed 1px rgba(117,117,117,0.5);
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+.cm_upload_file{
+    width: 100%;
+}
+.cm_file_name{
+    color: #000000;
+}
+.cm_extraction{
+    font-size: 10px;
+    color: #757575;
+}
+.cm_extraction span{
+    color: #20A6D2;
+}
+.cm_file_note {
+    margin-top: 16px;
+    color: #000000;
+    font-size: 10px;
+}
+.cm_file_note img {
+    display: inline-block;
+    margin-right: 5px;
+}
+.cm_file_note span{
+    font-weight: 600;
+    color: #757575;
+    margin-left: 5px;
+    display: inline-block;
+}
+.cm_preview_img{
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+.cm_file_size{
+    display: none;
+    font-size: 12px;
+}
+.cm_file_upload_section.active .cm_extraction,
+.cm_file_upload_section.active .cm_file_note {
+    display: none;
+}
+.cm_file_upload_section.active .cm_file_size{
+    display: inline-block;
+}
+.cm_file_upload_section.active{
+    border: 1px solid rgba(117, 117, 117, 0.2);
+}
+.cm_remove_btn{
+    position: relative;
+    z-index: 1;
+    font-size: 12px;
+    display: inline-block;
+    margin-left: 5px;
+}
+.cm_remove_btn:hover{
+    color: #000000;
+}
+.incorrect_file, .incorrect_file_size{
+    display: none;
+    font-size: 10px;
+    font-weight: 500;
+    color: red;
+}
+.tab-common-sub-inner-title h3 {
+    font-weight: 500;
+    font-size: 20px;
+    color: #001B4A;
+}
+.ck-editor-block{
+    margin-top: 20px;
+}
+.cke_top{
+    background-color: #ffffff !important;
+}
+.cke_bottom{
+    display: none !important;
+}
+.cke_chrome{
+    border: 1px solid rgba(32, 166, 210, 0.5) !important;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.tab-setting-save-btn{
+    padding: 22px;
+    background-color: #ffffff;
+}
+.tab-setting-save-btn .common-btn{
+    max-width: 265px;
+    display: block;
+    width: 100%
+}
+
+/*=============================== Settings Screen Page End ===========================*/
 
 
 

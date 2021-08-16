@@ -1,29 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import Dropdown from 'react-bootstrap/Dropdown'
-
-import RangeSlider from 'react-bootstrap-range-slider';
-import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
+import Accordion from 'react-bootstrap/Accordion'
+import Card from 'react-bootstrap/Card'
 
 import Tabbox from '../../Component/batch-1/chapterinnerAll/Tabbox';
 import Tabs from 'react-bootstrap/Tabs';
 
+//images
+import acc_notify_ic from '../../assets/images/batch-1/acc_notify_ic.svg';
+import acc_minus from '../../assets/images/batch-1/acc_minus.svg';
+import acc_plus from '../../assets/images/batch-1/acc_plus.svg';
 
 import PhysicsImagebox from './chapterinnerAll/PhysicsImagebox';
 
 import PhysicsBoxData from '../batch-1/chapterinnerAll/ChapterData';
 import PostRightsbox from '../batch-1/chapterinnerAll/Postright';
 
-const Chapterinner1 = (props) => {
+const Chapterinner2 = (props) => {
+
+    function filterByID(item, uniqueCategorys) {
+        return item.filter(function(el) {
+            return el.category.toLowerCase().indexOf(uniqueCategorys.toLowerCase()) !== -1
+        })
+    }
+
     const [bigimages, setbigimages] = useState(0);
     const [allbigimages, setallbigimages] = useState(0);
     const [fullimages, setfullimages] = useState(false);
-    const [valuePogress, setvaluePogress] = useState(1);
-
-
-    const [ value, setValue ] = React.useState(50);
-
     const [key, setKey] = useState('home');
+
     
     var chapterdata = PhysicsBoxData;
     var indexdata = chapterdata[bigimages];
@@ -33,6 +39,7 @@ const Chapterinner1 = (props) => {
     
 
     const saveindexhandler = (currentindex) => {
+        console.log(currentindex);
         setbigimages(currentindex);
         setallbigimages(0);
     }
@@ -48,12 +55,13 @@ const Chapterinner1 = (props) => {
     const fullimagesfn = () => {
         setfullimages(!fullimages);
     }
+    
+    let allCategory = chapterdata.map(row=>{
+        return  row.category;
+    });
 
-    const setvaluePogressfn = (pogressdata) => {
-        setvaluePogress(pogressdata / 20 + 1);
-        setValue(pogressdata);
-        console.log(pogressdata / 20 + 1);
-    }
+    let uniqueCategory =   allCategory.filter((item, index, arry) => (arry.indexOf(item) === index));
+
   return (
     <div className="main-content-wrapper full-content-wrapper">
         <div className="common-inner-padding-block">
@@ -81,7 +89,7 @@ const Chapterinner1 = (props) => {
                 <div className={fullimages ? "physics-col-left fullscreen" : "physics-col-left"}>
                     <div className="physics-inner-box">
                         <PhysicsImagebox
-                            category = {indexdata.category} 
+                            category = {indexdata.category}
                             title = {indexdata.title}
                             progressbar = {indexdata.progressbar}
                         />
@@ -89,10 +97,11 @@ const Chapterinner1 = (props) => {
                         <div className="physics-video-block">
                             <div className="physics-video-img">
                                 <TransformWrapper
-                                    initialScale={valuePogress}
+                                    initialScale={1}
                                     initialPositionX={0}
                                     initialPositionY={0}
                                     wheel={{ step: 0}}
+                                    
                                 >
                                     {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
                                     <React.Fragment>
@@ -110,11 +119,7 @@ const Chapterinner1 = (props) => {
                                                 </button>
 
                                                 <div className="images_pogressbar">
-                                                    <RangeSlider
-                                                        value={value}
-                                                        onChange={changeEvent => setvaluePogressfn(changeEvent.target.value)}
-                                                        step={20}
-                                                    />
+                                                    
                                                 </div>
 
                                                 <button onClick={() => zoomIn()} className="images_plus_button">
@@ -227,37 +232,68 @@ const Chapterinner1 = (props) => {
                                         )
                                     })
                                 }
-
                             </Tabs>
                         </div>
                     </div>
                 </div>
-                
             
                 <div className={fullimages ? "physics-col-right fullscreen" : "physics-col-right"} >
                     <div className="physics-content-right">
-                        {
-                            PhysicsBoxData.map((val, index) => {
-                                return(
-                                    <PostRightsbox 
-                                        title = {val.title}
-                                        progressbar = {val.progressbar}
-                                        image = {val.images[0]}
-                                        indexs = {index}
-                                        onsaveindexdata = {saveindexhandler}
-                                        key = {index}
-                                        activeclasses = {index === bigimages ? "physics-details-box ph-done-process active" : "physics-details-box ph-done-process"}
-                                    />
-                                )
-                            })
-                        }
+                        <div className="ph-accordion-block">
+                        <Accordion defaultActiveKey="0" >
+                            {
+                                uniqueCategory.map((val, index) => {
+
+                                    let arrByID = filterByID(chapterdata, val);
+                                    return(
+                                        <Card className="cm-card">
+                                            <Accordion.Toggle as={Card.Header} eventKey="0">
+                                            <div className="cm-card-header">
+                                                <button className="btn" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true">
+                                                    <span className="cm-accordion-number">{index + 1}</span>
+                                                    <p className="cm-accordion-title"> {val}</p>
+                                                    <span className="cm-accordion-notify">
+                                                        <img src={acc_notify_ic} alt="icon" />
+                                                        {arrByID.length}
+                                                    </span>
+                                                    <span className="cm-accordion-pm-icon">
+                                                        <img className="acc-minus" src={acc_minus} alt="icon" />
+                                                        <img className="acc-plus" src={acc_plus} alt="icon" />
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            </Accordion.Toggle>
+                                            <Accordion.Collapse eventKey="0">
+                                                <Card.Body className="cm-card-body" >
+                                                {
+                                                    arrByID.map((val, index) => {
+                                                        return(
+                                                            <PostRightsbox 
+                                                                title = {val.title}
+                                                                progressbar = {val.progressbar}
+                                                                image = {val.images[0]}
+                                                                indexs = {val.key}
+                                                                onsaveindexdata = {saveindexhandler}
+                                                                key = {val.key}
+                                                                activeclasses = {index === bigimages ? "physics-details-box ph-done-process active" : "physics-details-box ph-done-process"}
+                                                            />
+                                                        )
+                                                    })
+                                                }
+                                                </Card.Body>
+                                            </Accordion.Collapse>
+                                        </Card>
+                                    )
+                                })
+                            }
+                        </Accordion>
+                        </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
   );
 }
 
-export default Chapterinner1;
+export default Chapterinner2;

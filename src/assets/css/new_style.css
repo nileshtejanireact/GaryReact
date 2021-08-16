@@ -81,6 +81,46 @@
 .physics-details-box{
     cursor: pointer;
 }
+.fullscreen{
+    width: 100%;
+    padding: 0;
+}
+.full_page_section{
+    display: flex;
+}
+.full_page_section > p:nth-child(2){
+    margin: 0 32px;
+}
+.bottom_images_tools .common-dropdown .btn{
+    min-width: unset;
+    min-height: unset;
+    background-color: unset;
+    border: unset;
+    padding: 0 2px;
+    border-radius: unset;
+}
+.event_poiter{
+    cursor: pointer;
+}
+.bottom_images_tools .common-dropdown .btn-primary:not(:disabled):not(.disabled).active, 
+.bottom_images_tools .common-dropdown .btn-primary:not(:disabled):not(.disabled):active, 
+.bottom_images_tools .common-dropdown .show>.btn-primary.dropdown-toggle{
+    background-color: unset;
+    border: unset;
+}
+
+.card-header,
+.card-body{
+    padding: 0px;
+}
+.cm-card-header button{
+    background-color: #fff;
+}
+.full-content-chapter3 .physics-col-left{
+    width: 100%;
+    padding: 0;
+}
+
 
 
 
@@ -94,6 +134,6 @@
 }
 
 
-.sidebar-wrapper{
+/* .sidebar-wrapper{
     display: none;
-}
+} */

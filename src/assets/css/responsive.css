@@ -16,9 +16,7 @@
     .breadcrumb-left-col, .breadcrumb-right-col .cm-filter-left-col, .cm-filter-right-col{
         width: 100%;
     }
-    .filter-content-block{
-        justify-content: flex-start;
-    }
+
     .filter-note p, .common-head-logo-title{
         margin-bottom: 15px;
     }
@@ -33,11 +31,18 @@
     }
 
 }
+@media screen and (max-width: 1360px){
+    .login-wrapper .modal-dialog{
+        max-width: 100%;
+        margin: 1.75rem 15px;
+    }
+}
 @media screen and (max-width: 1280px) {
     .header-title-block{
         display: none;
     }
 }
+
 @media screen and (max-width: 1199px) {
     .sidebar-open{
         overflow: hidden;
@@ -104,6 +109,19 @@
     .time-question-box{
         padding: 20px 20px 15px;
     }
+    .login-col-left, .login-col-right{
+        width: 50%;
+    }
+    .login-form-content-block, .login-bg-block{
+        padding: 40px;
+    }
+    .login-bg-block{
+        min-height: 650px;
+    }
+    .login-desc-block h2{
+        font-size: 40px;
+    }
+
 }
 
 
@@ -154,6 +172,20 @@
     .cm-accordion-title{
         min-width: auto;
     }
+    .login-form-content-block, .login-bg-block {
+        padding: 40px 25px;
+    }
+    .login-bg-block {
+        min-height: 530px;
+        background-position: right;
+    }
+    .login-desc-block h2 {
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+    .login-form-title h3{
+        font-size: 30px;
+    }
 }
 @media screen and (max-width: 767px) {
     .header-block{
@@ -203,9 +235,31 @@
     .common-inner-padding-block {
         padding: 0 15px 25px;
     }
+    .filter-content-block{
+        justify-content: flex-start;
+    }
     .physics-header-nav{
         padding: 20px;
         flex-wrap: wrap;
+    }
+    .login-col-left, .login-col-right{
+        width: 100%;
+    }
+    .login-bg-block{
+        min-height: 350px;
+    }
+    .login-desc-block h2, .login-form-title h3{
+        font-size: 25px;
+    }
+    .login-desc-block p, .login-form-title p{
+        font-size: 14px;
+    }
+    .my-form {
+        margin-top: 20px;
+    }
+    .login-body-wrapper .close{
+        right: 15px;
+        top: 15px;
     }
 }
 @media screen and (max-width: 637px) {}
@@ -321,7 +375,11 @@
     }
 }
 
-@media screen and (max-width: 367px) {}
+@media screen and (max-width: 367px) {
+    .login-popup-btn .common-btn{
+        padding: 7px 20px;
+    }
+}
 @media screen and (max-width: 320px) {}
 
 

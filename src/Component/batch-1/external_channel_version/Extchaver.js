@@ -3,16 +3,16 @@ import React from 'react';
 
 const Externalchaversion1 = (props) => {
   return (
-    <div class="fl-col col-sm-6 col-md-4 col-lg-3">
-        <div class="filter-list-box ext-cha-version1">
-            <div class="ext-cha-name">
+    <div className="fl-col col-sm-6 col-md-4 col-lg-3">
+        <div className="filter-list-box ext-cha-version1">
+            <div className="ext-cha-name">
                 <a href="#0">{props.ext_cha_name}</a>
             </div>
-            <div class="ext-cha-ic">
+            <div className="ext-cha-ic">
                 <img src={props.ext_cha_icon} alt="icon" />
             </div>
-            <div class="ext-img-desc">
-                <div class="ext-cha-img">
+            <div className="ext-img-desc">
+                <div className="ext-cha-img">
                     <img src={props.ext_cha_img} alt="image" />
                 </div>
                 <p>{props.ext_cha_v1_dec}</p>
@@ -24,18 +24,18 @@ const Externalchaversion1 = (props) => {
 
 const Externalchaversion2 = (props) => {
     return (
-        <div class="fl-col col-sm-6 col-md-4 col-lg-3">
-            <div class="filter-list-box ext-cha-version2">
-                <div class="ext-cha-name">
+        <div className="fl-col col-sm-6 col-md-4 col-lg-3">
+            <div className="filter-list-box ext-cha-version2">
+                <div className="ext-cha-name">
                     <a href="#0">{props.ext_cha_name}</a>
                 </div>
-                <div class="ext-cha-ic">
+                <div className="ext-cha-ic">
                     <img src={props.ext_cha_icon} alt="icon"/>
                 </div>
-                <div class="ext-cha-v2-img">
+                <div className="ext-cha-v2-img">
                     <img src={props.ext_cha_img} alt="image"/>
                 </div>
-                <div class="ext-common-desc">
+                <div className="ext-common-desc">
                     <p>{props.ext_cha_v1_dec}</p>
                 </div>
             </div>
@@ -45,15 +45,15 @@ const Externalchaversion2 = (props) => {
 
 const Externalchaversion3 = (props) => {
     return (
-        <div class="fl-col col-sm-6 col-md-4 col-lg-3">
-            <div class="filter-list-box ext-cha-version2">
-                <div class="ext-cha-name">
+        <div className="fl-col col-sm-6 col-md-4 col-lg-3">
+            <div className="filter-list-box ext-cha-version2">
+                <div className="ext-cha-name">
                     <a href="#0">{props.ext_cha_name}</a>
                 </div>
-                <div class="ext-cha-ic">
+                <div className="ext-cha-ic">
                     <img src={props.ext_cha_icon} alt="icon" />
                 </div>
-                <div class="ext-common-desc">
+                <div className="ext-common-desc">
                     <p>{props.ext_cha_v1_dec}</p>
                 </div>
             </div>
@@ -63,21 +63,21 @@ const Externalchaversion3 = (props) => {
 
 const Externalchaversion4 = (props) => {
     return (
-        <div class="fl-col col-sm-6 col-md-4 col-lg-3">
-            <div class={props.imagclass}>
-                <div class="filter-list-img">
+        <div className="fl-col col-sm-6 col-md-4 col-lg-3">
+            <div className={props.imagclass}>
+                <div className="filter-list-img">
                     <a href="#0">
                         <img src={props.ext_cha_img} alt="Filter list" />
-                        <div class="ext-cha-ic">
+                        <div className="ext-cha-ic">
                             <img src={props.ext_cha_icon} alt="icon" />
                         </div>
                     </a>
                 </div>
-                <div class="ext-common-content">
-                    <div class="ext-cha-name">
+                <div className="ext-common-content">
+                    <div className="ext-cha-name">
                         <a href="#0">{props.ext_cha_name}</a>
                     </div>
-                    <div class="ext-common-desc">
+                    <div className="ext-common-desc">
                         <p>{props.ext_cha_v1_dec}</p>
                     </div>
                 </div>

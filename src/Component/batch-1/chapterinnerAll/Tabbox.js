@@ -4,7 +4,7 @@ import Tab from 'react-bootstrap/Tab';
 
 function Tabbox(props) {
     return (  
-        <Tab eventKey={props.eventKey} title={props.tabtitle}>
+        <Tab eventKey={props.eventKey} title={props.eventKey}>
             <div className="ph-tab-content-block">
                 <div className="tab-common-content">
                     <div className="tab-common-title">
