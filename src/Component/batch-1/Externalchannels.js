@@ -20,7 +20,7 @@ import ext_cha_v1_img from '../../assets/images/batch-1/ext-channels-img1.png';
 import filter_list_img from '../../assets/images/batch-1/filter-list1.png';
 
 // external_channel_version Components
-import Externalchaversion1 from './external_channel_version/Ext_cha_ver';
+import Externalchaversion1 from './external_channel_version/Extchaver';
 import {Externalchaversion2, Externalchaversion3, Externalchaversion4} from './external_channel_version/Extchaver';
 
 
@@ -325,12 +325,12 @@ function Externalchannels() {
                </div>
                 
 
-               <div class="filter-list-wrapper ">
-                    <div class="row">
+               <div className="filter-list-wrapper ">
+                    <div className="row">
                         {
                             ext_cha_v1_data.map((val) => {
                                 return(
-                                    <Externalhaversion1 
+                                    <Externalchaversion1 
                                         id = {val.id}
                                         ext_cha_name = {val.ext_cha_name}
                                         ext_cha_icon = {val.ext_cha_icon}

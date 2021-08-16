@@ -8,13 +8,13 @@ import routes from '../Routes';
 function Appcontent(props) {
   
   useEffect(() => {
-    const student_as_location = window.location.href;
+    // const student_as_location = window.location.href;
     // if(student_as_location.indexOf("assessments")>-1){
     //     document.body.classList.add('student_assessment_body');
     // }
     // else{
     //     document.body.classList.remove('student_assessment_body');
-    // }
+    // }  
   })
 
   return (

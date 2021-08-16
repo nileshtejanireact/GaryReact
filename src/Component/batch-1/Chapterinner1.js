@@ -3,19 +3,38 @@ import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 
 import Tabbox from '../../Component/batch-1/chapterinnerAll/Tabbox';
+import Tabs from 'react-bootstrap/Tabs';
+
 
 import PhysicsImagebox from './chapterinnerAll/PhysicsImagebox';
-import physicsImages1 from '../../assets/images/batch-1/physics-video-img.png';
-
-import post_image from '../../assets/images/batch-1/ph-image.png';
 
 import PhysicsBoxData from '../batch-1/chapterinnerAll/ChapterData';
 import PostRightsbox from '../batch-1/chapterinnerAll/Postright';
 
-
 const Chapterinner1 = (props) => {
-    const [bigimages, setbigimages] = useState(physicsImages1);
+    const [bigimages, setbigimages] = useState(0);
+    const [allbigimages, setallbigimages] = useState(0);
 
+    const [key, setKey] = useState('home');
+    
+    var chapterdata = PhysicsBoxData;
+    var indexdata = chapterdata.[bigimages]
+    
+    var imagespath = indexdata.images[allbigimages];
+    var totalimages = indexdata.images.length;
+    
+
+    const saveindexhandler = (currentindex) => {
+        setbigimages(currentindex);
+    }
+
+    const previmages = () => {
+        setallbigimages(allbigimages === 0 ? 0 : allbigimages - 1);
+    }
+
+    const nextimages = () => {
+        setallbigimages(totalimages - 1  === allbigimages ? allbigimages : allbigimages + 1);
+    }
 
 
   return (
@@ -45,9 +64,9 @@ const Chapterinner1 = (props) => {
                 <div className="physics-col-left">
                     <div className="physics-inner-box">
                         <PhysicsImagebox
-                            main_title = "Physics"
-                            description = "Newton’s Laws"
-                            progressbar = "34"
+                            category = {indexdata.category}
+                            title = {indexdata.title}
+                            progressbar = {indexdata.progressbar}
                         />
 
                         <div className="physics-video-block">
@@ -60,28 +79,59 @@ const Chapterinner1 = (props) => {
                                     {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
                                     <React.Fragment>
                                         <TransformComponent>
-                                            <img src={bigimages} alt="test" />
+                                            <img src={imagespath} alt="test1" />
                                         </TransformComponent>
                                         <div className="tools bottom_images_tools">
-                                            <button onClick={() => zoomOut()} className="images_plus_button">
-                                                <svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
-                                                    <g id="icons8-minus">
-                                                        <path d="M10 0C4.4823 0 0 4.4823 0 10C0 15.5177 4.4823 20 10 20C15.5177 20 20 15.5177 20 10C20 4.4823 15.5177 0 10 0ZM10 0.869565C15.0478 0.869565 19.1304 4.95225 19.1304 10C19.1304 15.0478 15.0478 19.1304 10 19.1304C4.95225 19.1304 0.869565 15.0478 0.869565 10C0.869565 4.95225 4.95225 0.869565 10 0.869565ZM4.78261 9.56522L4.78261 10.4348L15.2174 10.4348L15.2174 9.56522L4.78261 9.56522Z" id="Shape" fill="#FFFFFF" stroke="none" />
-                                                    </g>
-                                                </svg>
-                                            </button>
+                                            <div className="bottom_images_tools_inner">
+                                                <button onClick={() => zoomOut()} className="images_plus_button">
+                                                    <svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+                                                        <g id="icons8-minus">
+                                                            <path d="M10 0C4.4823 0 0 4.4823 0 10C0 15.5177 4.4823 20 10 20C15.5177 20 20 15.5177 20 10C20 4.4823 15.5177 0 10 0ZM10 0.869565C15.0478 0.869565 19.1304 4.95225 19.1304 10C19.1304 15.0478 15.0478 19.1304 10 19.1304C4.95225 19.1304 0.869565 15.0478 0.869565 10C0.869565 4.95225 4.95225 0.869565 10 0.869565ZM4.78261 9.56522L4.78261 10.4348L15.2174 10.4348L15.2174 9.56522L4.78261 9.56522Z" id="Shape" fill="#FFFFFF" stroke="none" />
+                                                        </g>
+                                                    </svg>
+                                                </button>
 
-                                            <div className="images_pogressbar">
+                                                {/* <div className="images_pogressbar">
 
+                                                </div> */}
+
+                                                <button onClick={() => zoomIn()} className="images_plus_button">
+                                                    <svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+                                                        <g id="icons8-plus">
+                                                            <path d="M10 0C4.4823 0 0 4.4823 0 10C0 15.5177 4.4823 20 10 20C15.5177 20 20 15.5177 20 10C20 4.4823 15.5177 0 10 0ZM10 0.869565C15.0478 0.869565 19.1304 4.95225 19.1304 10C19.1304 15.0478 15.0478 19.1304 10 19.1304C4.95225 19.1304 0.869565 15.0478 0.869565 10C0.869565 4.95225 4.95225 0.869565 10 0.869565ZM9.56522 4.78261L9.56522 9.56522L4.78261 9.56522L4.78261 10.4348L9.56522 10.4348L9.56522 15.2174L10.4348 15.2174L10.4348 10.4348L15.2174 10.4348L15.2174 9.56522L10.4348 9.56522L10.4348 4.78261L9.56522 4.78261Z" id="Shape" fill="#FFFFFF" stroke="none" />
+                                                        </g>
+                                                    </svg>
+                                                </button>
                                             </div>
 
-                                            <button onClick={() => zoomIn()} className="images_plus_button">
-                                                <svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
-                                                    <g id="icons8-plus">
-                                                        <path d="M10 0C4.4823 0 0 4.4823 0 10C0 15.5177 4.4823 20 10 20C15.5177 20 20 15.5177 20 10C20 4.4823 15.5177 0 10 0ZM10 0.869565C15.0478 0.869565 19.1304 4.95225 19.1304 10C19.1304 15.0478 15.0478 19.1304 10 19.1304C4.95225 19.1304 0.869565 15.0478 0.869565 10C0.869565 4.95225 4.95225 0.869565 10 0.869565ZM9.56522 4.78261L9.56522 9.56522L4.78261 9.56522L4.78261 10.4348L9.56522 10.4348L9.56522 15.2174L10.4348 15.2174L10.4348 10.4348L15.2174 10.4348L15.2174 9.56522L10.4348 9.56522L10.4348 4.78261L9.56522 4.78261Z" id="Shape" fill="#FFFFFF" stroke="none" />
-                                                    </g>
-                                                </svg>
-                                            </button>
+                                            <div className="chage_center_btn">
+                                                <div className="prev_next_img_btn" onClick={previmages}>
+                                                    <svg width="11px" height="20px" viewBox="0 0 11 20" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+                                                        <g id="icons8-more_than-copy-2" transform="matrix(-1 0 0 1 10.8411255 0)">
+                                                            <path d="M0.859813 0L0 0.859813L9.14019 10L0 19.1402L0.859813 20L10.4299 10.4299L10.8411 10L10.4299 9.57009L0.859813 0Z" id="Path" fill="#FFFFFF" stroke="none" />
+                                                        </g>
+                                                    </svg>
+                                                </div>
+
+                                                <div className="total_images">
+                                                    <p>{allbigimages + 1} </p>
+                                                    <span> / </span>
+                                                    <p> {totalimages}</p>
+                                                </div>
+
+                                                <div className="prev_next_img_btn" onClick={nextimages}>
+                                                    <svg width="11px" height="20px" viewBox="0 0 11 20" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+                                                        <g id="icons8-more_than-copy">
+                                                            <path d="M0.859813 0L0 0.859813L9.14019 10L0 19.1402L0.859813 20L10.4299 10.4299L10.8411 10L10.4299 9.57009L0.859813 0Z" id="Path" fill="#FFFFFF" stroke="none" />
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            
+                                            <div className="">
+                                                <span>123</span>
+                                            </div>
+
                                         </div>
                                     </React.Fragment>
                                     )}
@@ -91,23 +141,43 @@ const Chapterinner1 = (props) => {
                     </div>
 
 
-                    <div class="physics-tab-block">
-                        <Tabbox />
+                    <div className="physics-tab-block">
+                        <div className="ph-tab-nav-block">
+                            <Tabs id="controlled-tab-example" activeKey={key} onSelect={(k) => setKey(k)}>
+                                {
+                                    indexdata.tabs.map((val, index) => {
+                                        console.log(val.tab_common_title);
+                                        return(
+                                            <Tabbox 
+                                                key = {index}
+                                                eventKey = {val.eventKey}
+                                                title={val.tabtitle}
+                                                tab_common_titles = {val.tab_common_title}
+                                                tab_common_descs = {val.tab_common_desc}
+                                            />
+                                        )
+                                    })
+                                }
+
+                                {/* /* {console.log(indexdata.tabs[0].eventKey)} */}
+                            </Tabs>
+                        </div>
                     </div>
-
-
                 </div>
             
-                <div class="physics-col-right">
-                    <div class="physics-content-right">
+                <div className="physics-col-right">
+                    <div className="physics-content-right">
                         {
-                        
                             PhysicsBoxData.map((val, index) => {
                                 return(
                                     <PostRightsbox 
                                         title = {val.title}
                                         progressbar = {val.progressbar}
                                         image = {val.images[0]}
+                                        indexs = {index}
+                                        onsaveindexdata = {saveindexhandler}
+                                        key = {index}
+                                        activeclasses = {index === bigimages ? "physics-details-box ph-done-process active" : "physics-details-box ph-done-process"}
                                     />
                                 )
                             })

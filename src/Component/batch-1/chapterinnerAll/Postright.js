@@ -2,24 +2,30 @@ import React from 'react';
 
 import ProgressBar from 'react-bootstrap/ProgressBar';
 
-import ph_img_done_ic from '../../../assets/images/batch-1/ph-img-done-ic.svg';
 import watch_ic from '../../../assets/images/batch-1/watch_ic.svg';
 
 
-function PostRightsbox(props) {
+function PostRightsbox(props) { 
+    
+    function getindexdata(indexdata) {
+        const childindex = indexdata;
+       props.onsaveindexdata(childindex);
+    }
+    
+
   return (
-    <div className="physics-details-box ph-done-process">
+    <div className={props.activeclasses} onClick = {() => getindexdata(props.indexs)} >
         <div className="ph-post-time">
         <p>
             <img src={watch_ic} alt="Watch" />
-            <p>0:40</p>
+            <span>0:40</span>
         </p>
         </div>
         <div className="ph-image-title-block ">
             <div className="ph-image-hold">
-                <img src={"http://localhost:3000/" + props.image}  alt="image" />
+                <img src={props.image}  alt="bigimage" />
                 <span className="ph-process-done-ic">
-                    <img src={props.clockicon} alt="icon" />
+                    <img src={watch_ic} alt="icon" />
                 </span>
             </div>
             <div className="ph-title-hold">

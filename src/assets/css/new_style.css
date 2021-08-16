@@ -27,9 +27,13 @@
 .react-transform-component{
     width: 100% !important;
 }
-.bottom_images_tools{
-    padding: 10px 25px;
-    background-color: #001b4a;
+.react-transform-component{
+    height: 650px !important;
+}
+.react-transform-component{
+    width: 100%;
+    min-height: 100%;
+    object-fit: cover;
 }
 .images_plus_button{
     border: unset;
@@ -42,10 +46,45 @@
 .bottom_images_tools{
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding: 10px 25px;
+    background-color: #001b4a;
 }
 .ph-tab-nav-block .nav.nav-tabs a {
     margin-right: 25px;
 }
+.bottom_images_tools_inner{
+    display: flex;
+}
+.chage_center_btn{
+    display: flex;
+    align-items: center;
+}
+.total_images{
+    display: flex;
+    padding: 4.5px 7.5px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin: 0 25px;
+}
+.total_images p{
+    font-size: 14px;
+    color: #272D36;
+}
+.total_images span{
+    display: inline-block;
+    margin: 0 3px;
+}
+.prev_next_img_btn{
+    cursor: pointer;
+}
+.physics-details-box{
+    cursor: pointer;
+}
+
+
+
+
 
 
 @media screen and (max-width: 400px){

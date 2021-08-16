@@ -5,11 +5,6 @@ import message from '../assets/images/batch-1/message.svg';
 import gmes_logo from '../assets/images/batch-1/gmes-logo.svg';
 
 const Header = () => {
-    
-
-
-    
-
 
     const openModal = (event) => {
         document.body.classList.add('sidebar-open');

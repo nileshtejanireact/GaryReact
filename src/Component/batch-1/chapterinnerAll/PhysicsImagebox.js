@@ -6,8 +6,8 @@ function PhysicsImagebox(props) {
   return (
     <div className="physics-header-nav">
         <div className="physics-title">
-            <p>Physics {props.main_title}</p>
-            <h3>Newton’s Laws{props.description}</h3>
+            <p>{props.category}</p>
+            <h3>{props.title}</h3>
         </div>
         <div className="physics-file-process">
             <p>{props.progressbar}% COMPLETED</p>
