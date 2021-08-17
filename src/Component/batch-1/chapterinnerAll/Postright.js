@@ -13,9 +13,8 @@ function Postright(props) {
     }
 
     function getindexdata2(indexdata2) {
-        console.log(indexdata2)
         props.onsaveindexdata2(indexdata2)
-     }
+    }
     
   return (
     <div className={props.activeclasses}  onClick = {() => {getindexdata(props.index); getindexdata2(props.keys)}} >
