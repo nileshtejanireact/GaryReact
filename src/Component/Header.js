@@ -4,7 +4,7 @@ import Logo from '../assets/images/batch-1/logo.svg';
 import message from '../assets/images/batch-1/message.svg';
 import gmes_logo from '../assets/images/batch-1/gmes-logo.svg';
 
-const Header = () => {
+const Header = (props) => {
 
     const openModal = (event) => {
         document.body.classList.add('sidebar-open');
@@ -42,25 +42,30 @@ const Header = () => {
                                         </div>
                                     </div>
                                 </li>
-                                <li className="cm-d-none">
-                                    <div className="common-trainee-dropdown">
-                                       <div className="beginner-label-drop">
-                                           <h3>6,286</h3>
-                                           <p>
-                                               <span className="green-label">BEGINNER</span>
-                                               PLE CREDITS
-                                           </p>
-                                       </div>
-                                    </div>
-                                </li>
-                                <li className="cm-d-none">
-                                    <div className="common-trainee-dropdown">
-                                        <div className="cm-dropdown-label">
-                                            <h3>Edutech - Trainee</h3>
-                                            <p>2021 - 2022</p>
+                                {
+                                    props.fullpagep  &&  <li className="cm-d-none">
+                                        <div className="common-trainee-dropdown">
+                                        <div className="beginner-label-drop">
+                                            <h3>6,286</h3>
+                                            <p>
+                                                <span className="green-label">BEGINNER</span>
+                                                PLE CREDITS
+                                            </p>
                                         </div>
-                                    </div>
-                                </li>
+                                        </div>
+                                    </li>
+                                }
+                                {
+                                    props.fullpagep  && <li className="cm-d-none">
+                                        <div className="common-trainee-dropdown">
+                                            <div className="cm-dropdown-label">
+                                                <h3>Edutech - Trainee</h3>
+                                                <p>2021 - 2022</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                }
+                                
                                 <li className="cm-d-none">
                                     <div className="common-trainee-dropdown">
                                         <a href="#0">

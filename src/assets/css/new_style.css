@@ -12,17 +12,6 @@
 .common-filter-show.active{
     display: block;
 }
-
-.student_assessment_body .sidebar-wrapper{
-    display: none;
-}
-.student_assessment_body .header-dropdown-ul ul li:not(li:last-child){
-    display: none;
-}
-.student_assessment_body .sidebar-wrapper .mobile-menu-trigger{
-    display: none;
-}
-
 .react-transform-wrapper,
 .react-transform-component{
     width: 100% !important;
@@ -120,9 +109,6 @@
     width: 100%;
     padding: 0;
 }
-
-
-
 
 
 

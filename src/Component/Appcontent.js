@@ -14,10 +14,12 @@ function Appcontent(props) {
     for ( let i = 0; i < fullPageLayoutRoutes.length; i++ ){
       if(student_as_location === fullPageLayoutRoutes[i]){
           document.body.classList.add('student_assessment_body');
+          props.onfullpagestate(false);
           break;
       }
       else{
           document.body.classList.remove('student_assessment_body');
+          props.onfullpagestate(true);
       }  
     }
   }

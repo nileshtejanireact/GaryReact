@@ -83,8 +83,6 @@ const Chapterinner2 = (props) => {
                     </a>
                 </div>
             </div>
-
-
             <div className="physics-inner-block ">
                 <div className={fullimages ? "physics-col-left fullscreen" : "physics-col-left"}>
                     <div className="physics-inner-box">
@@ -240,53 +238,54 @@ const Chapterinner2 = (props) => {
                 <div className={fullimages ? "physics-col-right fullscreen" : "physics-col-right"} >
                     <div className="physics-content-right">
                         <div className="ph-accordion-block">
-                        <Accordion defaultActiveKey="0" >
-                            {
-                                uniqueCategory.map((val, index) => {
+                            <Accordion defaultActiveKey="0" >
+                                {
+                                    uniqueCategory.map((val, index) => {
+                                        
+                                        let arrByID = filterByID(chapterdata, val);
 
-                                    let arrByID = filterByID(chapterdata, val);
-                                    return(
-                                        <Card className="cm-card">
-                                            <Accordion.Toggle as={Card.Header} eventKey="0">
-                                            <div className="cm-card-header">
-                                                <button className="btn" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true">
-                                                    <span className="cm-accordion-number">{index + 1}</span>
-                                                    <p className="cm-accordion-title"> {val}</p>
-                                                    <span className="cm-accordion-notify">
-                                                        <img src={acc_notify_ic} alt="icon" />
-                                                        {arrByID.length}
-                                                    </span>
-                                                    <span className="cm-accordion-pm-icon">
-                                                        <img className="acc-minus" src={acc_minus} alt="icon" />
-                                                        <img className="acc-plus" src={acc_plus} alt="icon" />
-                                                    </span>
-                                                </button>
-                                            </div>
-                                            </Accordion.Toggle>
-                                            <Accordion.Collapse eventKey="0">
-                                                <Card.Body className="cm-card-body" >
-                                                {
-                                                    arrByID.map((val, index) => {
-                                                        return(
-                                                            <PostRightsbox 
-                                                                title = {val.title}
-                                                                progressbar = {val.progressbar}
-                                                                image = {val.images[0]}
-                                                                indexs = {val.key}
-                                                                onsaveindexdata = {saveindexhandler}
-                                                                key = {val.key}
-                                                                activeclasses = {index === bigimages ? "physics-details-box ph-done-process active" : "physics-details-box ph-done-process"}
-                                                            />
-                                                        )
-                                                    })
-                                                }
-                                                </Card.Body>
-                                            </Accordion.Collapse>
-                                        </Card>
-                                    )
-                                })
-                            }
-                        </Accordion>
+                                        return(
+                                            <Card className="cm-card" key={index}>
+                                                <Accordion.Toggle as={Card.Header} eventKey={index + 1}>
+                                                <div className="cm-card-header">
+                                                    <button className="btn" type="button">
+                                                        <span className="cm-accordion-number">{index + 1}</span>
+                                                        <p className="cm-accordion-title"> {val}</p>
+                                                        <span className="cm-accordion-notify">
+                                                            <img src={acc_notify_ic} alt="icon" />
+                                                            {arrByID.length}
+                                                        </span>
+                                                        <span className="cm-accordion-pm-icon">
+                                                            <img className="acc-minus" src={acc_minus} alt="icon" />
+                                                            <img className="acc-plus" src={acc_plus} alt="icon" />
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                                </Accordion.Toggle>
+                                                <Accordion.Collapse eventKey={index + 1}>
+                                                    <Card.Body className="cm-card-body" >
+                                                    {
+                                                        arrByID.map((val, index) => {
+                                                            return(
+                                                                <PostRightsbox 
+                                                                    title = {val.title}
+                                                                    progressbar = {val.progressbar}
+                                                                    image = {val.images[0]}
+                                                                    indexs = {val.key}
+                                                                    onsaveindexdata = {saveindexhandler}
+                                                                    key = {val.key}
+                                                                    activeclasses = {index === bigimages ? "physics-details-box ph-done-process active" : "physics-details-box ph-done-process"}
+                                                                />
+                                                            )
+                                                        })
+                                                    }
+                                                    </Card.Body>
+                                                </Accordion.Collapse>
+                                            </Card>
+                                        )
+                                    })
+                                }
+                            </Accordion>
                         </div>
                     </div>
                 </div>

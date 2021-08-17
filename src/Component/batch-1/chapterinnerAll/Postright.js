@@ -9,6 +9,7 @@ function PostRightsbox(props) {
     
     function getindexdata(indexdata) {
         // const childindex = indexdata;
+        console.log(indexdata);
        props.onsaveindexdata(indexdata);
     }
     
