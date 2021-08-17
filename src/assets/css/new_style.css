@@ -29,8 +29,8 @@
     background-color: transparent;
     outline: unset;
 }
-.images_pogressbar{
-    margin: 0 10px;
+.images_pogressbar {
+    margin: -3px 10px 0;
 }
 .bottom_images_tools{
     display: flex;
@@ -97,7 +97,6 @@
     background-color: unset;
     border: unset;
 }
-
 .card-header,
 .card-body{
     padding: 0px;
@@ -109,13 +108,142 @@
     width: 100%;
     padding: 0;
 }
+.physics-details-box.ph-done-process.active{
+    background-color: #C5D3E4;
+}
+.accordion > .card{
+    border-radius: 10px !important;
+    border: 0px;
+}
+.physics-details-box.ph-done-process.active .ph-process-done-ic{
+    display: none;
+}
+.physics-details-box.ph-done-process.active .ph-image-hold:before{
+    display: none;
+}
+.physics-col-right.fullscreen .physics-content-right{
+    display: none;
+}
+.images_pogressbar{
+    width: 100px;
+}
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 2px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+.slider:hover {
+    opacity: 1;
+}
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 4px;
+    height: 12px;
+    border-radius: 12px;
+    background: #fff;
+    cursor: pointer;
+}
+.slider::-moz-range-thumb {
+    width: 4px;
+    height: 12px;
+    border-radius: 12px;
+    background: #fff;
+    cursor: pointer;
+}
 
 
 
+
+
+
+
+
+@media screen and (max-width: 1600px){
+    .react-transform-component {
+        height: 550px !important;
+    }
+}
+@media screen and (max-width: 1440px){
+    .react-transform-component {
+        height: 500px !important;
+    }
+}
+@media screen and (max-width: 1360px){
+    .react-transform-component {
+        height: 470px !important;
+    }
+}
+@media screen and (max-width: 1199px){
+    .react-transform-component {
+        height: 400px !important;
+    }
+    .physics-col-left {
+        padding-right: 30px;
+    }
+    .full_page_section > p:nth-child(2) {
+        margin: 0 25px;
+    }
+}
+@media screen and (max-width: 991px){
+    .full_page_section > p {
+        display: none;
+    }
+}
+@media screen and (max-width: 767px){
+    .react-transform-component {
+        height: 350px !important;
+    }
+}
+@media screen and (max-width: 576px){
+    .react-transform-component {
+        height: 290px !important;
+    }
+    .images_pogressbar {
+        width: 70px;
+    }
+    .full_page_section > p:nth-child(2) {
+        margin: 0 20px;
+    }
+    .total_images{
+        margin: 0 20px;
+    }
+    .images_pogressbar{
+        display: none;
+    }
+    .images_plus_button:first-child{
+        margin-right: 10px;
+    }
+    .bottom_images_tools{
+        padding: 7px 15px;
+    }
+}
 
 @media screen and (max-width: 400px){
     .ph-tab-nav-block .nav.nav-tabs a {
         margin-right: 15px;
+    }
+    .react-transform-component {
+        height: 260px !important;
+    }
+    .total_images {
+        margin: 0 13px;
+    }
+}
+@media screen and (max-width: 367px){
+    .react-transform-component {
+        height: 250px !important;
+    }
+}
+@media screen and (max-width: 320px){
+    .react-transform-component {
+        height: 220px !important;
     }
 }
 

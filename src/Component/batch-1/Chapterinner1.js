@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import Dropdown from 'react-bootstrap/Dropdown'
 
@@ -7,24 +7,22 @@ import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
 
 import Tabbox from '../../Component/batch-1/chapterinnerAll/Tabbox';
 import Tabs from 'react-bootstrap/Tabs';
+import Tab from 'react-bootstrap/Tab';
 
 
 import PhysicsImagebox from './chapterinnerAll/PhysicsImagebox';
 
 import PhysicsBoxData from '../batch-1/chapterinnerAll/ChapterData';
-import PostRightsbox from '../batch-1/chapterinnerAll/Postright';
+import Postright from '../batch-1/chapterinnerAll/Postright';
 
 const Chapterinner1 = (props) => {
     const [bigimages, setbigimages] = useState(0);
     const [allbigimages, setallbigimages] = useState(0);
     const [fullimages, setfullimages] = useState(false);
-    const [valuePogress, setvaluePogress] = useState(1);
-
-
-    const [ value, setValue ] = React.useState(50);
-
+    const [ value, setValue ] = React.useState(0);
     const [key, setKey] = useState('home');
-    
+    const [imagescale, setimagescale] = useState(1);
+
     var chapterdata = PhysicsBoxData;
     var indexdata = chapterdata[bigimages];
     
@@ -34,6 +32,8 @@ const Chapterinner1 = (props) => {
 
     const saveindexhandler = (currentindex) => {
         setbigimages(currentindex);
+    }
+    const saveindexhandler2 = (currentindex2) => {
         setallbigimages(0);
     }
 
@@ -49,11 +49,28 @@ const Chapterinner1 = (props) => {
         setfullimages(!fullimages);
     }
 
+    const imgscaleref = useRef()
     const setvaluePogressfn = (pogressdata) => {
-        setvaluePogress(pogressdata / 20 + 1);
         setValue(pogressdata);
-        console.log(pogressdata / 20 + 1);
+        if(pogressdata !== 0){   
+            let pogressnumber = pogressdata / 10;
+            setimagescale(pogressnumber);         
+            imgscaleref.current.parentNode.style.transform = `scale(${imagescale})`
+            imgscaleref.current.parentNode.style.transformOrigin = "center center"
+            imgscaleref.current.parentNode.style.transition = "0.2s all ease"
+        }
+        else{
+            imgscaleref.current.parentNode.style.transform = "scale(1)";
+            imgscaleref.current.parentNode.style.transformOrigin = "center center"
+            imgscaleref.current.parentNode.style.transition = "0.2s all ease"   
+        }
     }
+
+    const zoomIndata = () => {
+        imgscaleref.current.parentNode.style.transformOrigin = "0 0"
+        console.log('data');
+    }
+
   return (
     <div className="main-content-wrapper full-content-wrapper">
         <div className="common-inner-padding-block">
@@ -89,7 +106,7 @@ const Chapterinner1 = (props) => {
                         <div className="physics-video-block">
                             <div className="physics-video-img">
                                 <TransformWrapper
-                                    initialScale={valuePogress}
+                                    initialScale={1}
                                     initialPositionX={0}
                                     initialPositionY={0}
                                     wheel={{ step: 0}}
@@ -97,11 +114,11 @@ const Chapterinner1 = (props) => {
                                     {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
                                     <React.Fragment>
                                         <TransformComponent>
-                                            <img src={imagespath} alt="test1" />
+                                            <img src={imagespath} alt="test1" ref={imgscaleref} />  
                                         </TransformComponent>
                                         <div className="tools bottom_images_tools">
                                             <div className="bottom_images_tools_inner">
-                                                <button onClick={() => zoomOut()} className="images_plus_button">
+                                                <button onClick={() => { zoomOut(); zoomIndata()}} className="images_plus_button">
                                                     <svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
                                                         <g id="icons8-minus">
                                                             <path d="M10 0C4.4823 0 0 4.4823 0 10C0 15.5177 4.4823 20 10 20C15.5177 20 20 15.5177 20 10C20 4.4823 15.5177 0 10 0ZM10 0.869565C15.0478 0.869565 19.1304 4.95225 19.1304 10C19.1304 15.0478 15.0478 19.1304 10 19.1304C4.95225 19.1304 0.869565 15.0478 0.869565 10C0.869565 4.95225 4.95225 0.869565 10 0.869565ZM4.78261 9.56522L4.78261 10.4348L15.2174 10.4348L15.2174 9.56522L4.78261 9.56522Z" id="Shape" fill="#FFFFFF" stroke="none" />
@@ -110,14 +127,16 @@ const Chapterinner1 = (props) => {
                                                 </button>
 
                                                 <div className="images_pogressbar">
-                                                    <RangeSlider
+                                                    <input type="range" 
                                                         value={value}
                                                         onChange={changeEvent => setvaluePogressfn(changeEvent.target.value)}
-                                                        step={20}
-                                                    />
+                                                        step={10} 
+                                                        className="slider" 
+                                                        id="myRange">    
+                                                    </input>
                                                 </div>
 
-                                                <button onClick={() => zoomIn()} className="images_plus_button">
+                                                <button onClick={() => { zoomIn(); zoomIndata()}} className="images_plus_button">
                                                     <svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
                                                         <g id="icons8-plus">
                                                             <path d="M10 0C4.4823 0 0 4.4823 0 10C0 15.5177 4.4823 20 10 20C15.5177 20 20 15.5177 20 10C20 4.4823 15.5177 0 10 0ZM10 0.869565C15.0478 0.869565 19.1304 4.95225 19.1304 10C19.1304 15.0478 15.0478 19.1304 10 19.1304C4.95225 19.1304 0.869565 15.0478 0.869565 10C0.869565 4.95225 4.95225 0.869565 10 0.869565ZM9.56522 4.78261L9.56522 9.56522L4.78261 9.56522L4.78261 10.4348L9.56522 10.4348L9.56522 15.2174L10.4348 15.2174L10.4348 10.4348L15.2174 10.4348L15.2174 9.56522L10.4348 9.56522L10.4348 4.78261L9.56522 4.78261Z" id="Shape" fill="#FFFFFF" stroke="none" />
@@ -176,8 +195,6 @@ const Chapterinner1 = (props) => {
                                                         </svg>
                                                     </p>
 
-                                                    
-
                                                     <div className="common-dropdown">
                                                         <Dropdown >
                                                             <Dropdown.Toggle id="dropdown-basic2" className="event_poiter" >
@@ -214,20 +231,37 @@ const Chapterinner1 = (props) => {
                     <div className="physics-tab-block">
                         <div className="ph-tab-nav-block">
                             <Tabs id="controlled-tab-example" activeKey={key} onSelect={(k) => setKey(k)}>
-                                {
-                                    indexdata.tabs.map((val, index) => {
+                                 {/* {
+                                    indexdata.tabs.map((val) => {
                                         return(
-                                            <Tabbox 
-                                                key = {index}
-                                                eventKey = {val.eventKey}
-                                                title={val.tabtitle}
-                                                tab_common_titles = {val.tab_common_title}
-                                                tab_common_descs = {val.tab_common_desc}
-                                            />
+                                            <Tabbox
+                                               eventKey= {val.eventKey}
+                                               title={val.tabtitle}
+                                               tab_common_title={val.tab_common_title}
+                                               tab_common_desc={val.tab_common_desc}>
+                                               </Tabbox>
                                         )
                                     })
-                                }
+                                 } */}
 
+                                 {
+                                    indexdata.tabs.map((val, index) => {
+                                        return(
+                                            <Tab eventKey={val.eventKey} title={val.tabtitle} key={index}>
+                                                <div className="ph-tab-content-block">
+                                                    <div className="tab-common-content">
+                                                        <div className="tab-common-title">
+                                                            <h3>{val.tab_common_title}</h3>
+                                                        </div>
+                                                        <div className="tab-common-desc">
+                                                            <p>{val.tab_common_desc}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </Tab>
+                                        )
+                                    })
+                                 }
                             </Tabs>
                         </div>
                     </div>
@@ -239,13 +273,16 @@ const Chapterinner1 = (props) => {
                         {
                             PhysicsBoxData.map((val, index) => {
                                 return(
-                                    <PostRightsbox 
+                                    <Postright 
                                         title = {val.title}
                                         progressbar = {val.progressbar}
                                         image = {val.images[0]}
-                                        indexs = {index}
+                                        index = {index}
                                         onsaveindexdata = {saveindexhandler}
+                                        onsaveindexdata2 = {saveindexhandler2}
                                         key = {index}
+                                        assigneddate = {val.assigneddate}
+                                        completeddate = {val.completeddate}
                                         activeclasses = {index === bigimages ? "physics-details-box ph-done-process active" : "physics-details-box ph-done-process"}
                                     />
                                 )

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom'
 import Logo from '../assets/images/batch-1/logo.svg';
 import message from '../assets/images/batch-1/message.svg';
 import gmes_logo from '../assets/images/batch-1/gmes-logo.svg';
@@ -14,9 +14,9 @@ const Header = (props) => {
         <div className="header-wrapper">
             <div className="header-block">
                 <div className="logo-block">
-                    <a href="#0">
+                    <Link to="/">
                         <img src={Logo} alt="logo" />
-                    </a>
+                    </Link>
                 </div>
                 <div className="header-content-row">
                     <div className="header-left-block">

@@ -1,6 +1,5 @@
 
 import React, { useState } from 'react';
-import { Redirect, Route, Switch, withRouter } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import '../src/assets/css/style.css';
