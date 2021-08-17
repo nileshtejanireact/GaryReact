@@ -2,8 +2,6 @@ import React, { useState, useRef } from 'react';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import Dropdown from 'react-bootstrap/Dropdown'
 
-
-import Tabbox from '../../Component/batch-1/chapterinnerAll/Tabbox';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 
@@ -11,7 +9,6 @@ import Tab from 'react-bootstrap/Tab';
 import PhysicsImagebox from './chapterinnerAll/PhysicsImagebox';
 
 import PhysicsBoxData from '../batch-1/chapterinnerAll/ChapterData';
-import PostRightsbox from '../batch-1/chapterinnerAll/Postright';
 
 const Chapterinner1 = (props) => {
     const [bigimages, setbigimages] = useState(0);

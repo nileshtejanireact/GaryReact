@@ -189,6 +189,10 @@ img {
 .header-right-block, .header-dropdown-ul{
     height: 100%;
 }
+.header-right-block{
+    display: flex;
+    align-items: center;
+}
 .common-trainee-dropdown{
     display: flex;
     flex-wrap: wrap;
@@ -252,7 +256,7 @@ img {
     -ms-transition: all 0.5s ease 0s;
     -o-transition: all 0.5s ease 0s;
     transition: all 0.5s ease 0s;
-    margin-right: auto;
+    margin-left: auto;
 }
 .mobile-menu-trigger span:nth-child(1) {
     margin-top: 5px;
@@ -342,6 +346,9 @@ img {
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
 }
 .menu-arrow img {
     transition: all 0.5s ease 0s;
@@ -395,6 +402,34 @@ img {
 }
 .sidebar-block::-webkit-scrollbar-thumb {
     background: #20A6D2;
+}
+.side-bar-inner-menu{
+    display: none;
+}
+.side-bar-inner-menu ul{
+    padding-left: 55px;
+    padding-right: 16px;
+}
+.side-bar-inner-menu ul li a {
+    font-weight: 400;
+    padding: 10px 10px 10px 0;
+    border-bottom: 1px dashed #20A6D2;
+}
+.side-bar-inner-menu ul li a:hover{
+    background-color: transparent;
+    color:  #20A6D2;;
+}
+.side-bar-inner-menu ul li:last-child a{
+    border-bottom: 0;
+}
+.sidebar-menu ul li.has-active{
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.has-sub-menu.has-active .menu-arrow.menu_arow_rotate img{
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
 }
 
 /*----------------Sidebar Css End ---------------*/
@@ -479,7 +514,15 @@ img {
     padding: 0px 30px 0px 12px;
     position: relative;
     color: #212529;
-    transition: color .5s;
+    float: unset;
+    transition: all 0.5s ease 0s;
+}
+.common-dropdown .btn.open:focus {
+    border-color: rgba(32, 166, 210, 1);
+    box-shadow: 0px 3px 7px 1px rgba(0, 0, 0, 0.08);
+}
+.common-dropdown .btn:hover{
+    box-shadow: 0px 3px 7px 1px rgba(0, 0, 0, 0.08);
 }
 .common-dropdown .btn .current {
     white-space: nowrap;
@@ -548,6 +591,7 @@ img {
 }
 .common-dropdown .dropdown-toggle{
     padding: 10px 30px 10px 12px;
+    transition: color .5s;
 }
 /*.common-dropdown .btn[aria-expanded="true"]:before {
     transform: translateY(-50%) rotate(180deg);
@@ -594,6 +638,9 @@ img {
     background-color: #ffffff;
     border-radius: 10px;
     overflow: hidden;
+    height: 100%;
+}
+.fl-col{
     margin-bottom: 35px;
 }
 .filter-list-img {
@@ -721,6 +768,9 @@ img {
     color: #20A6D2;
     text-transform: uppercase;
 }
+.starts-date-hold{
+    margin-right: 5px;
+}
 .assess-list-wrapper .filter-item-name h3 a{
     min-height: 42px;
     margin-bottom: 0;
@@ -770,6 +820,10 @@ img {
     padding: 10px 35px 10px 15px;
     color: #000;
     font-size: 14px;
+    transition: all 0.5s ease 0s;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }.common-search-hold input::-webkit-input-placeholder{
      opacity: 1;
      color: #757575;
@@ -1476,6 +1530,7 @@ img {
     font-weight: 300;
     color: #272D36;
     padding: 0 0 10px;
+    transition: unset;
 }
 .ph-tab-nav-block .nav-tabs .nav-link.active {
     background-color: transparent;
@@ -1764,6 +1819,16 @@ img {
     display: none;
     cursor: pointer;
 }
+.filter-box .common-search-hold.input-value-close .input-close-text{
+    top: 50%;
+}
+.common-search-hold input:focus {
+    box-shadow: 0px 3px 7px 1px rgba(0, 0, 0, 0.08);
+    border-color: #20A6D2;
+}
+.common-search-hold input:hover{
+    box-shadow: 0px 3px 7px 1px rgba(0, 0, 0, 0.08);
+}
 /*=============================== Login Page End ===========================*/
 
 /*=============================== Settings Screen Page Start ===========================*/
@@ -1772,11 +1837,12 @@ img {
     border-radius: 10px;
     margin-top: 30px;
 }
-.settings-tab-nav .nav-tabs{
+.settings-tab-nav .nav-tabs, .setting-label-nav .nav-tabs{
     border-bottom: 3px solid rgba(117, 117, 117, 0.1);
     padding: 0 25px;
+    flex-wrap: unset;
 }
-.settings-tab-nav .nav-tabs .nav-link {
+.settings-tab-nav .nav-tabs .nav-link, .setting-label-nav .nav-tabs .nav-link {
     border: 0;
     padding: 20px 20px 17px;
     color: #757575;
@@ -1786,17 +1852,22 @@ img {
     border-radius: 0;
     margin: 0;
 }
+.setting-label-nav .nav-tabs .nav-item,
 .settings-tab-nav .nav-tabs .nav-item {
     margin-right: 25px;
+    white-space: nowrap;
 }
+.setting-label-nav .nav-item:last-child,
 .settings-tab-nav .nav-tabs .nav-item:last-child{
     margin: 0;
 }
+.setting-label-nav .nav-tabs .nav-link.active,
 .settings-tab-nav .nav-tabs .nav-link.active {
     font-weight: 700;
     color: #20A6D2;
     background-color: transparent;
 }
+.setting-label-nav .nav-tabs .nav-link.active:after,
 .settings-tab-nav .nav-tabs .nav-link.active:after {
     content: '';
     position: absolute;
@@ -1944,7 +2015,251 @@ img {
     width: 100%
 }
 
+/*---------------- Settings Colors Page Css Start ------------------*/
+.color-scheme-content-block{
+    padding: 45px 25px 20px;
+    background-color: #ffffff;
+}
+.color-scheme-inner-content {
+    border: 1px solid #E0E0E0;
+    padding: 20px 24px;
+    border-radius: 10px;
+    height: 100%;
+    position: relative;
+}
+.color-scheme-box{
+    height: 100%
+}
+.color-scheme-box label {
+    width: 100%;
+    margin: 0;
+    cursor: pointer;
+    height: 100%;
+}
+.color-scheme-box label input {
+    display: none;
+}
+.color-scheme-box label input:checked + .color-scheme-inner-content{
+    border: 2px solid #20A6D2;
+}
+.color-scheme-title h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.color-scheme-ul ul{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -3px ;
+}
+.color-scheme-ul ul li {
+    padding: 0 3px;
+    width: 20%;
+    margin-bottom: 6px;
+}
+.color-sc-box {
+    width: 100%;
+    height: 57px;
+}
+.color-scheme-desc{
+    margin-top: 15px;
+}
+.color-scheme-desc p{
+    font-size: 12px;
+    color: #757575;
+}
+.color-scheme-content-block .tab-setting-save-btn{
+    padding: 50px 0 30px;
+}
+.check-color-select{
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.check-color-select img {
+    width: 19px;
+    height: 21px;
+}
+.color-scheme-box label input:checked + .color-scheme-inner-content .check-color-select{
+    opacity: 1;
+    visibility: visible;
+}
+/*---------------- Settings Colors Page Css End ------------------*/
 /*=============================== Settings Screen Page End ===========================*/
+
+/*=============================== Attendance Page Start ===========================*/
+.attendance-wrapper{
+    padding-top: 25px;
+}
+.attendance-block{
+    display: flex;
+    flex-wrap: wrap;
+}
+.attendance-left-col{
+    width: 305px;
+}
+.attendance-right-col {
+    width: calc(100% - 305px);
+    padding-left: 30px;
+}
+.virtual-room-box{
+    padding: 15px 19px 30px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+}
+.virtual-room-title h3 {
+    font-size: 20px;
+    font-weight: 500;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(39, 45, 54, 0.53);
+    margin-bottom: 15px;
+}
+.virtual-dropdown-block p.vir-drop-label{
+    font-size: 12px;
+    color: #20A6D2;
+    margin-bottom: 12px;
+}
+.virtual-room-box .common-dropdown .btn{
+    max-width: 100%;
+    min-width: 100%;
+}
+.virtual-room-box .common-dropdown .nice-select .list, .attendance-drop-date .common-dropdown .nice-select .list {
+    width: 100%;
+}
+.virtual-dropdown-block {
+    margin-bottom: 25px;
+}
+.show-sessions-btn .common-btn {
+    width: 100%
+}
+.attendance-filter-block {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.attendance-drop-date{
+    display: flex;
+    flex-wrap: wrap;
+}
+.attendance-drop-date .common-dropdown .btn {
+    min-width: 177px;
+}
+.attendance-drop-date .common-dropdown + .common-dropdown{
+    margin-left: 20px;
+}
+
+.cv-download-ic .table_toptext{
+    padding-bottom: 0;
+}
+.attendance-session-details-box {
+    background-color: #001B4A;
+    border-radius: 8px;
+    padding: 12px 25px;
+    margin: 16px 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.att-session-col p{
+    font-size: 14px;
+    color: #20A6D2;
+    text-transform: uppercase;
+}
+.att-session-col h4 {
+    font-weight: 500;
+    font-size: 14px;
+    color: #FFFFFF;
+}
+.att-session-col:nth-child(1){
+    width: 50%;
+}
+.att-session-col:nth-child(4) {
+    width: 10%;
+}
+.att-session-col + .att-session-col {
+    padding-left: 15px;
+    margin-left: 15px;
+    border-left: 1px solid rgba(32, 166, 210, 0.4);
+}
+.common-table-cm.listview_table .table_heading a {
+    font-weight: 500;
+    color: #20a6d2;
+}
+.common-table-desc{
+    color: #001B4A;
+}
+.common-table-cm.listview_table tbody tr:nth-child(even) {
+    background-color: rgba(135, 228, 255, 0.18);
+}
+.common-table-cm.listview_table thead th {
+    white-space: nowrap;
+}
+.common-table-cm.listview_table tbody tr:nth-child(odd) {
+    background: #FFFFFF;
+}
+.common-table-cm.listview_table td{
+    width: auto;
+}
+.attendance-table-block .common-table-cm.listview_table tbody tr:last-child td {
+    padding-bottom: 20px;
+}
+.table_page_number a:hover{
+    color: #20A6D2;
+}
+.common-table-cm.listview_table table {
+    background-color: #FFFFFF;
+}
+
+/*=============================== Attendance Page End ===========================*/
+
+/*=============================== Settings Labels Page Start ===========================*/
+.settings-label-tab-wrapper{
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+.setting-label-nav .nav-tabs {
+    padding: 0;
+}
+.setting-label-nav .nav-tabs .nav-link span {
+    display: block;
+    text-align: center;
+    min-width: 119px ;
+}
+.setting-label-nav .nav-tabs .nav-link{
+    padding: 20px 25px 17px;
+}
+.label-table-input input{
+    min-width: 318px;
+    height: 30px;
+    padding: 7px 10px;
+    border: 1px solid rgba(32, 166, 210, 0.5);
+    border-radius: 8px;
+}
+.setting-label-table-block .listview_table table {
+    border-radius: 0 ;
+}
+.setting-label-table-block .common-table-cm.listview_table .table_heading a{
+    color: #FFFFFF;
+}
+.setting-label-table-block .common-table-cm.listview_table .table_heading a.active{
+    color: #20a6d2;
+}
+.setting-label-table-block .common-table-cm.listview_table thead th:first-child{
+    width:33.333%;
+}
+.setting-label-table-block .tab-setting-save-btn {
+    padding: 25px 25px 35px 30px;
+}
+.setting-label-common-tab-content{
+    padding: 25px;
+}
+
+/*=============================== Settings Labels Page End ===========================*/
 
 
 

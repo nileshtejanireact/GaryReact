@@ -1,6 +1,6 @@
-import React from 'react';
+// import React from 'react';
 
-import Tab from 'react-bootstrap/Tab';
+// import Tab from 'react-bootstrap/Tab';
 
 // function Tabbox(props) {
 //     return (  

@@ -6,10 +6,27 @@
 @media screen and (min-width: 1920px) {}
 
 
-@media screen and (max-width: 1920px) {}
+@media screen and (max-width: 1800px) {
+    .att-session-col:nth-child(1) {
+        width: 40%;
+    }
+
+}
 @media screen and (max-width: 1600px) {
     .assess-item-name{
         font-size: 25px;
+    }
+    .filter-list-desc{
+        padding: 15px;
+    }
+    .fs-col-3 {
+        width: 200px;
+    }
+    .color-scheme-ul ul li{
+        width: 25%;
+    }
+    .att-session-col:nth-child(1), .att-session-col:nth-child(4) {
+        width: auto;
     }
 }
 @media screen and (max-width: 1440px) {
@@ -23,11 +40,35 @@
     .ext-cha-version2, .ext-common-content{
         padding: 15px;
     }
-    .common-filter-show.active{
-        border-radius: 8px;
-    }
     .common-dropdown .filter-show-trigger .btn.active{
         padding-bottom: 25px;
+    }
+    .fs-col-1 {
+        margin-bottom: 20px;
+    }
+    .settings-tab-nav .nav-tabs{
+        padding: 0 15px 0;
+        overflow-x: auto;
+    }
+    .settings-tab-nav .nav-tabs .nav-link.active:after{
+        bottom: 0;
+    }
+    .settings-tab-nav .nav-tabs .nav-item{
+        margin-right: 15px;
+    }
+    .att-session-col, .att-session-col:nth-child(1), .att-session-col:nth-child(4){
+        width: 50%;
+    }
+    .attendance-session-details-box{
+        justify-content: unset;
+    }
+    .att-session-col + .att-session-col{
+        margin-left: 0;
+        padding-left: 0;
+        border-left: 0;
+    }
+    .att-session-col{
+        margin-bottom: 15px;
     }
 
 }
@@ -35,6 +76,10 @@
     .login-wrapper .modal-dialog{
         max-width: 100%;
         margin: 1.75rem 15px;
+    }
+    .header-dropdown-ul ul li{
+        margin-right: 10px;
+        padding-right: 10px;
     }
 }
 @media screen and (max-width: 1280px) {
@@ -79,6 +124,7 @@
         width: auto;
         position: relative;
         z-index: 2;
+        margin-left: 15px;
     }
     .mobile-sidebar-close{
         display: block;
@@ -121,6 +167,13 @@
     .login-desc-block h2{
         font-size: 40px;
     }
+    .color-col{
+        margin-bottom: 30px;
+    }
+    .color-scheme-content-block .tab-setting-save-btn{
+        padding-top: 20px;
+    }
+
 
 }
 
@@ -186,6 +239,17 @@
     .login-form-title h3{
         font-size: 30px;
     }
+    .attendance-drop-date .common-dropdown + .common-dropdown {
+        margin-left: 10px;
+    }
+    .attendance-right-col{
+        width: 100%;
+        padding: 30px 0 0;
+    }
+    .attendance-left-col{
+        width: 100%;
+    }
+
 }
 @media screen and (max-width: 767px) {
     .header-block{
@@ -222,6 +286,9 @@
         left: 7px;
         width: 6px;
         height: 10px;
+    }
+    .common-filter-show.active{
+        border-radius: 8px;
     }
     .question-pagination a{
         min-width: 95px;
@@ -261,6 +328,12 @@
         right: 15px;
         top: 15px;
     }
+    .common-setting-content-block, .tab-setting-save-btn{
+        padding: 15px;
+    }
+    .web-mob-col{
+        margin-right: 15px;
+    }
 }
 @media screen and (max-width: 637px) {}
 @media screen and (max-width: 575px) {
@@ -274,7 +347,13 @@
         width: calc(100% - 180px);
     }
     .mail-dropdown{
-        padding: 0 10px;
+        padding: 0 10px 0 0;
+    }
+    .mail-dropdown img{
+        min-width: 30px;
+    }
+    .mobile-menu-trigger{
+        margin-left: 30px;
     }
     .mail-highlight{
         right: -10px;
@@ -289,7 +368,7 @@
     .filter-box{
         width: 100%;
     }
-    .filter-list-box, .main-external-channels-wrapper .fl-col{
+    .filter-list-box, .main-external-channels-wrapper .fl-col, .fl-col{
         margin-bottom: 20px;
     }
     .filter-item-name h3 a{
@@ -308,6 +387,21 @@
         width: 100%;
         margin-top: 15px;
     }
+    .web-mob-col{
+        max-width: 100%;
+        margin: 0 0 15px;
+    }
+    .home-screen-editor-block{
+        margin-top: 15px;
+    }
+    .tab-common-inner-title h3, .tab-common-sub-inner-title h3, .virtual-room-title h3{
+        font-size: 18px;
+    }
+   .cv-download-ic{
+        width: 100%
+    }
+
+
 
 }
 
@@ -334,6 +428,9 @@
     }
     .finish-test-btn{
         margin: 10px 0 0;
+    }
+    .att-session-col, .att-session-col:nth-child(1), .att-session-col:nth-child(4){
+        width: 100%;
     }
 }
 @media screen and (max-width: 430px) {}
@@ -373,11 +470,26 @@
         font-size: 14px;
         line-height: 1.2;
     }
+    .attendance-drop-date .common-dropdown, .attendance-drop-date{
+        width: 100%;
+    }
+    .attendance-drop-date .common-dropdown + .common-dropdown{
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    .attendance-drop-date .common-dropdown .btn{
+        width: 100%;
+        min-width: 100%;
+    }
+
 }
 
 @media screen and (max-width: 367px) {
     .login-popup-btn .common-btn{
         padding: 7px 20px;
+    }
+    .mobile-menu-trigger {
+        margin-left: 15px;
     }
 }
 @media screen and (max-width: 320px) {}

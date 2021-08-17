@@ -2,10 +2,8 @@ import React, { useState, useRef } from 'react';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import Dropdown from 'react-bootstrap/Dropdown'
 
-import RangeSlider from 'react-bootstrap-range-slider';
 import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
 
-import Tabbox from '../../Component/batch-1/chapterinnerAll/Tabbox';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 
@@ -68,7 +66,6 @@ const Chapterinner1 = (props) => {
 
     const zoomIndata = () => {
         imgscaleref.current.parentNode.style.transformOrigin = "0 0"
-        console.log('data');
     }
 
   return (

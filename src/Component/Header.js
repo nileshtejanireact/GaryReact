@@ -32,7 +32,8 @@ const Header = (props) => {
                     <div className="header-right-block">
                         <div className="header-dropdown-ul">
                             <ul>
-                                <li>
+                                {
+                                    props.fullpagep  && <li>
                                     <div className="common-trainee-dropdown">
                                         <div className="mail-dropdown">
                                             <a href="#0">
@@ -42,6 +43,8 @@ const Header = (props) => {
                                         </div>
                                     </div>
                                 </li>
+                                }
+                                
                                 {
                                     props.fullpagep  &&  <li className="cm-d-none">
                                         <div className="common-trainee-dropdown">

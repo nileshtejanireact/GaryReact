@@ -4,7 +4,6 @@ import Dropdown from 'react-bootstrap/Dropdown'
 import Accordion from 'react-bootstrap/Accordion'
 import Card from 'react-bootstrap/Card'
 
-import Tabbox from '../../Component/batch-1/chapterinnerAll/Tabbox';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 
@@ -33,6 +32,7 @@ const Chapterinner2 = (props) => {
     const [activepost, setactivepost] = useState(0);
     const [ value, setValue ] = React.useState(0);
     const [imagescale, setimagescale] = useState(1);
+    const imgscaleref = useRef()
     
     var chapterdata = PhysicsBoxData;
     var indexdata = chapterdata[bigimages];
@@ -43,12 +43,12 @@ const Chapterinner2 = (props) => {
 
     const saveindexhandler = (currentindex) => {
         setallbigimages(0);
+        console.log(currentindex);
+        setactivepost(currentindex)
     }
     
     const saveindexhandler2 = (currentindex2) => {
         setbigimages(currentindex2);
-        setactivepost(currentindex2)
-        setactivepost(currentindex2)
     }
 
     const previmages = () => {
@@ -63,7 +63,7 @@ const Chapterinner2 = (props) => {
         setfullimages(!fullimages);
     }
 
-    const imgscaleref = useRef()
+    
     const setvaluePogressfn = (pogressdata) => {
         setValue(pogressdata);
         if(pogressdata !== 0){   
@@ -306,7 +306,6 @@ const Chapterinner2 = (props) => {
                                                     <Card.Body className="cm-card-body" >
                                                     {
                                                         arrByID.map((val, index) => {
-
                                                             return(
                                                                 <Postright 
                                                                     title = {val.title}
@@ -316,6 +315,7 @@ const Chapterinner2 = (props) => {
                                                                     onsaveindexdata = {saveindexhandler}
                                                                     onsaveindexdata2 = {saveindexhandler2}
                                                                     keys = {val.key}
+                                                                    key = {index}
                                                                     assigneddate = {val.assigneddate}
                                                                     completeddate = {val.completeddate}
                                                                     activeclasses = {index === activepost ? "physics-details-box ph-done-process active" : "physics-details-box ph-done-process"}

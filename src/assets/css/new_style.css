@@ -157,7 +157,9 @@
     background: #fff;
     cursor: pointer;
 }
-
+.student_assessment .mobile-menu-trigger{
+    display: none;
+}
 
 
 

@@ -18,7 +18,8 @@ function App(props) {
 
   const fullpagestate = (data) => {
     setfullpage(data);
-  }  
+  } 
+   
 
   return (
     <>

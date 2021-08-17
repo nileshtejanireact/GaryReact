@@ -13,12 +13,13 @@ function Appcontent(props) {
 
     for ( let i = 0; i < fullPageLayoutRoutes.length; i++ ){
       if(student_as_location === fullPageLayoutRoutes[i]){
-          document.body.classList.add('student_assessment_body');
+        var new_path_class = fullPageLayoutRoutes[i].substring(1)
+          document.body.classList.add(new_path_class);
           props.onfullpagestate(false);
           break;
       }
       else{
-          document.body.classList.remove('student_assessment_body');
+          document.body.classList.remove(new_path_class);
           props.onfullpagestate(true);
       }  
     }
