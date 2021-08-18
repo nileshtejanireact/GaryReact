@@ -25,6 +25,7 @@ function App(props) {
     <>
         <Header fullpagep = {fullpage}/>
         {fullpage && <Siderbar />}
+        <div class="cm-overlay"></div>
         <Appcontent onfullpagestate = {fullpagestate}/>
     </>
   );

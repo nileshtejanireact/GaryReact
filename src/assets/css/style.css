@@ -4,7 +4,7 @@
     font-family: 'Poppins', sans-serif;
  */
 
-html, body {
+ html, body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     line-height: 1.4;
@@ -546,7 +546,7 @@ img {
     height: 6px;
     background-repeat: no-repeat;
     background-size: contain;
-    /* background-image: url('../image/batch-1/down-arrow.svg'); */
+    background-image: url('../images/batch-1/down-arrow.svg');
     transform: translateY(-50%);
     transition: all 0.5s ease 0s;
 }
@@ -832,7 +832,7 @@ img {
     margin-right: 12px;
 }
 .common-dropdown .filter-show-trigger .btn:before {
-    /* background-image: url('../image/batch-1/filter_drop_arrow.svg'); */
+    background-image: url('../images/batch-1/filter_drop_arrow.svg');
     transition: all 0.5s ease 0s;
     top: 19px;
 }

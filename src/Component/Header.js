@@ -20,11 +20,6 @@ const Header = (props) => {
                 </div>
                 <div className="header-content-row">
                     <div className="header-left-block">
-                        <div className="mobile-menu-trigger" onClick={openModal}>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
                         <div className="header-title-block">
                             <h3>GEMS Modern Academy Dubai</h3>
                         </div>
@@ -77,6 +72,12 @@ const Header = (props) => {
                                     </div>
                                 </li>
                             </ul>
+                        </div>
+                    
+                        <div className="mobile-menu-trigger" onClick={openModal}>
+                            <span></span>
+                            <span></span>
+                            <span></span>
                         </div>
                     </div>
                 </div>

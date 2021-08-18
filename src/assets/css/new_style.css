@@ -160,6 +160,13 @@
 .student_assessment .mobile-menu-trigger{
     display: none;
 }
+.dropdown-item:focus, .dropdown-item:hover{
+    background-color: rgba(32, 166, 210, 0.4);
+    color: #757575;
+}
+.common-dropdown .show.dropdown .btn:before{
+    transform: translateY(-50%) rotate(180deg);
+}
 
 
 
