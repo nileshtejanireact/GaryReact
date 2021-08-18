@@ -27,6 +27,18 @@ const Chapterinner1 = (props) => {
     var imagespath = indexdata.images[allbigimages];
     var totalimages = indexdata.images.length;
     
+    function openFullscreen() {
+        var isInFullScreen = (document.fullScreenElement && document.fullScreenElement !==     null) ||    // alternative standard method  
+                (document.mozFullScreen || document.webkitIsFullScreen);
+    
+        var docElm = document.getElementById("myimage");
+
+        if (!isInFullScreen) {
+            if (docElm.requestFullscreen) { docElm.requestFullscreen(); }
+            else if (docElm.mozRequestFullScreen) { docElm.mozRequestFullScreen(); }
+            else if (docElm.webkitRequestFullScreen) { docElm.webkitRequestFullScreen(); }
+        }
+    }
 
     const saveindexhandler = (currentindex) => {
         setbigimages(currentindex);
@@ -111,7 +123,7 @@ const Chapterinner1 = (props) => {
                                     {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
                                     <React.Fragment>
                                         <TransformComponent>
-                                            <img src={imagespath} alt="test1" ref={imgscaleref} />  
+                                            <img src={imagespath} alt="test1" ref={imgscaleref} id="myimage" />  
                                         </TransformComponent>
                                         <div className="tools bottom_images_tools">
                                             <div className="bottom_images_tools_inner">
@@ -184,7 +196,7 @@ const Chapterinner1 = (props) => {
                                                         </svg>
                                                     </p>
 
-                                                    <p className="event_poiter">
+                                                    <p className="event_poiter" onClick={openFullscreen}>
                                                         <svg width="21px" height="20px" viewBox="0 0 21 20" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
                                                             <g id="icons8-fit_to_width">
                                                                 <path d="M0.000106102 6.20534e-05L0.000106102 6.31581C-0.00194967 6.50496 0.0967339 6.68176 0.261207 6.77839C0.425679 6.87296 0.627158 6.87296 0.791631 6.77839C0.956103 6.68176 1.05479 6.50496 1.05273 6.31581L1.05273 1.79693L5.94374 6.68793C6.03008 6.77839 6.14522 6.8339 6.26651 6.84829C6.28502 6.84829 6.30146 6.85035 6.31997 6.85035C6.33847 6.85035 6.35492 6.84829 6.37342 6.84829C6.38987 6.84624 6.40837 6.84418 6.42482 6.84007C6.61807 6.80306 6.77227 6.6612 6.82778 6.47206C6.88329 6.28292 6.82983 6.07938 6.68797 5.94369L1.79697 1.05269L6.31586 1.05269C6.505 1.05474 6.68181 0.956059 6.77844 0.791587C6.87301 0.627114 6.87301 0.425635 6.77844 0.261163C6.68181 0.0966899 6.505 -0.00199372 6.31586 6.20534e-05L0.000106102 6.20534e-05ZM13.6842 6.20534e-05C13.4951 -0.00199372 13.3183 0.0966899 13.2217 0.261163C13.1271 0.425635 13.1271 0.627114 13.2217 0.791587C13.3183 0.956059 13.4951 1.05474 13.6842 1.05269L18.2031 1.05269L13.3121 5.94369C13.1744 6.07527 13.1189 6.27264 13.1682 6.45561C13.2155 6.64065 13.3594 6.78456 13.5444 6.83185C13.7274 6.88119 13.9248 6.82568 14.0564 6.68793L18.9474 1.79693L18.9474 6.31581C18.9432 6.5913 19.155 6.82362 19.4305 6.84829C19.4469 6.84829 19.4634 6.85035 19.4819 6.85035C19.7718 6.84418 20.0041 6.6057 20 6.31581L20 6.20534e-05L13.6842 6.20534e-05ZM0.518195 13.1497C0.228312 13.1558 -0.00400545 13.3943 0.000106102 13.6842L0.000106102 19.9999L6.31586 19.9999C6.505 20.002 6.68181 19.9033 6.77844 19.7388C6.87301 19.5744 6.87301 19.3729 6.77844 19.2084C6.68181 19.0439 6.505 18.9453 6.31586 18.9473L1.79697 18.9473L6.68798 14.0563C6.84422 13.9042 6.88945 13.6739 6.80516 13.4745C6.72087 13.273 6.5235 13.1455 6.30558 13.1517C6.16783 13.1558 6.03831 13.2134 5.94374 13.3121L1.05273 18.2031L1.05273 13.6842C1.05479 13.5423 0.999278 13.4046 0.898538 13.3038C0.797798 13.2031 0.660053 13.1476 0.518195 13.1497ZM19.4654 13.1497C19.4469 13.1517 19.4305 13.1517 19.414 13.1538C19.3791 13.1579 19.3441 13.1661 19.3092 13.1764C19.0913 13.2483 18.9432 13.4539 18.9474 13.6842L18.9474 18.2031L14.0564 13.3121C13.9577 13.2093 13.822 13.1538 13.6781 13.1517C13.4725 13.1538 13.2833 13.2751 13.199 13.4642C13.1147 13.6533 13.1476 13.8754 13.2874 14.0296C13.2957 14.0378 13.3039 14.0481 13.3121 14.0563L18.2031 18.9473L13.6842 18.9473C13.4005 18.9453 13.1661 19.1714 13.1559 19.4551C13.1456 19.7388 13.3635 19.9794 13.6472 19.9999C13.6596 19.9999 13.6719 19.9999 13.6842 19.9999L20 19.9999L20 13.6842C20.002 13.5423 19.9465 13.4046 19.8458 13.3038C19.745 13.2031 19.6073 13.1476 19.4654 13.1497Z" id="Shape" fill="#FFFFFF" stroke="none" />
