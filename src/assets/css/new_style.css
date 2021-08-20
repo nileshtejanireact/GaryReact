@@ -16,8 +16,8 @@
 .react-transform-component{
     width: 100% !important;
 }
-.react-transform-component{
-    height: 650px !important;
+.react-transform-component img{
+    height: 650px;
 }
 .react-transform-component{
     width: 100%;
@@ -167,6 +167,19 @@
 .common-dropdown .show.dropdown .btn:before{
     transform: translateY(-50%) rotate(180deg);
 }
+.content_img_block .react-transform-component img{
+    height: 457px;
+    width: 100%;
+    object-fit: cover;
+}
+.content_img_block .bottom_images_tools{
+    border-radius: 0 0 10px 10px;
+    padding: 15px 24px;
+}
+.input-close-text{
+    display: unset;
+}
+
 
 
 
@@ -175,23 +188,26 @@
 
 
 @media screen and (max-width: 1600px){
-    .react-transform-component {
-        height: 550px !important;
+    .react-transform-component img{
+        height: 550px;
+    }
+    .content_img_block .react-transform-component img {
+        height: 430px;
     }
 }
 @media screen and (max-width: 1440px){
-    .react-transform-component {
-        height: 500px !important;
+    .react-transform-component img{
+        height: 500px;
     }
 }
 @media screen and (max-width: 1360px){
-    .react-transform-component {
-        height: 470px !important;
+    .react-transform-component img{
+        height: 470px;
     }
 }
 @media screen and (max-width: 1199px){
-    .react-transform-component {
-        height: 400px !important;
+    .react-transform-component img{
+        height: 400px;
     }
     .physics-col-left {
         padding-right: 30px;
@@ -204,15 +220,24 @@
     .full_page_section > p {
         display: none;
     }
-}
-@media screen and (max-width: 767px){
-    .react-transform-component {
-        height: 350px !important;
+    .content_img_block{
+        margin-top: 20px;
+    }
+    .content_img_block .full_page_section > p {
+        display: unset;
     }
 }
-@media screen and (max-width: 576px){
-    .react-transform-component {
-        height: 290px !important;
+@media screen and (max-width: 767px){
+    .react-transform-component img{
+        height: 350px;
+    }
+    .content_img_block .react-transform-component img {
+        height: 350px;
+    }
+}
+@media screen and (max-width: 575px){
+    .react-transform-component img{
+        height: 290px;
     }
     .images_pogressbar {
         width: 70px;
@@ -232,27 +257,37 @@
     .bottom_images_tools{
         padding: 7px 15px;
     }
+    .content_img_block .react-transform-component img {
+        height: 270px;
+    }
+    .content_img_block .bottom_images_tools {
+        padding: 10px 20px;
+    }
+    
 }
 
 @media screen and (max-width: 400px){
     .ph-tab-nav-block .nav.nav-tabs a {
         margin-right: 15px;
     }
-    .react-transform-component {
-        height: 260px !important;
+    .react-transform-component img{
+        height: 260px;
     }
     .total_images {
         margin: 0 13px;
     }
+    .content_img_block .react-transform-component img {
+        height: 220px;
+    }
 }
 @media screen and (max-width: 367px){
-    .react-transform-component {
-        height: 250px !important;
+    .react-transform-component img{
+        height: 250px;
     }
 }
 @media screen and (max-width: 320px){
-    .react-transform-component {
-        height: 220px !important;
+    .react-transform-component img{
+        height: 220px;
     }
 }
 

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+  <g id="Group_1" data-name="Group 1" transform="translate(-404.5 -575.5)">
+    <g id="icons8-menu_vertical" transform="translate(416 583)">
+      <path id="Shape" d="M0,9a1,1,0,1,1,1,1A1,1,0,0,1,0,9ZM0,5A1,1,0,1,1,1,6,1,1,0,0,1,0,5ZM0,1A1,1,0,1,1,1,2,1,1,0,0,1,0,1Z" fill="#20a6d2"/>
+    </g>
+    <circle id="Oval" cx="12" cy="12" r="12" transform="translate(405 576)" fill="none" stroke="#20a6d2" stroke-miterlimit="10" stroke-width="1"/>
+  </g>
+</svg>

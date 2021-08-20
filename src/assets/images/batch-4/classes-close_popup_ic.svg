@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="27px" height="27px" viewBox="0 0 27 27" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <g id="Group-121" transform="translate(0.5 0.5)">
+    <path d="M13 26C20.1797 26 26 20.1797 26 13C26 5.8203 20.1797 0 13 0C5.8203 0 0 5.8203 0 13C0 20.1797 5.8203 26 13 26Z" id="Oval" fill="#20A6D2" fill-rule="evenodd" stroke="none" />
+    <g id="icons8-delete" transform="translate(6.7070312 6.7070312)">
+      <path d="M0.974428 0L0 0.974428L5.02557 6L0 11.0256L0.974428 12L6 6.97443L11.0256 12L12 11.0256L6.97443 6L12 0.974428L11.0256 0L6 5.02557L0.974428 0Z" id="Path" fill="#FFFFFF" stroke="none" />
+    </g>
+  </g>
+</svg>

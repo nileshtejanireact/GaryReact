@@ -1,8 +1,33 @@
 
 
-@media screen and (min-width: 1080px) {}
-@media screen and (min-width: 1400px) {}
-@media screen and (min-width: 1600px) {}
+@media screen and (min-width: 1300px) {
+    .data-trainer-wrapper {
+        -ms-flex: 0 0 72.5%;
+        -webkit-box-flex: 0;
+        flex: 0 0 72.5%;
+        max-width: 72.5%;
+    }
+    .newsfeed-main-wrapper {
+        -ms-flex: 0 0 27.5%;
+        -webkit-box-flex: 0;
+        flex: 0 0 27.5%;
+        max-width: 27.5%;
+    }
+}
+@media (min-width: 1500px) and (max-width: 1600px) {
+    .newsfeed-main-wrapper {
+        -ms-flex: 0 0 30%;
+        -webkit-box-flex: 0;
+        flex: 0 0 30%;
+        max-width: 30%;
+    }
+    .data-trainer-wrapper {
+        -ms-flex: 0 0 70%;
+        -webkit-box-flex: 0;
+        flex: 0 0 70%;
+        max-width: 70%;
+    }
+}
 @media screen and (min-width: 1920px) {}
 
 
@@ -29,8 +54,24 @@
         width: auto;
     }
 }
+@media screen and (max-width: 1530px) {
+    .chart-wrapper {
+        height: auto;
+    }
+    .common-good-afternoon-details {
+        padding-top: 23px;
+    }
+    .data-table-block {
+        margin-top: 20px;
+    }
+    .chart-wrapper,
+    .latest-in-training-zone {
+        margin-top: 25px;
+    }
+}
+
 @media screen and (max-width: 1440px) {
-    .breadcrumb-left-col, .breadcrumb-right-col .cm-filter-left-col, .cm-filter-right-col{
+    .breadcrumb-left-col, .breadcrumb-right-col .cm-filter-left-col, .cm-filter-right-col, .main-gradebook-edit-wrapper .cm-filter-left-col, .main-gradebook-edit-wrapper .cm-filter-right-col{
         width: 100%;
     }
 
@@ -70,8 +111,60 @@
     .att-session-col{
         margin-bottom: 15px;
     }
+    .setting-label-nav .nav-tabs .nav-link{
+        padding: 20px 10px 17px;
+    }
+    /* -------------------- Listview Page Start ----------------------- */
+    .listview_table .breadcrumb-left-col,
+    .listview_table .breadcrumb-right-col .cm-filter-left-col,
+    .listview_table .cm-filter-right-col {
+        width: auto;
+    }
+    .search-icon {
+        right: 7px;
+    }
+    /* -------------------- Listview Page End ----------------------- */
+    .trainer-latest-wrapper .ext-common-content {
+        padding: 20px 20px 20px;
+    }
+    .trainer-latest-wrapper .ext-cha-name a {
+        font-size: 17px;
+    }
+    .data-trainer-wrapper .data-table-2-wrapper th:nth-child(3) .table_heading {
+        width: 60px;
+    }
+    .media-induction-image {
+        width: 60px;
+    }
+    .newsfeed-title {
+        margin-bottom: 20px;
+    }
+    .good-afternoon-details-wrapper {
+        padding: 30px 25px;
+    }
+    .dashboard-page-1 .chart-wrapper {
+        padding-bottom: 0;
+    }
+    .dashboard-page-1 .x-text {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .dashboard-page-1 .chart-wrapper {
+        padding-top: 45px;
+    }
+    .y-text-wrapper {
+        top: 50%;
+    }
+    .chat-icon-box {
+        width: 70px;
+        height: 70px;
+    }
+    .chat-icon-box img {
+        width: 50%;
+    }
 
 }
+
 @media screen and (max-width: 1360px){
     .login-wrapper .modal-dialog{
         max-width: 100%;
@@ -81,10 +174,49 @@
         margin-right: 10px;
         padding-right: 10px;
     }
+    /* -------------------- Content Upload Page Start ----------------------- */
+    .module_block a {
+        padding: 11px 20px;
+        font-size: 12px;
+    }
+    .save_module_btn {
+        font-size: 12px;
+    }
+    .format_box a span svg {
+        margin-right: 5px;
+        width: 20px;
+    }
+    .format_box a {
+        font-size: 12px;
+        padding: 9px 7px;
+    }
+    /* -------------------- Content Upload Page End ----------------------- */
 }
 @media screen and (max-width: 1280px) {
     .header-title-block{
         display: none;
+    }
+    .common-dashboard-page .common-padding-content {
+        padding: 40px 30px;
+    }
+    .media-image {
+        width: 35px;
+    }
+    .good-afternoon-details-wrapper {
+        padding: 20px 20px;
+        height: 100%;
+    }
+    .common-dashboard-page .filter-list-desc {
+        padding: 16px 15px;
+    }
+    .other-useful-info-wrapper {
+        padding: 20px 15px;
+    }
+    .trainer-latest-recommended {
+        padding-top: 50px;
+    }
+    .owl-recommended-for-you.owl-theme .owl-dots {
+        margin-top: 20px;
     }
 }
 
@@ -173,10 +305,61 @@
     .color-scheme-content-block .tab-setting-save-btn{
         padding-top: 20px;
     }
-
+    /* -------------------- Listview Page Start ----------------------- */
+    .list_table_title p {
+        font-size: 20px;
+        line-height: 1;
+    }
+    .listview_table .common-dropdown .dropdown-menu {
+        left: -20px !important;
+    }
+    .table_page_number a {
+        margin-left: 5px;
+    }
+    .my_filter-box .common-dropdown .nice-select .list {
+        left: -40px;
+    }
+    /* -------------------- Listview Page End ----------------------- */
+    .mt_5 {
+        margin-top: 40px;
+    }
+    .common-good-afternoon-details .col-lg-4 {
+        margin-bottom: 30px;
+    }
+    .data-table-wrapper {
+        padding-top: 27px;
+    }
+    .common-dashboard-page .common-padding-content {
+        padding: 30px 20px;
+    }
+    .trainer-latest-wrapper {
+        padding-top: 40px;
+    }
+    .chart-wrapper,
+    .latest-in-training-zone {
+        margin-top: 20px;
+    }
+    .common-good-afternoon-details {
+        padding-top: 20px;
+    }
+    .data-trainer-wrapper .latest-in-training-zone .col-lg-6 {
+        margin-bottom: 15px;
+    }
+    .dashboard-page-2 .mt_5 {
+        margin-top: 40px;
+    }
+    .after-border-right:nth-child(3)::after {
+        display: none;
+    }
+    .open-programs-open-assessments {
+        padding-top: 30px;
+    }
+    .chat-icon-box {
+        width: 50px;
+        height: 50px;
+    }
 
 }
-
 
 @media screen and (max-width: 991px) {
     .fs-col-1, .fs-col-2, .fs-col-3 {
@@ -249,8 +432,119 @@
     .attendance-left-col{
         width: 100%;
     }
+    .setting-label-nav{
+        position: relative;
+        padding-bottom: 3px;
+    }
+    .setting-label-nav .nav-tabs{
+        overflow-x: auto;
+        border-bottom: 0;
+        margin-bottom: -3px;
+    }
+    .setting-label-nav:after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: rgba(117, 117, 117, 0.1);
+        left: 0;
+        bottom: 0;
+    }
+    .setting-label-nav .nav-tabs .nav-link.active:after{
+        bottom: 0;
+    }
+    .cloud-desc-content{
+        min-width: 180px;
+    }
+    /* -------------------- Listview Page Start ----------------------- */
+    .listview_table tr td:first-child,
+    .listview_table tr th:first-child {
+        padding-left: 20px;
+    }
+    .listview_table tr td:last-child,
+    .listview_table tr th:last-child {
+        padding-right: 20px;
+    }
+    /* -------------------- Listview Page End ----------------------- */
+    /* -------------------- Content Upload Page Start ----------------------- */
+    .content_block {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    .content_format_block,
+    .content_img_block {
+        width: 100%;
+    }
+    .content_img {
+        margin-top: 40px;
+    }
+    /* -------------------- Content Upload Page End ----------------------- */
+    /* -------------------- Allocation Page Start ----------------------- */
+    .all_filters_block .all_filter_ul>li {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .all_filters_block .all_filter_ul>li:last-child {
+        margin-bottom: 0;
+    }
+    .main_audience_block {
+        width: 100%;
+    }
+    .filter_by_block,
+    .selected_block {
+        width: 48%;
+        margin-top: 20px;
+    }
+    .delivery_box .common_checkbox {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+    }
+    .delivery_box .common_checkbox .form-group {
+        margin-bottom: 0px;
+    }
+    .delivery_box {
+        padding: 20px 0;
+    }
+    .search-icon {
+        right: 10px;
+    }
+    /* -------------------- Allocation Page End ----------------------- */
+    .data-table-wrapper {
+        padding-top: 5px;
+    }
+    .pagination-btn-w {
+        width: 90px;
+        height: 25px;
+    }
+    .data-table-1-wrapper {
+        margin-bottom: 35px;
+    }
+    .good-afternoon-details-wrapper {
+        padding: 20px 15px;
+    }
+    .data-table-block,
+    .chart-wrapper,
+    .latest-in-training-zone {
+        margin-top: 15px;
+    }
+    .dashboard-page-2 .data-trainer-wrapper {
+        padding-bottom: 0;
+    }
+    .media-induction-image {
+        width: 100px;
+    }
+    .other-useful-info-wrapper .col-xl-3:nth-child(1) {
+        margin-bottom: 30px;
+    }
+    .owl-recommended-for-you.owl-theme .owl-nav {
+        top: -62px;
+    }
 
 }
+
 @media screen and (max-width: 767px) {
     .header-block{
         padding: 0 15px;
@@ -259,7 +553,7 @@
         width: 100%;
         margin-bottom: 10px;
     }
-    .assess-item-name, .common-head-logo-title h3, .time-management-title h3 {
+    .assess-item-name, .common-head-logo-title h3, .time-management-title h3, .classes-desc-block h3 {
         font-size: 20px;
     }
     .time-section-block{
@@ -305,6 +599,9 @@
     .filter-content-block{
         justify-content: flex-start;
     }
+    .main-gradebook-edit-wrapper .filter-content-block{
+        margin-top: 15px;
+    }
     .physics-header-nav{
         padding: 20px;
         flex-wrap: wrap;
@@ -334,8 +631,71 @@
     .web-mob-col{
         margin-right: 15px;
     }
+    .label-table-input input{
+        min-width: 200px;
+    }
+    .classes-popup-list{
+        right: -20px;
+        left: unset;
+    }
+    .classes-col{
+        width: 33.333%;
+        padding: 0 8px;
+    }
+    .classes-box-block{
+        margin: 0 -8px;
+    }
+    .cloud-col-left{
+        width: 100%;
+    }
+    .cloud-col-left + .cloud-col-left{
+        margin-top: 15px;
+    }
+    .main-gradebook-edit-wrapper .filter-box ul li{
+        margin-bottom: 10px;
+    }
+    .physics-file-process{
+        width: 100%;
+        margin-top: 10px;
+    }
+    .question-hold-draw h3{
+        font-size: 16px;
+    }
+    /* -------------------- Listview Page Start ----------------------- */
+    .listview_table tr td {
+        font-size: 12px;
+    }
+    .listview_table .table_heading a {
+        font-size: 13px;
+    }
+    .listview_table .my_filter-box {
+        margin-left: 10px;
+    }
+    /* -------------------- Listview Page End ----------------------- */
+    /* -------------------- Content Upload Page Start ----------------------- */
+    .content_format_block h3 {
+        font-size: 14px;
+    }
+    .module_block a {
+        padding: 11px 12px;
+    }
+    .save_module_btn a {
+        padding: 10px 10px;
+    }
+    .content_img {
+        margin-top: 20px;
+    }
+    /* -------------------- Content Upload Page End ----------------------- */
+    /* -------------------- Allocation Page Start ----------------------- */
+    .filter_by_block,
+    .selected_block {
+        width: 100%;
+        margin-top: 20px;
+    }
+    /* -------------------- Allocation Page End ----------------------- */
+
 }
-@media screen and (max-width: 637px) {}
+
 @media screen and (max-width: 575px) {
     .common-padding-content {
         padding: 25px 15px;
@@ -400,13 +760,324 @@
    .cv-download-ic{
         width: 100%
     }
-
-
+    .main-gradebook-edit-wrapper .cv-download-ic{
+        width: auto;
+    }
+    .main-gradebook-edit-wrapper .filter-box ul li {
+      margin: 0;
+    }
+    .main-gradebook-edit-wrapper .filter-box ul li + li {
+        margin-top: 10px;
+    }
+    .classes-subject-block {
+        padding-top: 30px;
+    }
+    .classes-sub-bg-block h3, .classes-sub-desc-block h3{
+        font-size: 16px;
+    }
+    .classes-desc-block h3{
+        font-size: 18px;
+    }
+    .trigger-classes-expand img{
+        max-width: 20px;
+    }
+    .cla-correct-ul{
+        width: 100%;
+        margin-top: 10px;
+    }
+    .cla-correct-ul p + p {
+        margin-left: 10px;
+    }
+    .cla-correct-ul p img {
+        margin-right: 5px;
+    }
+    .classes-expand-nav{
+        padding: 10px 15px;
+    }
+    .cloud-computing-block{
+        padding: 15px;
+    }
+    .cloud-desc-content{
+        display: block;
+        min-width: auto;
+    }
+    .cloud-desc-content +  .cloud-desc-content{
+        margin-top: 10px;
+    }
+    .cloud-status-had p{
+        text-align: left;
+        margin-top: 15px;
+    }
+    .main-gradebook-edit-wrapper .filter-content-block li, .main-gradebook-edit-wrapper .filter-box .common-dropdown .btn ul.list{
+        width: 100%;
+    }
+    .main-gradebook-edit-wrapper .filter-box .common-dropdown .btn{
+        min-width: 100%;
+    }
+    /* -------------------- Listview Page Start ----------------------- */
+    .all_filters_block .common-dropdown .btn ul.list {
+        width: 100%;
+    }
+    .new_course_btn {
+        font-size: 12px;
+    }
+    .listview_table td {
+        padding: 5px 10px;
+    }
+    .listview_table th {
+        padding: 10px;
+    }
+    .listview_table tr td:first-child,
+    .listview_table tr th:first-child {
+        padding-left: 20px;
+    }
+    .listview_table tr td:last-child,
+    .listview_table tr th:last-child {
+        padding-right: 20px;
+    }
+    .listview_table .common-breadcrumb-block {
+        margin-bottom: 15px;
+    }
+    .listview_table .my_filter-box {
+        margin-top: 0px;
+    }
+    .listview_table .my_filter-box {
+        width: auto;
+    }
+    .list_table_title p {
+        padding-bottom: 15px;
+    }
+    .listview_table .cm-filter-right-col {
+        width: 100%;
+    }
+    .listview_table .filter-content-block {
+        margin-top: 10px;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+    /* -------------------- Listview Page End ----------------------- */
+    /* -------------------- Content Upload Page Start ----------------------- */
+    .content_upload_section .module_info_block {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        padding: 10px;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+    }
+    .module_block_left {
+        width: 100%;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+    .module_block {
+        width: 47%;
+    }
+    .module_block a {
+        width: 100%;
+        padding: 10px 0;
+        border-left: 0;
+        border-bottom: 1px solid rgba(214, 214, 214, 0.56);
+    }
+    .module_block_right {
+        width: 100%;
+        text-align: center;
+    }
+    .delivery_box {
+        padding: 10px 0;
+    }
+    .save_module_btn {
+        padding: 0;
+        padding-top: 10px;
+        border-left: 0;
+    }
+    .check_all {
+        padding: 10px 15px;
+    }
+    .all_checkboxes .form-group label {
+        padding: 5px 15px;
+    }
+    .all_checkboxes .form-group input:checked+label:after {
+        left: 20px;
+    }
+    .selected_block,
+    .select_filter,
+    .top_filter {
+        padding: 15px;
+    }
+    /* -------------------- Content Upload Page End ----------------------- */
+    .common-dashboard-page .common-padding-content {
+        padding: 30px 15px;
+    }
+    .common-good-afternoon-details {
+        padding-top: 10px;
+    }
+    .common-good-afternoon-details .col-lg-4 {
+        margin-bottom: 15px;
+    }
+    .data-table-wrapper {
+        padding-top: 15px;
+    }
+    .data-table-block,
+    .chart-wrapper,
+    .latest-in-training-zone {
+        margin-top: 13px;
+    }
+    .trainer-latest-wrapper {
+        padding-top: 40px;
+    }
+    .data-table-1-wrapper {
+        margin-bottom: 30px;
+    }
+    .latest-in-training-zone .col-sm-6:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    .mt_5 {
+        margin-top: 35px;
+    }
+    .data-table-2-wrapper th:nth-child(3) .table_heading {
+        width: 60px;
+    }
+    .media-image {
+        width: 40px;
+    }
+    .dashboard-page-2 .data-trainer-wrapper {
+        padding-right: 15px;
+    }
+    .chart-wrapper {
+        padding-left: 35px;
+        padding-top: 25px;
+    }
+    .y-text-wrapper {
+        left: 13px;
+    }
+    .x-text {
+        padding-top: 12px;
+        padding-bottom: 15px;
+    }
+    .common-right-bar {
+        border-radius: 10px;
+        height: unset;
+        margin-bottom: 30px;
+        -webkit-box-shadow: 0 0 13px -6px rgba(102, 102, 102, 0.44);
+        box-shadow: 0 0 13px -6px rgba(102, 102, 102, 0.44);
+        overflow: hidden;
+    }
+    .open-assessments-main-wrapper {
+        margin-top: 30px;
+    }
+    .owl-recommended-for-you.owl-theme .owl-dots {
+        margin-top: 15px;
+    }
+    .trainer-latest-recommended {
+        padding-top: 50px;
+    }
+    .owl-recommended-for-you.owl-theme .owl-nav {
+        top: -60px;
+    }
+    .dashboard-page-03 .common-right-bar {
+        height: unset;
+        margin-bottom: 30px;
+    }
+    .mobile-screen-none {
+        display: none;
+    }
+    .good-afternoon-details-wrapper {
+        padding: 15px 15px;
+    }
+    .chat-icon-box {
+        width: 40px;
+        height: 40px;
+    }
 
 }
 
-
-@media screen and (max-width: 480px) {}
+@media screen and (max-width: 480px) {
+    /* -------------------- Listview Page Start ----------------------- */
+    .listview_table .my_filter-box {
+        margin-top: 10px;
+        width: 100%;
+    }
+    .my_filter-box .common-dropdown .btn {
+        width: 100%;
+        max-width: 100%;
+    }
+    .my_filter-box ul li {
+        width: 100%;
+    }
+    .my_filter-box .common-dropdown .nice-select .list {
+        left: 0px;
+        width: 100%;
+    }
+    .listview_table .my_filter-box {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    /* -------------------- Listview Page End ----------------------- */
+    .x-text {
+        padding-top: 5px;
+        padding-bottom: 10px;
+    }
+    .chart-wrapper {
+        padding-right: 10px;
+    }
+    .common-right-bar {
+        margin-top: 28px;
+    }
+    .newsfeed {
+        padding: 20px 18px 15px;
+    }
+    .anita-sharma-wrapper {
+        padding: 20px 16px 15px;
+    }
+    .articles-and-videos {
+        padding: 20px 17px 15px;
+    }
+    .new-achievement {
+        padding: 20px 17px 15px;
+    }
+    .chart-wrapper {
+        overflow-x: scroll;
+    }
+    .chart-wrapper #myChart {
+        width: 400px !important;
+    }
+    .common-section-title {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        padding-right: 0;
+    }
+    .dashboard-page-03 .filter-box {
+        margin-top: 10px;
+    }
+    .owl-recommended-for-you.owl-theme .owl-nav {
+        top: -55px;
+    }
+    .recommend-box {
+        padding-top: 10px;
+    }
+    .owl-recommended-for-you.owl-carousel .owl-item {
+        height: 338.72px !important;
+    }
+    .trainer-latest-recommended {
+        padding-top: 35px;
+    }
+    .common-dashboard-page .filter-list-desc {
+        padding: 15px 15px;
+    }
+}
 @media screen and (max-width: 450px) {
     .filter-category-ul ul li{
         width: 100%;
@@ -432,6 +1103,74 @@
     .att-session-col, .att-session-col:nth-child(1), .att-session-col:nth-child(4){
         width: 100%;
     }
+    .classes-col{
+        width: 50%;
+    }
+    .classes-subject-box-block .classes-col{
+        margin-bottom: 15px;
+    }
+    /* -------------------- Content Upload Page start ----------------------- */
+    .format_box a {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+    .format_box a span svg {
+        margin-right: 0;
+        margin-bottom: 5px;
+        height: 15px;
+        width: 15px;
+    }
+    .file_upload_section {
+        padding: 15px;
+    }
+    .select_content_block {
+        padding: 10px;
+    }
+    .url_inputbox {
+        border-radius: 5px;
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+    .save_module_btn a {
+        padding: 7px 10px;
+        width: 100%;
+    }
+    .all_checkboxes::-webkit-scrollbar {
+        width: 5px;
+    }
+    .select_filter_btn a,
+    .selected_btn a {
+        width: 100%;
+        text-align: center;
+    }
+    .listview_table .filter-content-block {
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    .common-search-hold input {
+        font-size: 12px;
+    }
+    /* -------------------- Content Upload Page End ----------------------- */
+
 }
 @media screen and (max-width: 430px) {}
 @media screen and (max-width: 400px) {
@@ -443,7 +1182,7 @@
         margin-top: 15px;
     }
     .common-filter-show.active{
-        border-radius: 0px 8px 8px 8px;
+        border-radius: 0px 0px 8px 8px;
     }
     .ph-tab-nav-block .nav-tabs .nav-link{
         font-size: 14px;
@@ -477,13 +1216,77 @@
         margin-left: 0;
         margin-top: 10px;
     }
-    .attendance-drop-date .common-dropdown .btn{
+    .attendance-drop-date .common-dropdown .btn,
+    .filter-show-trigger .btn{
         width: 100%;
         min-width: 100%;
     }
+    .main-gradebook-edit-wrapper .attendance-drop-date {
+        width: auto;
+    }
+    .gra-edit-btn a, .gra-save-discard-btn a{
+        font-size: 12px;
+    }
+    .gra-edit-btn a img, .gra-save-discard-btn a img{
+        margin-right: 5px;
+    }
+    .common-dropdown .filter-show-trigger .btn.active {
+        padding-bottom: 10px;
+    }
 
 }
-
+@media screen and (max-width:390px) {
+    /* -------------------- Listview Page Start ----------------------- */
+    .listview_table .common-dropdown .dropdown-menu {
+        left: 0px !important;
+    }
+    .open_close_block a {
+        font-size: 12px;
+        height: 33px;
+    }
+    .common_checkbox .form-group label {
+        font-size: 13px;
+    }
+    .check_all .form-group label,
+    .uncheck_span a {
+        font-size: 13px;
+    }
+    .common_checkbox .form-group input:checked+label:after {
+        top: 3px;
+    }
+    .all_checkboxes .form-group input:checked+label:after {
+        top: 8px;
+    }
+    .delivery_box {
+        padding: 15px;
+    }
+    /* -------------------- Listview Page End ----------------------- */
+}
+@media screen and (max-width: 380px) {
+    .chart-wrapper #myChart {
+        width: 370px !important;
+    }
+    .owl-recommended-for-you.owl-theme .owl-dots {
+        margin-top: 10px;
+    }
+}
+@media screen and (max-width:375px) {
+    /* -------------------- Content Upload Page Start ----------------------- */
+    .module_block a br {
+        display: none;
+    }
+    .module_block {
+        width: 100%;
+        margin-right: 0px;
+    }
+    .module_block_left {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    /* -------------------- Content Upload Page End ----------------------- */
+}
 @media screen and (max-width: 367px) {
     .login-popup-btn .common-btn{
         padding: 7px 20px;
@@ -491,8 +1294,94 @@
     .mobile-menu-trigger {
         margin-left: 15px;
     }
+    .classes-col{
+        width: 100%;
+    }
+    .cloud-session-btn a{
+        min-width: 120px;
+    }
 }
-@media screen and (max-width: 320px) {}
+@media screen and (max-width: 320px) {
+    /* -------------------- Allocation Page Start ----------------------- */
+    .delivery_box .common_checkbox .form-group {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .delivery_box .common_checkbox .form-group:last-child {
+        margin-bottom: 0px;
+    }
+    .delivery_box .common_checkbox {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    .content_format_block h3,
+    .audience_block h3,
+    .delivery_blog h3,
+    .top_filter h3,
+    .select_filter h3,
+    .selected_block h3 {
+        font-size: 14px;
+    }
+    /* -------------------- Allocation Page End ----------------------- */
+    .trainer-latest-wrapper {
+        padding-top: 30px;
+    }
+    .common-section-title h4 {
+        font-size: 18px;
+    }
+    .chart-wrapper {
+        padding: 15px 15px 15px 25px;
+    }
+    .y-text-wrapper {
+        left: 10px;
+    }
+    .data-table-block table tr td {
+        height: 35px;
+    }
+    .data-table-block table tr td:first-child,
+    .data-table-block table tr th:first-child {
+        padding-left: 15px;
+    }
+    .data-table-block table th {
+        padding: 10px 10px;
+    }
+    .good-afternoon-media-sub-title {
+        margin-bottom: 15px;
+    }
+    .good-afternoon-title h2 {
+        font-size: 22px;
+    }
+    .good-afternoon-media-title {
+        font-size: 25px;
+    }
+    .chart-wrapper #myChart {
+        width: 310px !important;
+    }
+    .x-text {
+        padding-top: 2px;
+        padding-bottom: 5px;
+    }
+    .induction-for-sales-team {
+        padding: 15px 11px 15px;
+    }
+    .recommended-course .induction-for-sales-team .induction-media,
+    .anita-sharma-wrapper .induction-media {
+        flex-direction: column;
+        text-align: center;
+    }
+    .recommended-course .induction-for-sales-team .induction-media>div,
+    .anita-sharma-wrapper .induction-media>div {
+        width: 100%;
+    }
+    .recommended-course .induction-for-sales-team .induction-media>div:first-child,
+    .anita-sharma-wrapper .induction-media>div:first-child {
+        width: 90px;
+        margin: 0 auto 10px;
+    }
+    .induction-media-body>p {
+        padding-top: 5px;
+    }
+}
 
 
 
