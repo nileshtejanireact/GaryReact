@@ -76,7 +76,7 @@ const Dashboardtrainee03 = (props) => {
                                         </div>
                                         <div className="my-open-programs">
                                             <OwlCarousel className='owl-theme' loop margin={10} nav>
-                                                {
+                                                {/* {
                                                     
                                                     programsslider.map((val, index) => {
                                                         var inndrdata = val;
@@ -95,7 +95,7 @@ const Dashboardtrainee03 = (props) => {
                                                             </>
                                                         )
                                                     })
-                                                }
+                                                } */}
 
                                             </OwlCarousel>
                                         </div>
