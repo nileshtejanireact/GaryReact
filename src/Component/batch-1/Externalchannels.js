@@ -375,15 +375,18 @@ function Externalchannels() {
                         {
                             ext_cha_v4_data.map((val, index) => {
                                 return(
-                                    <Externalchaversion4 
-                                        key = {index}
-                                        id = {val.id}
-                                        imagclass = {val.imagclass}
-                                        ext_cha_name = {val.ext_cha_name}
-                                        ext_cha_icon = {val.ext_cha_icon}
-                                        ext_cha_img = {val.ext_cha_img}
-                                        ext_cha_v1_dec = {val.ext_cha_v1_dec}
-                                    />
+                                    <div className="fl-col col-sm-6 col-md-4 col-lg-3">
+                                        <Externalchaversion4 
+                                            key = {index}
+                                            id = {val.id}
+                                            imagclass = {val.imagclass}
+                                            ext_cha_name = {val.ext_cha_name}
+                                            ext_cha_icon = {val.ext_cha_icon}
+                                            ext_cha_img = {val.ext_cha_img}
+                                            ext_cha_v1_dec = {val.ext_cha_v1_dec}
+                                        />
+                                    </div>
+
                                 )
                             })
                         }  

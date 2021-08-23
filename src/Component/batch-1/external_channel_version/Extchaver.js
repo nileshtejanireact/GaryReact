@@ -63,23 +63,21 @@ const Externalchaversion3 = (props) => {
 
 const Externalchaversion4 = (props) => {
     return (
-        <div className="fl-col col-sm-6 col-md-4 col-lg-3">
-            <div className={props.imagclass}>
-                <div className="filter-list-img">
-                    <a href="#0">
-                        <img src={props.ext_cha_img} alt="Filter list" />
-                        <div className="ext-cha-ic">
-                            <img src={props.ext_cha_icon} alt="icon" />
-                        </div>
-                    </a>
+        <div className={props.imagclass}>
+            <div className="filter-list-img">
+                <a href="#0">
+                    <img src={props.ext_cha_img} alt="Filter list" />
+                    <div className="ext-cha-ic">
+                        <img src={props.ext_cha_icon} alt="icon" />
+                    </div>
+                </a>
+            </div>
+            <div className="ext-common-content">
+                <div className="ext-cha-name">
+                    <a href="#0">{props.ext_cha_name}</a>
                 </div>
-                <div className="ext-common-content">
-                    <div className="ext-cha-name">
-                        <a href="#0">{props.ext_cha_name}</a>
-                    </div>
-                    <div className="ext-common-desc">
-                        <p>{props.ext_cha_v1_dec}</p>
-                    </div>
+                <div className="ext-common-desc">
+                    <p>{props.ext_cha_v1_dec}</p>
                 </div>
             </div>
         </div>

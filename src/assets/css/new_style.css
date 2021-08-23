@@ -179,7 +179,44 @@
 .input-close-text{
     display: unset;
 }
-
+.check_all .form-group label, .uncheck_span a,
+.all_checkboxes .form-group label {
+    -webkit-user-select: none;  
+    -moz-user-select: none;     
+    -ms-user-select: none;      
+    user-select: none;          
+}
+.trainersLeaderchart{
+    height: 215px;
+}
+.kickstarting-your{
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.5s ease 0s;
+    -moz-transition: all 0.5s ease 0s;
+    -ms-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
+    animation: fadeIn 0.5s;
+}
+.kickstarting-your.active{
+    display: block;
+    opacity: 1;
+    visibility: visible;   
+}
+@-webkit-keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+ }
+ 
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+.fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
 
 
 

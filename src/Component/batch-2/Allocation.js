@@ -76,8 +76,6 @@ const Allocation = () => {
     const [dropdownData, setdropdownData] = useState('Filter');
     const [dropdownData2, setdropdownData2] = useState('Filter');
     const [searchic, setsearchic] = useState(true);
-    const [checkallinput, setcheckallinput] = useState(false);
-    const [checkallinput2, setcheckallinput2] = useState(false);
 
     const toggleData = (data) => {
         setdropdownData(data);
@@ -89,7 +87,6 @@ const Allocation = () => {
 
     const searchChangehandler = (event) => {
         var inputlength = event.target.value.length;
-        // console.log(event.target.value.length);
         if(inputlength > 0){
             setsearchic(false);
         }
@@ -99,25 +96,61 @@ const Allocation = () => {
     }
 
     const checkall = () => {
-        console.log('hiii')  
-        setcheckallinput(true); 
-    }
-    const uncheckall = () => {setcheckallinput(false)}
-    
-    const checkall2 = () => {setcheckallinput2(true)}
-    const uncheckall2 = () => {setcheckallinput2(false)}
+        var checkall = document.getElementById('Check_All');
+        var allchecelement = document.getElementsByClassName('individual');
 
-    const chckedchage = (e) => {
-        // console.log(e.target.checked);
-        if(e.target.checked){
-            // e.target.uncheckall;
-            console.log('ok')
+        if(checkall.checked === true){
+            [...allchecelement].forEach(element => {
+                element.checked = false;
+            });
         }
         else{
-            // e.target.checked;
-            console.log('mo')
+            [...allchecelement].forEach(element => {
+                element.checked = true;
+            });
         }
     }
+
+    const uncheckall = () => {
+        var checkall = document.getElementById('Check_All');
+        var allchecelement = document.getElementsByClassName('individual');
+        
+        if(checkall.checked === true){
+            checkall.checked = false;
+            [...allchecelement].forEach(element => {
+                element.checked = false;
+            });
+        }
+    }
+
+    const checkall2 = () => {
+        var checkall = document.getElementById('Check_All_2');
+        var allchecelement = document.getElementsByClassName('individual_two');
+
+        if(checkall.checked === true){
+            [...allchecelement].forEach(element => {
+                element.checked = false;
+            });
+        }
+        else{
+            [...allchecelement].forEach(element => {
+                element.checked = true;
+            });
+        }
+    }
+
+    const uncheckall2 = () => {
+        var checkall = document.getElementById('Check_All_2');
+        var allchecelement = document.getElementsByClassName('individual_two');
+        
+        if(checkall.checked === true){
+            checkall.checked = false;
+            [...allchecelement].forEach(element => {
+                element.checked = false;
+            });
+        }
+    }
+    
 
     return (
         <div className="main-content-wrapper">
@@ -235,7 +268,7 @@ const Allocation = () => {
                                             <div class="common_checkbox">
                                                 <div class="check_all">
                                                     <div class="form-group">
-                                                        <input type="checkbox" class="check_all_btn" id="Check_All" checked={checkallinput === true ? "checked" : ""} />
+                                                        <input type="checkbox" class="check_all_btn" id="Check_All" />
                                                         <label for="Check_All" onClick={checkall}>Check All</label>
                                                     </div>
                                                     <div class="uncheck_span">
@@ -248,7 +281,7 @@ const Allocation = () => {
                                                         checkboxdata.map((val, index) => {
                                                             return(
                                                                 <div class="form-group" key={index}>
-                                                                    <input type="checkbox" class="individual" id={val.id}  checked={checkallinput === true ? "checked" : ""} onClick={chckedchage} />
+                                                                    <input type="checkbox" class="individual" id={val.id} />
                                                                     <label for={val.id}>{val.label}</label>
                                                                 </div>
                                                             )
@@ -279,7 +312,7 @@ const Allocation = () => {
                                     <div class="common_checkbox">
                                         <div class="check_all">
                                             <div class="form-group">
-                                                <input type="checkbox" id="Check_All_2" class="uncheck_all_btn" checked={checkallinput2 === true ? "checked" : ""}/>
+                                                <input type="checkbox" id="Check_All_2" class="uncheck_all_btn"/>
                                                 <label for="Check_All_2" onClick={checkall2}>Check All</label>
                                             </div>
                                             <div class="uncheck_span">
@@ -291,7 +324,7 @@ const Allocation = () => {
                                                 checkboxdata.map((val, index) => {
                                                     return(
                                                         <div class="form-group" key={index}>
-                                                            <input type="checkbox" class="individual_two" id={`${val.id}${index}`} checked={checkallinput2 === true ? "checked" : ""} />
+                                                            <input type="checkbox" class="individual_two" id={`${val.id}${index}`} />
                                                             <label for={`${val.id}${index}`}>{val.label}</label>
                                                         </div>
                                                     )
@@ -301,7 +334,7 @@ const Allocation = () => {
                                                 checkboxdata.map((val, index) => {
                                                     return(
                                                         <div class="form-group" key={index}>
-                                                            <input type="checkbox" class="individual_two" id={`new${val.id}${index}`}  checked={checkallinput2 === true ? "checked" : ""} />
+                                                            <input type="checkbox" class="individual_two" id={`new${val.id}${index}`} />
                                                             <label for={`new${val.id}${index}`}>{val.label}</label>
                                                         </div>
                                                     )
