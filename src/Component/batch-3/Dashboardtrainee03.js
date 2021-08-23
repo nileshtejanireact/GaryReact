@@ -1,11 +1,16 @@
 import React, { useState } from 'react'
 
-import { EmployeesData3 } from '../batch-3/dashboardtrainee01innerAll/dashboarddata'
+import { EmployeesData3, programsslider } from '../batch-3/dashboardtrainee01innerAll/dashboarddata'
 import Programtable from '../batch-3/dashboardtrainee01innerAll/dashboardtable'
 import { Assessmentstable } from '../batch-3/dashboardtrainee01innerAll/dashboardtable'
 import TrainersLeaderchart from '../batch-3/dashboardtrainee01innerAll/dashboardchart'
 import Trainingzone from '../batch-3/dashboardtrainee02innerAll/trainingzone'
 import { training_zone } from '../batch-3/dashboardtrainee01innerAll/dashboarddata'
+
+import OwlCarousel from 'react-owl-carousel';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
+import ProgressBar from 'react-bootstrap/ProgressBar'
 
 import resize_icon from '../../assets/images/dashboard/resize-icon.svg'
 import ifst from '../../assets/images/dashboard/ifst.png'
@@ -13,10 +18,10 @@ import shape from '../../assets/images/dashboard/shape.svg'
 import rectangle from '../../assets/images/dashboard/rectangle.png'
 import wise_1 from '../../assets/images/dashboard/wise-1.svg'
 import wise_2 from '../../assets/images/dashboard/wise-2.png'
+import ph_image from '../../assets/images/dashboard/ph-image.png'
 
-{console.log(EmployeesData3)}
 
-const Dashboardtrainee03 = () => {
+const Dashboardtrainee03 = (props) => {
     const [seemore, setseemore] = useState(false);
 
     const seemorefn = (event) => {
@@ -36,7 +41,6 @@ const Dashboardtrainee03 = () => {
                         <div className="row">
                         {
                             EmployeesData3.map((val, index) => {
-                                console.log(val);
                                 return(
                                     <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 after-border-right">
                                         <div className="good-afternoon-details-wrapper">
@@ -48,7 +52,7 @@ const Dashboardtrainee03 = () => {
                                                              {index === 1 ? `/ ${val.employesubnumber}` : ""}
                                                         </sub>
                                                     </h2>
-                                                    {index === 1 ? <span class="last-week-text"><svg width="10px" height="10px" viewBox="0 0 10 10" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"> <path d="M3 0L0 2.84298L0.64186 3.43802L2.55349 1.62645L2.55349 8L3.44651 8L3.44651 1.62645L5.35814 3.43802L6 2.84298L3 0Z" transform="matrix(0.70710665 0.7071069 -0.7071069 0.70710665 5.6568604 0)" id="Path" fill="#1DA712" stroke="none"/> </svg>10+ last week</span> : " "}
+                                                    {index === 1 ? <span className="last-week-text"><svg width="10px" height="10px" viewBox="0 0 10 10" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"> <path d="M3 0L0 2.84298L0.64186 3.43802L2.55349 1.62645L2.55349 8L3.44651 8L3.44651 1.62645L5.35814 3.43802L6 2.84298L3 0Z" transform="matrix(0.70710665 0.7071069 -0.7071069 0.70710665 5.6568604 0)" id="Path" fill="#1DA712" stroke="none"/> </svg>10+ last week</span> : " "}
                                                 </div>
                                                 <div className="media-image">
                                                     <img src={val.employeeimage} alt="afternoon" />
@@ -64,7 +68,40 @@ const Dashboardtrainee03 = () => {
 
                     <div className="row">
                         <div className="col-lg-8 col-12 data-trainer-wrapper">
-                            
+                            <div className="open-programs-open-assessments">
+                                <div className="row">
+                                    <div className="col-md-6 col-12">
+                                        <div className="common-section-title">
+                                            <h4>My Open Programs</h4>
+                                        </div>
+                                        <div className="my-open-programs">
+                                            <OwlCarousel className='owl-theme' loop margin={10} nav>
+                                                {
+                                                    
+                                                    programsslider.map((val, index) => {
+                                                        var inndrdata = val;
+                                                        return(
+                                                            <>
+                                                                <div className="item">
+                                                                    {
+                                                                        console.log(inndrdata)
+                                                                        inndrdata.map((valn) => {
+                                                                            return(
+                                                                                <div>hrllo</div>
+                                                                            )
+                                                                        })
+                                                                    }
+                                                                </div>
+                                                            </>
+                                                        )
+                                                    })
+                                                }
+
+                                            </OwlCarousel>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <div className="col-lg-4 col-12 newsfeed-main-wrapper">

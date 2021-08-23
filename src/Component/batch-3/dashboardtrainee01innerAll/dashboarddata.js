@@ -10,6 +10,7 @@ import ext_cha_ic2 from '../../../assets/images/batch-1/ext_cha_ic2.svg';
 import bitmap from '../../../assets/images/dashboard/bitmap.png'
 import filter_list_img from '../../../assets/images/batch-1/filter-list1.png';
 import training_img from '../../../assets/images/dashboard/bitmap.png';
+import ph_image from '../../../assets/images/dashboard/ph-image.png';
 
 const EmployeesData = [
     {
@@ -176,6 +177,27 @@ const EmployeesData3 = [
     }
 ]
 
+const programsslider = [
+    {
+        slideritem : [
+            {
+                sliderimg: ph_image,
+                slidertitle: "The sales process",
+                sliderdec: "Sales: Closing Strategies",
+                time: '12m left',
+                sliderprogress : 34
+            },
+            {
+                sliderimg: ph_image,
+                slidertitle: "Identify your audience",
+                sliderdec: "Public Speaking Foundations",
+                time: '1m 32s left',
+                sliderprogress : 50
+            }
+        ]
+    }
+]
+
 
 export default EmployeesData;
-export { ProgramsData, Assessments, ext_cha_v4_data, training_zone, EmployeesData3 }
+export { ProgramsData, Assessments, ext_cha_v4_data, training_zone, EmployeesData3, programsslider }
