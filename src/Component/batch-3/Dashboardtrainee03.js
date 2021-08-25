@@ -1,25 +1,29 @@
 import React, { useState } from 'react'
 
-import { EmployeesData3, programsslider } from '../batch-3/dashboardtrainee01innerAll/dashboarddata'
-import Programtable from '../batch-3/dashboardtrainee01innerAll/dashboardtable'
-import { Assessmentstable } from '../batch-3/dashboardtrainee01innerAll/dashboardtable'
-import TrainersLeaderchart from '../batch-3/dashboardtrainee01innerAll/dashboardchart'
-import Trainingzone from '../batch-3/dashboardtrainee02innerAll/trainingzone'
-import { training_zone } from '../batch-3/dashboardtrainee01innerAll/dashboarddata'
+import { EmployeesData3 } from '../batch-3/dashboardtrainee01innerAll/dashboarddata'
+import {  programsslider } from '../batch-3/dashboardtrainee01innerAll/dashboarddata'
+// import Programtable from '../batch-3/dashboardtrainee01innerAll/dashboardtable'
+// import { Assessmentstable } from '../batch-3/dashboardtrainee01innerAll/dashboardtable'
+// import TrainersLeaderchart from '../batch-3/dashboardtrainee01innerAll/dashboardchart'
+// import Trainingzone from '../batch-3/dashboardtrainee02innerAll/trainingzone'
+// import { training_zone } from '../batch-3/dashboardtrainee01innerAll/dashboarddata'
+
+import Programsslideritem from '../batch-3/dashboardtrainee01innerAll/programsslideritem'
+
 
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
-import ProgressBar from 'react-bootstrap/ProgressBar'
 
-import resize_icon from '../../assets/images/dashboard/resize-icon.svg'
+
+// import resize_icon from '../../assets/images/dashboard/resize-icon.svg'
 import ifst from '../../assets/images/dashboard/ifst.png'
 import shape from '../../assets/images/dashboard/shape.svg'
 import rectangle from '../../assets/images/dashboard/rectangle.png'
 import wise_1 from '../../assets/images/dashboard/wise-1.svg'
 import wise_2 from '../../assets/images/dashboard/wise-2.png'
-import ph_image from '../../assets/images/dashboard/ph-image.png'
-
+// import ph_image from '../../assets/images/dashboard/ph-image.png'
+    
 
 const Dashboardtrainee03 = (props) => {
     const [seemore, setseemore] = useState(false);
@@ -29,7 +33,22 @@ const Dashboardtrainee03 = (props) => {
         setseemore(true);
     }
 
+    var data1 = JSON.stringify(programsslider);
+    var data2 = JSON.parse(data1);
+    var groupedData1 = [];
+
+    while(data2.length) {
+        groupedData1.push(data2.splice(0, 2));
+    }
+
+    const options = {
+        items: 1,
+        nav: true,
+        navText:["<div className='nav-btn prev-slide'></div>","<div className='nav-btn next-slide'></div>"],
+    }
+    
     return (
+        
         <div className="main-content-wrapper dashboard-page-2 common-dashboard-page dashboard-page-03">
             <div className="common-padding-content">
                 <div className="common-dashboard-good-afternoon-wrapper">
@@ -42,7 +61,7 @@ const Dashboardtrainee03 = (props) => {
                         {
                             EmployeesData3.map((val, index) => {
                                 return(
-                                    <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 after-border-right">
+                                    <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 after-border-right" key={index}>
                                         <div className="good-afternoon-details-wrapper">
                                             <div className="media good-afternoon-media align-items-center">
                                                 <div className="media-body">
@@ -75,28 +94,31 @@ const Dashboardtrainee03 = (props) => {
                                             <h4>My Open Programs</h4>
                                         </div>
                                         <div className="my-open-programs">
-                                            <OwlCarousel className='owl-theme' loop margin={10} nav>
-                                                {/* {
-                                                    
-                                                    programsslider.map((val, index) => {
-                                                        var inndrdata = val;
+                                            <OwlCarousel className='open-programs-owl owl-theme' items={1} loop margin={10} >
+                                                {
+                                                    groupedData1.map((val, index) => {
+                                                        {console.log(val)}
                                                         return(
-                                                            <>
-                                                                <div className="item">
-                                                                    {
-                                                                        console.log(inndrdata)
-                                                                        inndrdata.map((valn) => {
-                                                                            return(
-                                                                                <div>hrllo</div>
-                                                                            )
-                                                                        })
-                                                                    }
-                                                                </div>
-                                                            </>
+                                                            <div className="item" key={index}>
+                                                                {
+                                                                    val.map((newval, index) => {
+                                                                        {console.log(newval)}
+                                                                        return(
+                                                                            <Programsslideritem 
+                                                                                key={index}
+                                                                                sliderimg = {newval.sliderimg}
+                                                                                slidertitle = {newval.slidertitle}
+                                                                                sliderdec = {newval.sliderdec}
+                                                                                time = {newval.time}
+                                                                                sliderprogress = {newval.sliderprogress}
+                                                                            />
+                                                                        )
+                                                                    })    
+                                                                }
+                                                            </div>
                                                         )
                                                     })
-                                                } */}
-
+                                                }
                                             </OwlCarousel>
                                         </div>
                                     </div>
@@ -176,7 +198,7 @@ const Dashboardtrainee03 = (props) => {
                                         </div>
                                         <div className="see-more-wrapper">
                                             {
-                                                !seemore && <a href="javascript:void(0)" id="seeMore" className="see-more" onClick={seemorefn} >See more</a>
+                                                !seemore && <a href="javascriptVoid(0)" id="seeMore" className="see-more" onClick={seemorefn} >See more</a>
                                             }
                                         </div>
                                     </div>

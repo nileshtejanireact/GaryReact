@@ -179,22 +179,33 @@ const EmployeesData3 = [
 
 const programsslider = [
     {
-        slideritem : [
-            {
-                sliderimg: ph_image,
-                slidertitle: "The sales process",
-                sliderdec: "Sales: Closing Strategies",
-                time: '12m left',
-                sliderprogress : 34
-            },
-            {
-                sliderimg: ph_image,
-                slidertitle: "Identify your audience",
-                sliderdec: "Public Speaking Foundations",
-                time: '1m 32s left',
-                sliderprogress : 50
-            }
-        ]
+        sliderimg: ph_image,
+        slidertitle: "The sales process",
+        sliderdec: "Sales: Closing Strategies",
+        time: '12m left',
+        sliderprogress : 34
+    },
+    {
+        sliderimg: ph_image,
+        slidertitle: "Identify your audience",
+        sliderdec: "Public Speaking Foundations",
+        time: '1m 32s left',
+        sliderprogress : 50
+    },
+    {
+        sliderimg: ph_image,
+        slidertitle: "Identify your audience",
+        sliderdec: "Public Speaking Foundations",
+        time: '1m 32s left',
+        sliderprogress : 100
+    },
+
+    {
+        sliderimg: ph_image,
+        slidertitle: "Identify your audience",
+        sliderdec: "Public Speaking Foundations",
+        time: '1m 32s left',
+        sliderprogress : 50
     }
 ]
 
