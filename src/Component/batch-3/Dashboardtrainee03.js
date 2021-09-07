@@ -1,19 +1,19 @@
 import React, { useState } from 'react'
 
-import { EmployeesData3 } from '../batch-3/dashboardtrainee01innerAll/dashboarddata'
-import {  programsslider } from '../batch-3/dashboardtrainee01innerAll/dashboarddata'
+import { EmployeesData3, programsslider, Openassessments } from '../batch-3/dashboardtrainee01innerAll/dashboarddata'
+import Programsslideritem, { Openassessmentscom } from '../batch-3/dashboardtrainee01innerAll/programsslideritem'
+import $ from "jquery"
 // import Programtable from '../batch-3/dashboardtrainee01innerAll/dashboardtable'
 // import { Assessmentstable } from '../batch-3/dashboardtrainee01innerAll/dashboardtable'
 // import TrainersLeaderchart from '../batch-3/dashboardtrainee01innerAll/dashboardchart'
 // import Trainingzone from '../batch-3/dashboardtrainee02innerAll/trainingzone'
 // import { training_zone } from '../batch-3/dashboardtrainee01innerAll/dashboarddata'
 
-import Programsslideritem from '../batch-3/dashboardtrainee01innerAll/programsslideritem'
-
 
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
+
 
 
 // import resize_icon from '../../assets/images/dashboard/resize-icon.svg'
@@ -41,12 +41,51 @@ const Dashboardtrainee03 = (props) => {
         groupedData1.push(data2.splice(0, 2));
     }
 
-    const options = {
-        items: 1,
-        nav: true,
-        navText:["<div className='nav-btn prev-slide'></div>","<div className='nav-btn next-slide'></div>"],
+    var assessmentsdata1 = JSON.stringify(Openassessments);
+    var assessmentsdata2 = JSON.parse(assessmentsdata1);
+    var groupedData2 = [];
+
+    while(assessmentsdata2.length) {
+        groupedData2.push(assessmentsdata2.splice(0, 2));
     }
+
+    function startTimer(duration, display) {
+        var timer = duration,
+            minutes,
+            seconds;
+        setInterval(function () {
+            minutes = parseInt(timer / 60, 10);
+            seconds = parseInt(timer % 60, 10);
     
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+    
+            display.textContent = minutes + ":" + seconds;
+    
+            if (--timer < 0) {
+                timer = duration;
+            }
+        }, 1000);
+    }
+
+    window.onload = function () {
+        var fiveMinutes = 60 * 15,
+            display = document.querySelector("#time");
+        startTimer(fiveMinutes, display);
+    };
+
+    $(function () {
+        // $(".circle-graph").easyPieChart({
+        //     scaleColor: false,
+        //     lineWidth: 25,
+        //     lineCap: "butt",
+        //     barColor: "#a6cee3",
+        //     trackColor: "#1f78b4",
+        //     size: 160,
+        //     animate: 800,
+        // });
+    });
+
     return (
         
         <div className="main-content-wrapper dashboard-page-2 common-dashboard-page dashboard-page-03">
@@ -94,15 +133,13 @@ const Dashboardtrainee03 = (props) => {
                                             <h4>My Open Programs</h4>
                                         </div>
                                         <div className="my-open-programs">
-                                            <OwlCarousel className='open-programs-owl owl-theme' items={1} loop margin={10} >
+                                            <OwlCarousel className='open-programs-owl owl-theme' items={1} loop margin={10} nav navText= {['<i className="fa fa-angle-left" aria-hidden="true"></i>','<i className="fa fa-angle-right" aria-hidden="true"></i>']} >
                                                 {
                                                     groupedData1.map((val, index) => {
-                                                        {console.log(val)}
                                                         return(
                                                             <div className="item" key={index}>
                                                                 {
                                                                     val.map((newval, index) => {
-                                                                        {console.log(newval)}
                                                                         return(
                                                                             <Programsslideritem 
                                                                                 key={index}
@@ -120,6 +157,105 @@ const Dashboardtrainee03 = (props) => {
                                                     })
                                                 }
                                             </OwlCarousel>
+                                        </div>
+                                    </div>
+                                    
+                                    <div className="col-md-6 col-12 open-assessments-main-wrapper">
+                                        <div className="common-section-title">
+                                            <h4>Open Assessments</h4>
+                                        </div>
+                                        <div className="open-assessments-wrapper">
+                                            <OwlCarousel className='open-programs-owl owl-theme' items={1} loop margin={10} nav navText= {['<i className="fa fa-angle-left" aria-hidden="true"></i>','<i className="fa fa-angle-right" aria-hidden="true"></i>']} >
+                                                {
+                                                    groupedData2.map((val, index) => {
+                                                        return(
+                                                            <div className="item" key={index}>
+                                                                {
+                                                                    val.map((newval, index) => {
+                                                                        return(
+                                                                            <Openassessmentscom 
+                                                                                key={index}
+                                                                                assessmentstitle = {newval.assessmentstitle}
+                                                                                assessmentsdate = {newval.assessmentsdate}
+                                                                                assessmentsdue = {newval.assessmentsdue}
+                                                                            />
+                                                                        )
+                                                                    })    
+                                                                }
+                                                            </div>
+                                                        )
+                                                    })
+                                                }
+                                            </OwlCarousel>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div className="other-useful-info">
+                                <div className="common-section-title">
+                                    <h4>My Open Programs</h4>
+                                </div>
+                                <div className="other-useful-info-wrapper">
+                                    <div className="row">
+                                        <div className="col-xl-3 col-lg-3 col-sm-3 col-6 text-center">
+                                            <div className="graph-circle">
+                                                <div className="circle-graph-container justify-content-center">
+                                                <div className="circle-graph easyPieChart" data-percent="62">
+                                                    <p className="circle-graph-text">14</p>
+                                                    <canvas width="0" height="0"></canvas>
+                                                </div>
+
+                                                <div class="chart" data-percent="73">73%</div>
+                                                </div>
+                                                <div className="other-useful-section-title">
+                                                    <h5>Badges Achieved</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="col-xl-3 col-lg-3 col-sm-3 col-6 text-center">
+                                            <div className="other-useful-info-timer">
+                                                <div className="ten-countdown-timer">
+                                                    <div id="ten-countdown">
+                                                        <div id="time">
+                                                            14:50
+                                                        </div>
+                                                        <div className="time-mr-m d-flex align-items-center justify-content-around">
+                                                            <p>HR</p>
+                                                            <p>M</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="other-useful-section-title">
+                                                    <h5>Total Course Time Attended</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="col-xl-3 col-lg-3 col-sm-3 col-6 text-center">
+                                            <div className="graph-circle">
+                                                <div className="circle-graph-container justify-content-center">
+                                                    <div className="circle-graph easyPieChart" data-percent="62">
+                                                        <p className="circle-graph-text">14</p>
+                                                        <canvas width="0" height="0"></canvas>
+                                                    </div>
+                                                </div>
+                                                <div className="other-useful-section-title">
+                                                    <h5>Badges Achieved</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="col-xl-3 col-lg-3 col-sm-3 col-6 text-center">
+                                            <div className="other-useful-info-timer">
+                                                <div className="ten-countdown-timer">
+                                                    <div id="ten-countdown">
+                                                        <h6>4</h6>
+                                                    </div>
+                                                </div>
+                                                <div className="other-useful-section-title">
+                                                    <h5>Total Attempts For Assessments</h5>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

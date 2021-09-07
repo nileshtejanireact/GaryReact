@@ -41,7 +41,6 @@ const Programtable = () => {
 
                     {
                         ProgramsData.map((val, index) => {
-                                {console.log(val)}
                             return(
                                 <tr key={index}>
                                     <td className="width_50">{val.group}</td>

@@ -9,7 +9,6 @@ import ext_cha_ic3 from '../../../assets/images/batch-1/ext_cha_ic3.svg';
 import ext_cha_ic2 from '../../../assets/images/batch-1/ext_cha_ic2.svg';
 import bitmap from '../../../assets/images/dashboard/bitmap.png'
 import filter_list_img from '../../../assets/images/batch-1/filter-list1.png';
-import training_img from '../../../assets/images/dashboard/bitmap.png';
 import ph_image from '../../../assets/images/dashboard/ph-image.png';
 
 const EmployeesData = [
@@ -210,5 +209,28 @@ const programsslider = [
 ]
 
 
+const Openassessments = [
+    { 
+        assessmentstitle: "Formative Assessment 1",
+        assessmentsdate: "Sun, 31 Mar | 9:30 AM",
+        assessmentsdue: 'Sun, 6 Apr | 10:00 AM',
+    },
+    { 
+        assessmentstitle: "Formative Assessment 1",
+        assessmentsdate: "Sun, 31 Mar | 9:30 AM",
+        assessmentsdue: 'Sun, 6 Apr | 10:00 AM',
+    },
+    { 
+        assessmentstitle: "Formative Assessment 1",
+        assessmentsdate: "Sun, 31 Mar | 9:30 AM",
+        assessmentsdue: 'Sun, 6 Apr | 10:00 AM',
+    },
+    { 
+        assessmentstitle: "Formative Assessment 1",
+        assessmentsdate: "Sun, 31 Mar | 9:30 AM",
+        assessmentsdue: 'Sun, 6 Apr | 10:00 AM',
+    },
+]
+
 export default EmployeesData;
-export { ProgramsData, Assessments, ext_cha_v4_data, training_zone, EmployeesData3, programsslider }
+export { ProgramsData, Assessments, ext_cha_v4_data, training_zone, EmployeesData3, programsslider, Openassessments}

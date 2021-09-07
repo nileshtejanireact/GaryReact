@@ -217,8 +217,23 @@
     -webkit-animation-name: fadeIn;
     animation-name: fadeIn;
 }
-
-
+.accordion_wrapper .accordion .card{
+    border-radius: unset !important;
+    background-color: unset;
+} 
+.accordion_wrapper .accordion .collapse{
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.accordion_wrapper .card-header{
+    color: white;
+}
+.accordion_wrapper .accordion .card-body{
+    padding-left: 25px;
+}
+.accordion_wrapper .accordion .card-body a:hover{
+    background-color: unset;
+    color: #20A6D2;
+}
 
 
 

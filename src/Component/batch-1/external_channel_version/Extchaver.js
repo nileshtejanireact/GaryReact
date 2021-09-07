@@ -13,7 +13,7 @@ const Externalchaversion1 = (props) => {
             </div>
             <div className="ext-img-desc">
                 <div className="ext-cha-img">
-                    <img src={props.ext_cha_img} alt="image" />
+                    <img src={props.ext_cha_img} alt="image1"/>
                 </div>
                 <p>{props.ext_cha_v1_dec}</p>
             </div>
@@ -33,7 +33,7 @@ const Externalchaversion2 = (props) => {
                     <img src={props.ext_cha_icon} alt="icon"/>
                 </div>
                 <div className="ext-cha-v2-img">
-                    <img src={props.ext_cha_img} alt="image"/>
+                    <img src={props.ext_cha_img} alt="image2"/>
                 </div>
                 <div className="ext-common-desc">
                     <p>{props.ext_cha_v1_dec}</p>

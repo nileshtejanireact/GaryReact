@@ -25,10 +25,10 @@ const Chapterinner1 = (props) => {
     var imagespath = indexdata.images[allbigimages];
     var totalimages = indexdata.images.length;
     
-    const saveindexhandler = (currentindex) => {
-        setbigimages(currentindex);
-        setallbigimages(0);
-    }
+    // const saveindexhandler = (currentindex) => {
+    //     setbigimages(currentindex);
+    //     setallbigimages(0);
+    // }
 
     const previmages = () => {
         setallbigimages(allbigimages === 0 ? 0 : allbigimages - 1);

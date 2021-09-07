@@ -41,7 +41,7 @@ const Listview = () => {
                             <div className="breadcrumb-ul">
                                 <ul>
                                     <li>
-                                        <a><img src={home_svg} alt="home"/></a>
+                                        <a href="javascriptVoid(0)"><img src={home_svg} alt="home"/></a>
                                     </li>
                                     <li className="active">
                                         <span>Courses</span>

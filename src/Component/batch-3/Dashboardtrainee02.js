@@ -214,7 +214,7 @@ const Dashboardtrainee02 = () => {
                                         </div>
                                         <div className="see-more-wrapper">
                                             {
-                                                !seemore && <a href="javascript:void(0)" id="seeMore" className="see-more" onClick={seemorefn} >See more</a>
+                                                !seemore && <a href="javascriptVoid(0)" id="seeMore" className="see-more" onClick={seemorefn} >See more</a>
                                             }
                                         </div>
                                     </div>
