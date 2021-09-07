@@ -26,7 +26,7 @@ const Dashboardtrainee01 = () => {
                         {
                             EmployeesData.map((val, index) => {
                                 return(
-                                    <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 after-border-right">
+                                    <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 after-border-right" key={index}>
                                         <div className="good-afternoon-details-wrapper">
                                             <div className="media good-afternoon-media align-items-center">
                                                 <div className="media-body">
@@ -89,22 +89,22 @@ const Dashboardtrainee01 = () => {
                             </div>
                         </div>
 
-                        <div class="trainer-latest-wrapper">
-                            <div class="row">
-                                <div class="col-md-12 col-xl-6 col-12">
-                                    <div class="common-section-title">
+                        <div className="trainer-latest-wrapper">
+                            <div className="row">
+                                <div className="col-md-12 col-xl-6 col-12">
+                                    <div className="common-section-title">
                                         <h4><span>Trainer’s Leader Board</span> <img src={resize_icon} alt="Gmes logo" /></h4>
                                     </div>  
 
                                     <TrainersLeaderchart />
                                 </div>
 
-                                <div class="col-md-12 col-xl-6 col-12 mt_5">
-                                    <div class="common-section-title">
+                                <div className="col-md-12 col-xl-6 col-12 mt_5">
+                                    <div className="common-section-title">
                                         <h4><span>Latest in Training Zone</span> <img src={resize_icon} alt="Gmes logo" /></h4>
                                     </div>
 
-                                    <div class="row latest-in-training-zone">
+                                    <div className="row latest-in-training-zone">
                                         {
                                             ext_cha_v4_data.map((val, index) => {
                                                 return(

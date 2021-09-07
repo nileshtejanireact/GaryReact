@@ -234,6 +234,9 @@
     background-color: unset;
     color: #20A6D2;
 }
+.accordion_wrapper.cm_active .menu-arrow{
+    transform: translateY(-50%) rotate(-90deg);
+}
 
 
 

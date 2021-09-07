@@ -8,9 +8,18 @@ import menu_arrow from '../assets/images/batch-1/menu_arrow.png';
 import logout_img from '../assets/images/batch-1/logout.svg';
 
 const Siderbar = () => {
-
     const hideModal = (event) => {
         document.body.classList.remove('sidebar-open');
+    }
+
+    const setActive = event => {
+        [...event.currentTarget.parentElement.children].forEach(sib => sib.classList.remove('cm_active'))
+        if(event.currentTarget.parentElement.classList.contains('cm_active')){
+            event.currentTarget.parentElement.classList.remove("cm_active");
+        }
+        else{
+            event.currentTarget.parentElement.classList.add("cm_active");
+        }
     }
 
     return (
@@ -34,7 +43,7 @@ const Siderbar = () => {
                     <div className="sidebar-menu">
                         <ul>
                             <li className="accordion_wrapper has-sub-menu">
-                                <Accordion>
+                                <Accordion onClick={setActive}>
                                     <Card>
                                         <Accordion.Toggle as={Card.Header} eventKey="0">
                                         <a href="#0">
@@ -87,7 +96,7 @@ const Siderbar = () => {
                             </li>
 
                             <li className="accordion_wrapper has-sub-menu">
-                                <Accordion>
+                                <Accordion onClick={setActive}>
                                     <Card>
                                         <Accordion.Toggle as={Card.Header} eventKey="0">
                                         <a href="#0">
@@ -147,7 +156,7 @@ const Siderbar = () => {
                             
 
                             <li className="accordion_wrapper has-sub-menu">
-                                <Accordion>
+                                <Accordion onClick={setActive}>
                                     <Card>
                                         <Accordion.Toggle as={Card.Header} eventKey="1">
                                         <a href="#0">

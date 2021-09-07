@@ -63,7 +63,7 @@ const TrainersLeaderchart = () => {
 
     return (
         
-        <div class="chart-wrapper">
+        <div className="chart-wrapper">
             <div className="trainersLeaderchart">
                 <Scatter 
                     ref={trainersref} 
@@ -74,11 +74,11 @@ const TrainersLeaderchart = () => {
                 />
             </div>
 
-            <div class="y-text-wrapper">
-                <p class="y-text">Progress %</p>
+            <div className="y-text-wrapper">
+                <p className="y-text">Progress %</p>
             </div>
-            <div class="x-text-wrapper">
-                <p class="x-text">PLE Credits</p>
+            <div className="x-text-wrapper">
+                <p className="x-text">PLE Credits</p>
             </div>
         </div>  
     )
