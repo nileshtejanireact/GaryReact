@@ -175,29 +175,29 @@ const Allocation = () => {
 
                     <Moduleinfoblock />
 
-                    <div class="allocate_three_block">
-                        <div class="main_audience_block">
-                            <div class="audience_block">
-                                <h3>Audience <span class="text-danger">*</span></h3>
-                                <div class="open_close_block">
+                    <div className="allocate_three_block">
+                        <div className="main_audience_block">
+                            <div className="audience_block">
+                                <h3>Audience <span className="text-danger">*</span></h3>
+                                <div className="open_close_block">
                                     <a href="#0">open</a>
                                     <a href="#0">close</a>
                                 </div>
                             </div>
                             
-                            <div class="delivery_blog">
+                            <div className="delivery_blog">
                                 <h3>Select Delivery Groups</h3>
-                                <div class="delivery_box">
-                                    <form class="common_checkbox">
-                                        <div class="form-group">
+                                <div className="delivery_box">
+                                    <form className="common_checkbox">
+                                        <div className="form-group">
                                             <input type="checkbox" id="Classes" />
                                             <label for="Classes">Classes</label>
                                         </div>
-                                        <div class="form-group">
+                                        <div className="form-group">
                                             <input type="checkbox" id="Batches" />
                                             <label for="Batches">Batches</label>
                                         </div>
-                                        <div class="form-group">
+                                        <div className="form-group">
                                             <input type="checkbox" id="Individuals" />
                                             <label for="Individuals">Individuals</label>
                                         </div>
@@ -206,12 +206,12 @@ const Allocation = () => {
                             </div>
                         </div>
 
-                        <div class="filter_by_block">
-                            <div class="filter_box">
-                                <div class="top_filter">
+                        <div className="filter_by_block">
+                            <div className="filter_box">
+                                <div className="top_filter">
                                     <h3>Filter By</h3>
-                                    <div class="all_filters_block">
-                                        <ul class="all_filter_ul">
+                                    <div className="all_filters_block">
+                                        <ul className="all_filter_ul">
                                             <li>
                                                 <div className="common-dropdown">
                                                     <Dropdown>
@@ -247,13 +247,13 @@ const Allocation = () => {
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="common-search-hold input-value-close">
+                                                <div className="common-search-hold input-value-close">
                                                     <input type="text" placeholder="Search by keyword" onChange={searchChangehandler}/>
                                                     {
-                                                        !searchic && <span class=  "input-close-text"><img src={input_close_ic} alt="icon" /></span>
+                                                        !searchic && <span className=  "input-close-text"><img src={input_close_ic} alt="icon" /></span>
                                                     }
                                                     {
-                                                        searchic && <span class="search-icon"><img src={searchicon} alt="search" /></span>
+                                                        searchic && <span className="search-icon"><img src={searchicon} alt="search" /></span>
                                                     }
                                                 </div>
                                             </li>
@@ -261,27 +261,27 @@ const Allocation = () => {
                                     </div>
                                 </div>
 
-                                <div class="select_filter">
+                                <div className="select_filter">
                                     <form action="">
                                         <h3>Select From</h3>
-                                        <div class="select_filter_box">
-                                            <div class="common_checkbox">
-                                                <div class="check_all">
-                                                    <div class="form-group">
-                                                        <input type="checkbox" class="check_all_btn" id="Check_All" />
+                                        <div className="select_filter_box">
+                                            <div className="common_checkbox">
+                                                <div className="check_all">
+                                                    <div className="form-group">
+                                                        <input type="checkbox" className="check_all_btn" id="Check_All" />
                                                         <label for="Check_All" onClick={checkall}>Check All</label>
                                                     </div>
-                                                    <div class="uncheck_span">
-                                                        <a href="#0" class="uncheck_all" onClick={uncheckall}>Uncheck All</a>
+                                                    <div className="uncheck_span">
+                                                        <a href="#0" className="uncheck_all" onClick={uncheckall}>Uncheck All</a>
                                                     </div>
                                                 </div>
 
-                                                <div class="all_checkboxes">
+                                                <div className="all_checkboxes">
                                                     {
                                                         checkboxdata.map((val, index) => {
                                                             return(
-                                                                <div class="form-group" key={index}>
-                                                                    <input type="checkbox" class="individual" id={val.id} />
+                                                                <div className="form-group" key={index}>
+                                                                    <input type="checkbox" className="individual" id={val.id} />
                                                                     <label for={val.id}>{val.label}</label>
                                                                 </div>
                                                             )
@@ -291,7 +291,7 @@ const Allocation = () => {
                                             </div>
                                         </div>
 
-                                        <div class="select_filter_btn">
+                                        <div className="select_filter_btn">
                                             <a href="#0">
                                                 <span>Add to Selection</span>
                                                 <span>
@@ -305,26 +305,26 @@ const Allocation = () => {
                             </div>
                         </div>
                     
-                        <div class="selected_block">
+                        <div className="selected_block">
                             <form action="">
                                 <h3>Selected</h3>
-                                <div class="select_filter_box">
-                                    <div class="common_checkbox">
-                                        <div class="check_all">
-                                            <div class="form-group">
-                                                <input type="checkbox" id="Check_All_2" class="uncheck_all_btn"/>
+                                <div className="select_filter_box">
+                                    <div className="common_checkbox">
+                                        <div className="check_all">
+                                            <div className="form-group">
+                                                <input type="checkbox" id="Check_All_2" className="uncheck_all_btn"/>
                                                 <label for="Check_All_2" onClick={checkall2}>Check All</label>
                                             </div>
-                                            <div class="uncheck_span">
-                                                <a href="#0" class="uncheck_all_2" onClick={uncheckall2}>Uncheck All</a>
+                                            <div className="uncheck_span">
+                                                <a href="#0" className="uncheck_all_2" onClick={uncheckall2}>Uncheck All</a>
                                             </div>
                                         </div>
-                                        <div class="all_checkboxes">
+                                        <div className="all_checkboxes">
                                             {
                                                 checkboxdata.map((val, index) => {
                                                     return(
-                                                        <div class="form-group" key={index}>
-                                                            <input type="checkbox" class="individual_two" id={`${val.id}${index}`} />
+                                                        <div className="form-group" key={index}>
+                                                            <input type="checkbox" className="individual_two" id={`${val.id}${index}`} />
                                                             <label for={`${val.id}${index}`}>{val.label}</label>
                                                         </div>
                                                     )
@@ -333,8 +333,8 @@ const Allocation = () => {
                                             {
                                                 checkboxdata.map((val, index) => {
                                                     return(
-                                                        <div class="form-group" key={index}>
-                                                            <input type="checkbox" class="individual_two" id={`new${val.id}${index}`} />
+                                                        <div className="form-group" key={index}>
+                                                            <input type="checkbox" className="individual_two" id={`new${val.id}${index}`} />
                                                             <label for={`new${val.id}${index}`}>{val.label}</label>
                                                         </div>
                                                     )
@@ -343,7 +343,7 @@ const Allocation = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="select_filter_btn selected_btn">
+                                <div className="select_filter_btn selected_btn">
                                     <a href="#0">
                                     <span>Remove</span></a>
                                 </div>

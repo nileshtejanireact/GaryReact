@@ -207,7 +207,7 @@ const Dashboardtrainee03 = (props) => {
                                                     <canvas width="0" height="0"></canvas>
                                                 </div>
 
-                                                <div class="chart" data-percent="73">73%</div>
+                                                <div className="chart" data-percent="73">73%</div>
                                                 </div>
                                                 <div className="other-useful-section-title">
                                                     <h5>Badges Achieved</h5>
