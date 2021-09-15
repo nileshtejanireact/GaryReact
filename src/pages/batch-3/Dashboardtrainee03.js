@@ -33,6 +33,7 @@ const Dashboardtrainee03 = (props) => {
         setseemore(true);
     }
 
+
     var data1 = JSON.stringify(programsslider);
     var data2 = JSON.parse(data1);
     var groupedData1 = [];
@@ -74,17 +75,17 @@ const Dashboardtrainee03 = (props) => {
         startTimer(fiveMinutes, display);
     };
 
-    $(function () {
-        // $(".circle-graph").easyPieChart({
-        //     scaleColor: false,
-        //     lineWidth: 25,
-        //     lineCap: "butt",
-        //     barColor: "#a6cee3",
-        //     trackColor: "#1f78b4",
-        //     size: 160,
-        //     animate: 800,
-        // });
-    });
+    // $(function () {
+    //     $(".circle-graph").easyPieChart({
+    //         scaleColor: false,
+    //         lineWidth: 25,
+    //         lineCap: "butt",
+    //         barColor: "#a6cee3",
+    //         trackColor: "#1f78b4",
+    //         size: 160,
+    //         animate: 800,
+    //     });
+    // });
 
     return (
         
@@ -100,14 +101,15 @@ const Dashboardtrainee03 = (props) => {
                         {
                             EmployeesData3.map((val, index) => {
                                 return(
-                                    <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 after-border-right" key={index}>
+                                    <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 after-border-right" key={index} >
                                         <div className="good-afternoon-details-wrapper">
                                             <div className="media good-afternoon-media align-items-center">
                                                 <div className="media-body">
                                                     <p className="good-afternoon-media-sub-title">{val.employeestitle}</p>
                                                     <h2 className="good-afternoon-media-title">{val.employeenumber} 
-                                                        <sub>{index === 0 ? `  (${val.employees} Employees)` : ""} 
-                                                             {index === 1 ? `/ ${val.employesubnumber}` : ""}
+                                                        <sub>
+                                                            {index === 0 ? `  (${val.employees} Employees)` : ""} 
+                                                            {index === 1 ? `/ ${val.employesubnumber}` : ""}
                                                         </sub>
                                                     </h2>
                                                     {index === 1 ? <span className="last-week-text"><svg width="10px" height="10px" viewBox="0 0 10 10" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"> <path d="M3 0L0 2.84298L0.64186 3.43802L2.55349 1.62645L2.55349 8L3.44651 8L3.44651 1.62645L5.35814 3.43802L6 2.84298L3 0Z" transform="matrix(0.70710665 0.7071069 -0.7071069 0.70710665 5.6568604 0)" id="Path" fill="#1DA712" stroke="none"/> </svg>10+ last week</span> : " "}
@@ -137,7 +139,7 @@ const Dashboardtrainee03 = (props) => {
                                                 {
                                                     groupedData1.map((val, index) => {
                                                         return(
-                                                            <div className="item" key={index}>
+                                                            <div className="item" key={'item' + index}>
                                                                 {
                                                                     val.map((newval, index) => {
                                                                         return(

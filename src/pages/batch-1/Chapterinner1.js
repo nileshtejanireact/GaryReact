@@ -7,7 +7,6 @@ import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 
-
 import PhysicsImagebox from '../../Component/batch-1/chapterinnerAll/PhysicsImagebox';
 
 import PhysicsBoxData from '../../Component/batch-1/chapterinnerAll/ChapterData';
@@ -17,7 +16,7 @@ const Chapterinner1 = (props) => {
     const [bigimages, setbigimages] = useState(0);
     const [allbigimages, setallbigimages] = useState(0);
     const [fullimages, setfullimages] = useState(false);
-    const [ value, setValue ] = React.useState(0);
+    const [value, setValue] = React.useState(0);
     const [key, setKey] = useState('home');
     const [imagescale, setimagescale] = useState(1);
 
@@ -43,6 +42,7 @@ const Chapterinner1 = (props) => {
     const saveindexhandler = (currentindex) => {
         setbigimages(currentindex);
     }
+    
     const saveindexhandler2 = (currentindex2) => {
         setallbigimages(0);
     }
@@ -240,19 +240,6 @@ const Chapterinner1 = (props) => {
                     <div className="physics-tab-block">
                         <div className="ph-tab-nav-block">
                             <Tabs id="controlled-tab-example" activeKey={key} onSelect={(k) => setKey(k)}>
-                                 {/* {
-                                    indexdata.tabs.map((val) => {
-                                        return(
-                                            <Tabbox
-                                               eventKey= {val.eventKey}
-                                               title={val.tabtitle}
-                                               tab_common_title={val.tab_common_title}
-                                               tab_common_desc={val.tab_common_desc}>
-                                               </Tabbox>
-                                        )
-                                    })
-                                 } */}
-
                                  {
                                     indexdata.tabs.map((val, index) => {
                                         return(
