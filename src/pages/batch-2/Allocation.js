@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import Dropdown from 'react-bootstrap/Dropdown'
-import Moduleinfoblock from '../batch-2/contentuploadAll/moduleinfoblock';
+import Moduleinfoblock from '../../Component/batch-2/contentuploadAll/moduleinfoblock';
 
 import home_svg from '../../assets/images/batch-1/home.svg';
 import input_close_ic from '../../assets/images/batch-4/input-close-ic.svg';

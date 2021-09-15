@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 
-import EmployeesData from '../batch-3/dashboardtrainee01innerAll/dashboarddata'
-import Programtable from '../batch-3/dashboardtrainee01innerAll/dashboardtable'
-import { Assessmentstable } from '../batch-3/dashboardtrainee01innerAll/dashboardtable'
-import TrainersLeaderchart from '../batch-3/dashboardtrainee01innerAll/dashboardchart'
-import Trainingzone from '../batch-3/dashboardtrainee02innerAll/trainingzone'
-import { training_zone } from '../batch-3/dashboardtrainee01innerAll/dashboarddata'
+import EmployeesData from '../../Component/batch-3/dashboardtrainee01innerAll/dashboarddata'
+
+import Programtable from '../../Component/batch-3/dashboardtrainee01innerAll/dashboardtable'
+import { Assessmentstable } from '../../Component/batch-3/dashboardtrainee01innerAll/dashboardtable'
+import TrainersLeaderchart from '../../Component/batch-3/dashboardtrainee01innerAll/dashboardchart'
+import Trainingzone from '../../Component/batch-3/dashboardtrainee02innerAll/trainingzone'
+import { training_zone } from '../../Component/batch-3/dashboardtrainee01innerAll/dashboarddata'
 
 import resize_icon from '../../assets/images/dashboard/resize-icon.svg'
 import ifst from '../../assets/images/dashboard/ifst.png'

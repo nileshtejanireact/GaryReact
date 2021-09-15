@@ -1,6 +1,6 @@
 import React, {useState, useRef} from 'react'
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
-import Moduleinfoblock from '../batch-2/contentuploadAll/moduleinfoblock';
+import Moduleinfoblock from '../../Component/batch-2/contentuploadAll/moduleinfoblock';
 
 
 import home_svg from '../../assets/images/batch-1/home.svg';

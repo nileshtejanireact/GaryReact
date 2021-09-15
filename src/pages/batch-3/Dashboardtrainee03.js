@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
-import { EmployeesData3, programsslider, Openassessments } from '../batch-3/dashboardtrainee01innerAll/dashboarddata'
-import Programsslideritem, { Openassessmentscom } from '../batch-3/dashboardtrainee01innerAll/programsslideritem'
+import { EmployeesData3, programsslider, Openassessments } from '../../Component/batch-3/dashboardtrainee01innerAll/dashboarddata'
+import Programsslideritem, { Openassessmentscom } from '../../Component/batch-3/dashboardtrainee01innerAll/programsslideritem'
 import $ from "jquery"
 // import Programtable from '../batch-3/dashboardtrainee01innerAll/dashboardtable'
 // import { Assessmentstable } from '../batch-3/dashboardtrainee01innerAll/dashboardtable'

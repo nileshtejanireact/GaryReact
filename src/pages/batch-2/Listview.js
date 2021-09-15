@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import Dropdown from 'react-bootstrap/Dropdown'
 import Table from 'react-bootstrap/Table'
-import tablelistdata from '../batch-2/listinnerAll/tabledata'
+import tablelistdata from '../../Component/batch-2/listinnerAll/tabledata'
 
 
 

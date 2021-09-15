@@ -20,8 +20,8 @@ import ext_cha_v1_img from '../../assets/images/batch-1/ext-channels-img1.png';
 import filter_list_img from '../../assets/images/batch-1/filter-list1.png';
 
 // external_channel_version Components
-import Externalchaversion1 from './external_channel_version/Extchaver';
-import {Externalchaversion2, Externalchaversion3, Externalchaversion4} from './external_channel_version/Extchaver';
+import Externalchaversion1 from '../../Component/batch-1/external_channel_version/Extchaver';
+import {Externalchaversion2, Externalchaversion3, Externalchaversion4} from '../../Component/batch-1/external_channel_version/Extchaver';
 
 
 const ext_cha_v1_data = [

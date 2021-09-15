@@ -1,14 +1,14 @@
 import React from 'react'
 
-import EmployeesData from '../batch-3/dashboardtrainee01innerAll/dashboarddata'
-import { ext_cha_v4_data } from '../batch-3/dashboardtrainee01innerAll/dashboarddata'
-import Programtable from '../batch-3/dashboardtrainee01innerAll/dashboardtable'
-import { Assessmentstable } from '../batch-3/dashboardtrainee01innerAll/dashboardtable'
-
-import TrainersLeaderchart from '../batch-3/dashboardtrainee01innerAll/dashboardchart'
+import EmployeesData from '../../Component/batch-3/dashboardtrainee01innerAll/dashboarddata'
+import { ext_cha_v4_data } from '../../Component/batch-3/dashboardtrainee01innerAll/dashboarddata'
+import Programtable from '../../Component/batch-3/dashboardtrainee01innerAll/dashboardtable'
+import { Assessmentstable } from '../../Component/batch-3/dashboardtrainee01innerAll/dashboardtable'
+import TrainersLeaderchart from '../../Component/batch-3/dashboardtrainee01innerAll/dashboardchart'
 
 import resize_icon from '../../assets/images/dashboard/resize-icon.svg'
-import {Externalchaversion4} from '../batch-1/external_channel_version/Extchaver';
+
+import {Externalchaversion4} from '../../Component/batch-1/external_channel_version/Extchaver';
     
 
 

@@ -2,33 +2,50 @@ import React, { useState, useRef } from 'react';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import Dropdown from 'react-bootstrap/Dropdown'
 
+import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
+
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 
 
-import PhysicsImagebox from './chapterinnerAll/PhysicsImagebox';
+import PhysicsImagebox from '../../Component/batch-1/chapterinnerAll/PhysicsImagebox';
 
-import PhysicsBoxData from '../batch-1/chapterinnerAll/ChapterData';
+import PhysicsBoxData from '../../Component/batch-1/chapterinnerAll/ChapterData';
+import Postright from '../../Component/batch-1/chapterinnerAll/Postright';
 
 const Chapterinner1 = (props) => {
     const [bigimages, setbigimages] = useState(0);
     const [allbigimages, setallbigimages] = useState(0);
     const [fullimages, setfullimages] = useState(false);
     const [ value, setValue ] = React.useState(0);
+    const [key, setKey] = useState('home');
     const [imagescale, setimagescale] = useState(1);
 
-    const [key, setKey] = useState('home');
-    
     var chapterdata = PhysicsBoxData;
     var indexdata = chapterdata[bigimages];
     
     var imagespath = indexdata.images[allbigimages];
     var totalimages = indexdata.images.length;
     
-    // const saveindexhandler = (currentindex) => {
-    //     setbigimages(currentindex);
-    //     setallbigimages(0);
-    // }
+    function openFullscreen() {
+        var isInFullScreen = (document.fullScreenElement && document.fullScreenElement !==     null) ||    // alternative standard method  
+                (document.mozFullScreen || document.webkitIsFullScreen);
+    
+        var docElm = document.getElementById("myimage");
+
+        if (!isInFullScreen) {
+            if (docElm.requestFullscreen) { docElm.requestFullscreen(); }
+            else if (docElm.mozRequestFullScreen) { docElm.mozRequestFullScreen(); }
+            else if (docElm.webkitRequestFullScreen) { docElm.webkitRequestFullScreen(); }
+        }
+    }
+
+    const saveindexhandler = (currentindex) => {
+        setbigimages(currentindex);
+    }
+    const saveindexhandler2 = (currentindex2) => {
+        setallbigimages(0);
+    }
 
     const previmages = () => {
         setallbigimages(allbigimages === 0 ? 0 : allbigimages - 1);
@@ -63,21 +80,8 @@ const Chapterinner1 = (props) => {
         imgscaleref.current.parentNode.style.transformOrigin = "0 0"
     }
 
-    function openFullscreen() {
-        var isInFullScreen = (document.fullScreenElement && document.fullScreenElement !==     null) ||    // alternative standard method  
-                (document.mozFullScreen || document.webkitIsFullScreen);
-    
-        var docElm = document.getElementById("myimage");
-
-        if (!isInFullScreen) {
-            if (docElm.requestFullscreen) { docElm.requestFullscreen(); }
-            else if (docElm.mozRequestFullScreen) { docElm.mozRequestFullScreen(); }
-            else if (docElm.webkitRequestFullScreen) { docElm.webkitRequestFullScreen(); }
-        }
-    }
-
   return (
-    <div className="main-content-wrapper full-content-wrapper full-content-chapter3 chapter-inner-version-3">
+    <div className="main-content-wrapper full-content-wrapper">
         <div className="common-inner-padding-block">
             <div className="common-back-nav-block">
                 <div className="common-back-btn">
@@ -103,7 +107,7 @@ const Chapterinner1 = (props) => {
                 <div className={fullimages ? "physics-col-left fullscreen" : "physics-col-left"}>
                     <div className="physics-inner-box">
                         <PhysicsImagebox
-                            category = {indexdata.category}
+                            category = {indexdata.category} 
                             title = {indexdata.title}
                             progressbar = {indexdata.progressbar}
                         />
@@ -115,12 +119,11 @@ const Chapterinner1 = (props) => {
                                     initialPositionX={0}
                                     initialPositionY={0}
                                     wheel={{ step: 0}}
-                                    
                                 >
                                     {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
                                     <React.Fragment>
                                         <TransformComponent>
-                                            <img src={imagespath} alt="test1" ref={imgscaleref} id="myimage"/>
+                                            <img src={imagespath} alt="test1" ref={imgscaleref} id="myimage" />  
                                         </TransformComponent>
                                         <div className="tools bottom_images_tools">
                                             <div className="bottom_images_tools_inner">
@@ -201,8 +204,6 @@ const Chapterinner1 = (props) => {
                                                         </svg>
                                                     </p>
 
-                                                    
-
                                                     <div className="common-dropdown">
                                                         <Dropdown >
                                                             <Dropdown.Toggle id="dropdown-basic2" className="event_poiter" >
@@ -239,7 +240,20 @@ const Chapterinner1 = (props) => {
                     <div className="physics-tab-block">
                         <div className="ph-tab-nav-block">
                             <Tabs id="controlled-tab-example" activeKey={key} onSelect={(k) => setKey(k)}>
-                                {
+                                 {/* {
+                                    indexdata.tabs.map((val) => {
+                                        return(
+                                            <Tabbox
+                                               eventKey= {val.eventKey}
+                                               title={val.tabtitle}
+                                               tab_common_title={val.tab_common_title}
+                                               tab_common_desc={val.tab_common_desc}>
+                                               </Tabbox>
+                                        )
+                                    })
+                                 } */}
+
+                                 {
                                     indexdata.tabs.map((val, index) => {
                                         return(
                                             <Tab eventKey={val.eventKey} title={val.tabtitle} key={index}>
@@ -259,6 +273,30 @@ const Chapterinner1 = (props) => {
                                  }
                             </Tabs>
                         </div>
+                    </div>
+                </div>
+                
+            
+                <div className={fullimages ? "physics-col-right fullscreen" : "physics-col-right"} >
+                    <div className="physics-content-right">
+                        {
+                            PhysicsBoxData.map((val, index) => {
+                                return(
+                                    <Postright 
+                                        title = {val.title}
+                                        progressbar = {val.progressbar}
+                                        image = {val.images[0]}
+                                        index = {index}
+                                        onsaveindexdata = {saveindexhandler}
+                                        onsaveindexdata2 = {saveindexhandler2}
+                                        key = {index}
+                                        assigneddate = {val.assigneddate}
+                                        completeddate = {val.completeddate}
+                                        activeclasses = {index === bigimages ? "physics-details-box ph-done-process active" : "physics-details-box ph-done-process"}
+                                    />
+                                )
+                            })
+                        }
                     </div>
                 </div>
             </div>
