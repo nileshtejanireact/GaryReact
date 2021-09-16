@@ -31,7 +31,10 @@ const Dashboardtrainee01 = () => {
                                             <div className="media good-afternoon-media align-items-center">
                                                 <div className="media-body">
                                                     <p className="good-afternoon-media-sub-title">{val.employeestitle}</p>
-                                                    <h2 className="good-afternoon-media-title">{val.employeenumber} <sub>{index === 0 ? `(${val.employees} Employees` : ""})</sub></h2>
+                                                    <h2 className="good-afternoon-media-title">
+                                                        {val.employeenumber} 
+                                                        <sub>{index === 0 ? `(${val.employees} Employees)` : " "}</sub>
+                                                    </h2>
                                                 </div>
                                                 <div className="media-image">
                                                     <img src={val.employeeimage} alt="afternoon" />
